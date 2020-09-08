@@ -4,10 +4,11 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to my About Me](./about.html).
-[Link to my Research](./research.html).
-[Link to my Blog](./blog.html).
-[Link to my test](./test.html).
+[About Me](./about.html). <br>
+[Research](./research.html). <br>
+[CV](./cv.html). <br>
+[Blog](./blog.html). <br>
+[...test](./test.html). <br>
 
 
 There should be whitespace between paragraphs.
