@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
+[Link to my Home](./index.html).<br>
 [Link to my About Me](./about.html).<br>
 [Link to my Research](./research.html).<br>
 [Link to my CV](./cv.html).<br>
