@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
+#### NAV
+
+| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html)|
+| [CV](./cv.html)      | [Blog](./blog.html)      | [...test](./test.html) |
+
+
 
 ## Welcome to my Research
-
-
-[About Me](./about.html). <br>
-[Research](./research.html). <br>
-[CV](./cv.html). <br>
-[Blog](./blog.html). <br>
-[...test](./test.html). <br>
-
-
-
 _yay_
+
+
+
+
+
+
 
 [back](./)
