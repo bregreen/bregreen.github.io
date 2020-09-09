@@ -136,8 +136,7 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
-
-<a href="https://twitter.com/BreannaEGreen?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @BreannaEGreen</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/BreannaEGreen?ref_src=twsrc%5Etfw">Tweets by BreannaEGreen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
