@@ -3,12 +3,10 @@ layout: default
 title: Breanna E. Green's CV
 ---
 
+#### NAV
 
-[About Me](./about.html). <br>
-[Research](./research.html). <br>
-[CV](./cv.html). <br>
-[Blog](./blog.html). <br>
-[...test](./test.html). <br>
+| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html)|
+| [CV](./cv.html)      | [Blog](./blog.html)      | [...test](./test.html) |
 
 
 
