@@ -21,3 +21,16 @@ Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [P
 After UTSA, I spent a few years working as a Research Analyst in the Institutional Research department of a large community college in Texas. 
 
 My advisor is (Drew Margolin)[https://www.communication.cals.cornell.edu/people/drew-margolin/].
+
+
+
+
+## Recent Articles and Posts
+
+*
+*
+*
+
+
+## Contact Me
+For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at beg57@cornell.edu
