@@ -2,12 +2,10 @@
 layout: default
 Title: About Me
 ---
+#### NAV
 
-[Link to my Home](./index.html).<br>
-[Link to my About Me](./about.html).<br>
-[Link to my Research](./research.html).<br>
-[Link to my CV](./cv.html).<br>
-[Link to my Blog](./blog.html).<br>
+| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html)|
+| [CV](./cv.html)      | [Blog](./blog.html)      | [...test](./test.html) |
 
 ## Prounouns
 
