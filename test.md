@@ -11,6 +11,9 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [...test](./test.html). <br>
 
 
+
+I am an [Information Science](http://infosci.cornell.edu/) PhD student at Cornell University. 
+
 There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
