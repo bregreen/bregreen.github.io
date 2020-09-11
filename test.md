@@ -11,10 +11,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [...test](./test.html). <br>
 
 
-|              |                   |       |
-|:-------------|:------------------|:------|
-| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html)|
-| [CV](./cv.html)      | [Blog](./blog.html)      | [...test](./test.html) |
+| [Home](./index.html)| [About Me](./about.html) | [Research](./research.html)  |  [CV](./cv.html)  | [Blog](./blog.html)  | [...test](./test.html) |
 
 
 
