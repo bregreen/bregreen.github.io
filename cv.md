@@ -1,6 +1,8 @@
 ---
-layout: default
-title: Breanna E. Green's CV
+title: "Breanna E. Green CV"
+description: Up to date as of - August 2020
+date: 2020-09-01
+layout: pdf
 ---
 
 #### NAV
@@ -9,10 +11,7 @@ title: Breanna E. Green's CV
 | [CV](./cv.html)      | [Blog](./blog.html)      | 
 
 
- <h1>Breanna E. Green CV (as of August 2020)</h1>
-    <iframe src="/CV - Breanna E. Green.pdf" width="100%" height="500px"></iframe>
-
-
+<iframe src="https://drive.google.com/file/d/1ABh7zYD1lWW1dOd0EZbnfPWfnrNiHuxV/view?usp=sharing" width="100%" height="100%"></iframe>
 
 
 
