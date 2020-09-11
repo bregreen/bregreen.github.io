@@ -18,15 +18,21 @@ I am a first-generation college graduate, and I will be the first person in my f
 
 ## Interests - Professional and Personal
 
+* Computational Social Science
+* Identity Development
+* Horror & Sci-fi films
+* Soccer
+* Natural hair care
+* Taking afternoon naps
 
 
 ## Non-Negotiables
 
-I am a Black woman who examines the online communities of individuals and organizations that may not respect my humanity due to said characteristics. I also actively seek to advance the diversity of academia and technology, and spend time uplifting underserved populations. Given these points:
+I am a Black woman who examines the online communities of individuals and organizations that may not respect my humanity, due to said characteristics. I also actively seek to advance the diversity of academia and technology, and spend time uplifting underserved populations. Given these points:
 
-* 
-*
-*
+* If you are an event organizer or journalist asking me to speak on a panel or to be interviewed, please provide general information about fellow panelists or the interviewer.
+* If you identify as a woman and/or a person of color and you would like to ask questions about applying to graduate school or my experiences, please email - I will respond.
+
 
 
 
