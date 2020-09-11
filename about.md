@@ -32,6 +32,7 @@ I am a Black woman who examines the online communities of individuals and organi
 
 * If you are an event organizer or journalist asking me to speak on a panel or to be interviewed, please provide general information about fellow panelists or the interviewer.
 * If you identify as a woman and/or a person of color and you would like to ask questions about applying to graduate school or my experiences, please email - I will respond.
+* I will always be unabashedly myself, in all my forms. If I cannot bring my whole self to the enviroment, it is likely that there may not be a reason for me to be in the space. Thus... you can find my twitter below which encompasses both the personal and professional thoughts I would like to share.
 
 <a class="twitter-timeline" href="https://twitter.com/BreannaEGreen?ref_src=twsrc%5Etfw">Tweets by BreannaEGreen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
