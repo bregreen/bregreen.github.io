@@ -24,10 +24,14 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 ## Recent Articles and New
 
+* I spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
+
+* I was featured in a Summer 2020 [1MWIS article (a global network of women in STEM)] (https://www.1mwis.com/profiles/breanna-green)
+
 * [Cornell Sloan Fellowship Recipient - 2020 - 2025](https://www.engineering.cornell.edu/engdiversity/current-students/graduate-students/diversity-fellowship-programs)
 
 * [Wainwright, K., Green, B. E., & Romanowich, P. (2018). The Relationship Between Delay and Social Discounting, and Body Mass Index in    University Students. The Psychological Record, 68(4), 441-449.](https://www.researchgate.net/publication/325241458_The_Relationship_Between_Delay_and_Social_Discounting_and_Body_Mass_Index_in_University_Students)
 
 
 ## Contact Me
-For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at beg57@cornell.edu
+For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at beg57@cornell.edu.
