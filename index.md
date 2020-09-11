@@ -22,7 +22,7 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 
-## Recent Articles and New
+## Recent Articles and News
 
 * I spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
 
