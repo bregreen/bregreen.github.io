@@ -23,11 +23,10 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 
-## Recent Articles and Posts
+## Recent Articles and New
 
-*
-*
-*
+* Sloan Colman Fellowship Recipient - 2020 - 2025
+* Wainwright, K., Green, B. E., & Romanowich, P. (2018). The Relationship Between Delay and Social Discounting, and Body Mass Index in    University Students. The Psychological Record, 68(4), 441-449.
 
 
 ## Contact Me
