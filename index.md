@@ -26,7 +26,7 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 * I spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
 
-* I was featured in a Summer 2020 [1MWIS article (a global network of women in STEM)] (https://www.1mwis.com/profiles/breanna-green)
+* I was featured in a Summer 2020 [1MWIS article (a global network of women in STEM)](https://www.1mwis.com/profiles/breanna-green)
 
 * [Cornell Sloan Fellowship Recipient - 2020 - 2025](https://www.engineering.cornell.edu/engdiversity/current-students/graduate-students/diversity-fellowship-programs)
 
