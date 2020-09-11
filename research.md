@@ -14,7 +14,7 @@ In the meantime...
 
 ## Previous Research
 
-Master of Science: Psychology	August 2017 <Bbr>
+Master of Science: Psychology	August 2017 <br>
 University of Texas at San Antonio – San Antonio, Texas<br>
 <em>Thesis: How Much Do Black Lives Matter?: An Exploratory Study Examining The Relationship Between Activism, Discrimination And Psychological Distress Among African Americans</em>
 <br>
