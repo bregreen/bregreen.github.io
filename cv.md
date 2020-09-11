@@ -11,7 +11,6 @@ layout: pdf
 | [CV](./cv.html)      | [Blog](./blog.html)      | 
 
 
-<iframe src="/assets/CV - Breanna E. Green.pdf" width="100%" height="100%"></iframe>
 
 
 
