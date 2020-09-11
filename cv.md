@@ -9,6 +9,9 @@ date: 2020-09-01
 
 | [Home](./index.html) | [About Me](./about.html) | [Research](./research.html) | [CV](./cv.html)  | [Blog](./blog.html) | 
 
+To be updated soon - please see Linkedin under <em>Social Media</em> until then.
+
+Thank you!
 
 
 
