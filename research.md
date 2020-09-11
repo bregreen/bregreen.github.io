@@ -10,8 +10,15 @@ layout: default
 
 # Research
 
+New Projects coming soon!
 
-_yay_
+In the meantime...
+
+## Previous Research
+
+Master of Science: Psychology	August 2017
+University of Texas at San Antonio – San Antonio, Texas
+Thesis: How Much Do Black Lives Matter?: An Exploratory Study Examining The Relationship Between Activism, Discrimination And Psychological Distress Among African Americans
 
 
 
