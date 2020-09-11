@@ -9,8 +9,9 @@ title: Breanna E. Green's CV
 | [CV](./cv.html)      | [Blog](./blog.html)      | 
 
 
-
-
+ <h1>PDF Example with iframe</h1>
+    <iframe src="/assets/CV - Breanna E. Green.pdf" width="100%" height="500px">
+    </iframe>
 
 
 
