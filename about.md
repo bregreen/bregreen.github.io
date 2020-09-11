@@ -4,8 +4,8 @@ Title: About Me
 ---
 #### NAV
 
-| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html)|
-| [CV](./cv.html)      | [Blog](./blog.html)      |
+| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html) | [CV](./cv.html)  | [Blog](./blog.html) | 
+
 
 ## Prounouns
 
