@@ -34,4 +34,4 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 ## Contact Me
-For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at beg57@cornell.edu.
+For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at BEGreen@infosci.cornell.edu.
