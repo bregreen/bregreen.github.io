@@ -18,4 +18,4 @@ Thank you!
 
 
 
-[back](./)
+[home](./)
