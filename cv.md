@@ -12,6 +12,7 @@ date: 2020-09-01
 
 ## CV current as of Jan. 2021
 
+<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/CV_2020.pdf">Download PDF</a>.</p>
 
 
 <object data="https://bregreen.github.io/CV_2020.pdf" type="application/pdf" width="100%" height="875px">
@@ -21,6 +22,5 @@ date: 2020-09-01
 </object>
 
 
-<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/CV_2020.pdf">Download PDF</a>.</p>
 
 [home](./)
