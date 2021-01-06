@@ -11,6 +11,8 @@ date: 2020-09-01
 
 To be updated soon - please see Linkedin under <em>Social Media</em> until then.
 
+<embed src="https://bregreen.github.io/CV - Breanna E. Green.pdf.pdf" width="600px" height="500px" />
+
 Thank you!
 
 
