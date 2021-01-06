@@ -11,7 +11,7 @@ date: 2020-09-01
 
 
 ## CV current as of Jan. 2021
-<embed src="https://bregreen.github.io/CV_2020.pdf" width="100%" height="850px"/>
+<embed src="https://bregreen.github.io/CV_2020.pdf" width="100%" height="100%"/>
 
 
 
