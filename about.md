@@ -46,4 +46,4 @@ I am a Black woman who examines the online communities of individuals and organi
 
 
 
-[back](./)
+[home](./)
