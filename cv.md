@@ -12,12 +12,7 @@ date: 2020-09-01
 
 ## CV current as of Jan. 2021
 
-<div class="bg-image"></div>
 
-<div class="bg-text">
-  <h1>CV</h1>
-  <p>Jan. 2021</p>
-</div>
 
 <p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/CV_2020.pdf">Download PDF</a>.</p>
 
