@@ -10,7 +10,9 @@ date: 2020-09-01
 | [Home](./index.html) | [About Me](./about.html) | [Research](./research.html) | [CV](./cv.html)  | [Blog](./blog.html) | 
 
 
-[CV]<embed <iframe src="./CV_2020.pdf" width="100% height="850px"></iframe>
+[CV]<embed src="https://bregreen.github.io/CV_2020.pdf" width="100%" height="850px"/>
+
+<iframe src="./CV_2020.pdf" width="100% height="850px"></iframe>
 
 
 
