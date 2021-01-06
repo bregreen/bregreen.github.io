@@ -14,7 +14,7 @@ date: 2020-09-01
 
 <a href="/CV_2020.pdf" class="image fit" type="application/pdf"></a>
 
-<embed src="https://bregreen.github.io/CV_2020.pdf" width="100%" height="100%"/>
+<embed src="https://bregreen.github.io/CV_2020.pdf" width="100%" height="1000px"/>
 
 
 
