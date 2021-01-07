@@ -5,11 +5,6 @@ description: Up to date as of - January 2021
 date: 2020-09-01
 ---
 
-#### NAV
-
-| [Home](./index.html) | [About Me](./about.html) | [Research](./research.html) | [CV](./cv.html)  | [Blog](./blog.html) | 
-
-
 ## CV current as of Jan. 2021
 
 
