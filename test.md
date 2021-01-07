@@ -139,7 +139,10 @@ The final element.
 
 The following image works as a link:<br>
 
-![Link](/assets/img/logo.jpg)<a href="https://twitter.com/Grievance_ERC"></a>
+![Link](/assets/img/logo.jpg)
+
+
+<a href="https://twitter.com/Grievance_ERC"></a>
 
 
 <a href="https://twitter.com/Grievance_ERC">
