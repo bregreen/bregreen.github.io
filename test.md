@@ -138,7 +138,7 @@ The final element.
 
 
 
-<a href="https://twitter.com/Grievance_ERC">
+<a href="https://twitter.com/breannaegreen">
   <img alt="logo" src="https://bregreen.github.io/assets/img/logo.png">
 </a>
 
