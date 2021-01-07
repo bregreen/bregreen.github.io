@@ -142,6 +142,6 @@ The final element.
 </a>
 
 
-[post](./_posts/2020-01-07-wow.html)
+[post](./posts/2020-01-07-wow.html)
 
 [back](./)
