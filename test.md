@@ -146,7 +146,7 @@ The following image works as a link:<br>
 
 
 <a href="https://twitter.com/Grievance_ERC">
-  <img alt="logo" src="https://github.com/bregreen/bregreen.github.io/blob/master/assets/img/logo.png" style="width:42px;height:42px;">
+  <img alt="logo" src="https://bregreen.github.io/assets/img/logo.png" style="width:42px;height:42px;">
 </a>
 
 
