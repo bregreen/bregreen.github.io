@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Breanna E. Green CV"
-description: Up to date as of - August 2020
+description: Up to date as of - January 2021
 date: 2020-09-01
 ---
 
