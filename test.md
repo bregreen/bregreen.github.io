@@ -139,7 +139,7 @@ The final element.
 
 The following image works as a link:<br>
 
-![Link](/assets/img/logo.jpg)
+![Link](https://bregreen.github.io/assets/img/logo.png)
 
 
 <a href="https://twitter.com/Grievance_ERC"></a>
