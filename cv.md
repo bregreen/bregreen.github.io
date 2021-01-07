@@ -24,6 +24,9 @@ date: 2020-09-01
 
 <p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2020.pdf">Download PDF</a>.</p>
 
+<br>
+<br>
+<br>
 
 <object data="https://bregreen.github.io/assets/pdfs/Resume_2020.pdf" type="application/pdf" width="100%" height="875px">
     <embed src="https://bregreen.github.io/assets/pdfs/Resume_2020.pdf" type="application/pdf">
