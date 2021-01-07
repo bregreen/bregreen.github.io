@@ -138,10 +138,7 @@ The final element.
 
 
 The following image works as a link:<br>
-<a href="https://twitter.com/Grievance_ERC">
-    <img alt="text" src="https://github.com/bregreen/bregreen.github.io/blob/master/assets/img/cis_mark.png"
-    width=150" height="70">
- </a>
+<a href="https://twitter.com/Grievance_ERC"><img alt="text" src="https://bregreen.github.io/blob/master/assets/img/cis_mark.png" width=150" height="70"></a>
 
 
 [back](./)
