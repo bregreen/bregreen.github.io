@@ -3,8 +3,6 @@ layout: default
 Title: About Me
 ---
 
-<br>
-
 # About Me
 
 ## Prounouns
