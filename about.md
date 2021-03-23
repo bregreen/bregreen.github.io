@@ -3,19 +3,24 @@ layout: default
 Title: About Me
 ---
 
+<br>
+
+# About Me
+
+<br>
+
 ## Prounouns
 
 She, Her(s)
 
-## First Gen Scholar
-
-I am a first-generation college graduate, and I will be the first person in my family to earn a Doctorate degree. That holds incredible weight for me, and I seek to mentor future scholars throughout my journey.
-
-
-## Interests - Professional and Personal
+## Interests
 
 * Computational Social Science
 * Identity Development
+
+## First Gen Scholar
+
+I am a first-generation college graduate, and I will be the first person in my family to earn a Doctorate degree. That holds incredible weight for me, and I seek to mentor future scholars throughout my journey.
 
 
 ## Non-Negotiables
