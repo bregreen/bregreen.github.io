@@ -55,6 +55,49 @@
 }
 
 @font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/Poppins/Poppins-BlackItalic.ttf') format('truetype'),;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  src: url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: italic;
+  src: url('../fonts/Poppins/Poppins-BoldItalic.ttf') format('truetype'),;
+}
+
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype'),;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/Poppins/Poppins-ThinItalic.ttf') format('truetype'),;
+}
+
+@font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
   src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
