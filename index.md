@@ -3,8 +3,10 @@ layout: default
 title: Home
 ---
 
+<br>
 
 # Welcome
+
 
 I am an [Information Science](http://infosci.cornell.edu/) PhD student at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
 
