@@ -7,8 +7,6 @@ Title: About Me
 
 # About Me
 
-<br>
-
 ## Prounouns
 
 She, Her(s)
