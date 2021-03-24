@@ -9,7 +9,7 @@ date: 2021-01-01
 
 
 
-<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/CV_2020.pdf">Download PDF</a>.</p>
+<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/CV_BEGreen_2021.pdf">Download PDF</a>.</p>
 
 
 <object data="https://bregreen.github.io/assets/pdfs/CV_BEGreen_2021.pdf" type="application/pdf" width="100%" height="875px">
@@ -24,7 +24,7 @@ date: 2021-01-01
 ## Resume current as of Jan. 2021
 
 
-<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2020.pdf">Download PDF</a>.</p>
+<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2021.pdf">Download PDF</a>.</p>
 
 
 <object data="https://bregreen.github.io/assets/pdfs/Resume_2021.pdf" type="application/pdf" width="100%" height="875px">
