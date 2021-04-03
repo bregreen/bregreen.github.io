@@ -4,7 +4,7 @@ layout: default
 
 # Research
 
-New Projects coming soon!
+Twitter Scraping Mini-Demo coming soon!
 
 In the meantime...
 
