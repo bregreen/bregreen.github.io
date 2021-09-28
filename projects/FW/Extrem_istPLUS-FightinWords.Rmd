@@ -1,7 +1,7 @@
 ---
 title: "Extrem(ist +) Fightin' Words"
 author: "Breanna E. Green"
-subtitle: practicing
+subtitle:
 output:
   html_document:
     toc: yes
@@ -506,7 +506,7 @@ POS_barchart <- function(df1, df2){
 
 ## Bar Charts from Functions Above
 
-```{r}
+```{r POSbarcharts, echo=TRUE, fig.width=8}
 
 UPOS_barchart(x_odd.before, x_even.after)
 NOUNS_barchart(x_odd.before, x_even.after)
@@ -520,7 +520,7 @@ POS_barchart(x_odd.before, x_even.after)
 
 ## Cooccurences
 
-```{r}
+```{r, echo=FALSE, fig.width=8}
 
 CO_OC_noun_adj_same_sent.before <- function(df1){
   
@@ -631,6 +631,9 @@ Corrs(x_even.after)
 ```
 
 ```{r final}
+
+rm(list=ls())
+
 ```
 
 
