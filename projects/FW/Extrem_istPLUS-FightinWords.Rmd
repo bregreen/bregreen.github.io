@@ -14,9 +14,16 @@ output:
     toc: yes
 ---
 
+[home](https://bregreen.github.io/)
+
 ## load libraries
 
-```{r, echo=FALSE}
+```{r, results='hide'}
+
+### https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-usecase-postagging-lemmatisation.html
+library(udpipe)
+ud_model <- udpipe_download_model(language = "english")
+
 library(tidyverse)
 library(tidyr)
 library(dplyr)
@@ -24,11 +31,18 @@ library(ggplot2)
 library(ggrepel)
 library(knitr)
 library(tm)
+library(quanteda)
+library(lattice)
+library(latticeExtra)
+library(plotly)
+library(pdp)
+library(patchwork)
+
 ```
 
 ## load the FW functions
 
-```{r}
+```{r load_fw_functions}
 
 ### CODE DIRECTLY FROM: https://burtmonroe.github.io/TextAsDataCourse/Tutorials/TADA-FightinWords.nb.html#
 
@@ -139,9 +153,13 @@ fw.keys <- function(fw.ch,n.keys=10) {
 ```
 
 
-## Compare NYT Before and After "extremist" and other query terms
+## Compare Associated Press 1994-2010: Before and After "extremist" and other query terms
 
-Load and clean the data
+**Query search:**
+(activi* | ahbash | akromiya | anjem | ansharut | anticapital* | antidemocr* | antiestablish* | antifa | antigovern* | antimilitar* | antimonarch* | antipatri* | antireli* | antisem* | antisocia* | antisyst* | apost* | atharis | athei* | atheists | außerparlamentari* | authoritar* | bagau* | bigots | bplf | bukhari* | capitulatio* | conspirato* | counterj* | cybercalip* | damigo | dawro* | demon* | deradicaliza* | deviatio* | diqqi | dissid* | djamaat | dotbus* | ecofas* | espou* | ethnonationa* | extrem* | facists | fadaia* | fanat* | fasci* | fetö | fightdem* | freedo* | fundamental* | fuqra | gafatar | gamerga* | gemidzii | ghuluww | globali* | gramsc* | gülen* | hacktiv* | haquna | hardline | harkatul | hatemon* | heimwe* | hezbol* | hinduph* | hindutva | hizbut | hojja* | ideolog* | incitem* | inciters | insurr* | intacti* | islam4uk | islam* | jaljalat | jbakc | jihadi* | jmjb | jrtn | judai* | juhayman | jundu* | kadiza* | kahanism | kahanist | karram* | kaysa* | khalis* | khatmia | khawarij | khomein* | koutla | leftist | leftists | leftwing | liberatio* | madkha* | madkhal* | maimonid* | manosp* | mauras* | mcln | militan* | millatu | monarc* | mudja* | muhaji* | mujahid* | murab* | muttahi* | najjadah | nationali* | neofas* | neona* | opantish | oppositi* | paleolibertar* | paramili* | parliamenta* | pegida | populist | principa* | profe* | prowar | putinist | qadari | quranism | quranist | qutbism | qutbist | qutbists | racis* | radica* | reactioni* | reformis* | reichsbürgerbewe* | rightist | rightw* | rofiq | russoph* | sabireen | sadda* | salaf* | sayaff | scriptura* | secula* | separationi* | sharia4hol* | sikrikim | split* | squadism | strasse* | subver* | suidlan* | sukarn* | suprema* | supremac* | sympathi* | table* | tabliq | takfir | takfir* | takfi* |terror* | theoc* | titoite | triba* | trots* | trotsk* | ukrainoph* | ultraconserva* | ultralib* | ultranationa* | ultrar* | uscmo | wahabbi | wahab* | wahha* | xenoph* | yulde* | zinovie*)
+
+
+**Load and clean the data**
 
   * to string & lower text
   * pivot to long format
@@ -165,23 +183,37 @@ text_cleaner<-function(corpus){
 
 ```
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results= FALSE}
+
 extrem_NYT.dfm_all <-read.delim("~/Documents/GitHub/70corr_extremist_9410_NYT.txt", header=TRUE, sep="\t")
+extrem_NYT.dfm_all$pubdate = substr(extrem_NYT.dfm_all$Text.ID,9,16)
+extrem_NYT.dfm_all$pubdate <- as.POSIXct(extrem_NYT.dfm_all$pubdate, format = "%Y%m%d")
+
+####################################################################
+
 set.seed(2217)
 extrem_NYT.dfm <- as.data.frame(sample_n(extrem_NYT.dfm_all, 15000))
 rm(extrem_NYT.dfm_all)
 
-extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, toString)
-extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, tolower)
+####################################################################
 
-extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, toString)
-extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, tolower)
+# extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, toString)
+# extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, tolower)
+# 
+# extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, toString)
+# extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, tolower)
+
+
+####################################################################
 
 extrem_NYT.dfm <- extrem_NYT.dfm %>% distinct(Context.before, .keep_all = TRUE)
 
 extrem_NYT.dfm.long <- pivot_longer(extrem_NYT.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
 
 extrem_NYT.dfm.long$Context <- as.factor(extrem_NYT.dfm.long$Context)
+
+
+####################################################################
 
 extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
 
@@ -190,57 +222,67 @@ extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
 
 Calculate FW.
 
-```{r, echo=FALSE}
-library(quanteda)
+```{r, message=FALSE}
 
 e <- dfm(extremecorpus$content)
-dim(e)
+message(dim(e))
 head(e)
+
+#############################################
 
 e <- dfm_select(e, pattern = stopwords("english"), selection = "remove")
 e <- dfm_select(e, min_nchar = 2)
 e <- dfm_trim(e, min_termfreq = 4, min_docfreq = .05, verbose=TRUE)
 
-dim(e)
+#dim(e)
 # sparsity(e)
 
+#############################################
+
 extrem_dtm <- convert(e, to='data.frame')
-
 extrem_dtm <- extrem_dtm[-c(1)]
-
 w <- which( sapply(extrem_dtm, class ) == 'character' )
 
+#############################################
+
 fw.extrem <- fwgroups(extrem_dtm, groups=extrem_NYT.dfm.long$Context)
+
+rm(extrem_dtm)
 
 ```
 
 
-Get and show the top words per group by zeta.
+**Get and show the top words per group by zeta.**
 
 ```{r echo=TRUE, results="asis"}
-library(knitr)
+
 fwkeys.extrem <- fw.keys(fw.extrem, n.keys=20)
+cols <- rev(colnames(fwkeys.extrem))
+fwkeys.extrem <- fwkeys.extrem[,cols]
 kable(fwkeys.extrem)
+
 ```
 
 Plot: Before in Blue, After in Red
 
 ```{r, fig.height=5, fig.width=4}
+
 p.fw.extrem <- fw.ggplot.groups(fw.extrem,sizescale=4,max.words=200,
-                                max.countrank=400,colorpalette=c("red","blue"))
+                                max.countrank=400,colorpalette=c("red","blue"),
+                                title = 'Comparison of Terms Before and After Query Word')
 p.fw.extrem
 ```
 
 ## Calculate by query item/search term
 
-```{r}
+```{r, message=FALSE, fig.height=8, fig.width=4}
 
 extrem_NYT.dfm.long$Query.item <- as.factor(extrem_NYT.dfm.long$Query.item)
 
 top_n <-as.data.frame(sort(table(extrem_NYT.dfm.long$Query.item), decreasing = TRUE)[1:5]) 
-dim(top_n)
+message(dim(top_n))
 colnames(top_n) <- c('term', 'Freq')
-top_n
+message(top_n)
 
 extrem_dtm_topn <- convert(e, to='data.frame')
 extrem_dtm_topn$Number.of.hit <- extrem_NYT.dfm.long$Number.of.hit
@@ -262,14 +304,18 @@ kable(fwkeys.query_item)
 rm(r)
 rm(extrem_dtm_topn)
 
-p.fw.query_item <- fw.ggplot.groups(fw.query_item,sizescale=2,max.words=50,max.countrank=400)
+########################################################
+
+p.fw.query_item <- fw.ggplot.groups(fw.query_item,sizescale=3.2,max.words=150,max.countrank=400,
+                                    colorpalette=c("darkgreen","darkgreen","darkgreen","darkgreen","darkgreen"),
+                                    title = 'Comparison of Terms by Overall Top Terms')
 p.fw.query_item
 
 ```
 
 
 
-```{r, echo=TRUE, results='asis'}
+```{r, message=FALSE, fig.height=5, fig.width=4}
 
 extrem_dtm_topn <- convert(e, to='data.frame')
 extrem_dtm_topn$Number.of.hit <- extrem_NYT.dfm.long$Number.of.hit
@@ -299,19 +345,21 @@ rm(extrem_dtm_topn)
 #############################################
 fw.query_item_before <- fwgroups(extrem_dtm_topn_keep_before,groups = topn_terms_before$Query.item)
 fwkeys.query_item_before <- fw.keys(fw.query_item_before, n.keys=15)
-kable(fwkeys.query_item_before)
+kable(fwkeys.query_item_before, caption = "Top 15 Words for Query Term: BEFORE")
 
-p.fw.query_item_before <- fw.ggplot.groups(fw.query_item_before,sizescale=2,max.words=50,max.countrank=400,
-                                           colorpalette = c('red', 'red','red','red','red'))
+p.fw.query_item_before <- fw.ggplot.groups(fw.query_item_before,sizescale=2,max.words=150,max.countrank=400,
+                                           colorpalette = c('blue','blue','blue', 'blue','blue'),
+                                           title = 'Comparison of Terms by Overall Top Terms: BEFORE')
 p.fw.query_item_before
 
 #############################################
 fw.query_item_after <- fwgroups(extrem_dtm_topn_keep_after,groups = topn_terms_after$Query.item)
 fwkeys.query_item_after <- fw.keys(fw.query_item_after, n.keys=15)
-kable(fwkeys.query_item_after)
+kable(fwkeys.query_item_after, caption = "Top 15 Words for Query Term: AFTER")
 
-p.fw.query_item_after <- fw.ggplot.groups(fw.query_item_after,sizescale=2,max.words=50,max.countrank=400,
-                                           colorpalette = c('blue','blue','blue', 'blue','blue'))
+p.fw.query_item_after <- fw.ggplot.groups(fw.query_item_after,sizescale=2,max.words=150,max.countrank=400,
+                                           colorpalette = c('red', 'red','red','red','red'),
+                                          title = 'Comparison of Terms by Overall Top Terms: AFTER')
 p.fw.query_item_after
 
 
@@ -322,12 +370,7 @@ p.fw.query_item_after
 ## Calculate Parts of speech by before and after
 
 Calculate FW and keys
-```{r, results='hide'}
-### https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-usecase-postagging-lemmatisation.html
-
-library(udpipe)
-
-ud_model <- udpipe_download_model(language = "english")
+```{r, results='hide', warning=FALSE}
 
 ud_model <- udpipe_load_model(ud_model$file_model)
 
@@ -341,20 +384,12 @@ x$doc_id <-as.integer(x$doc_id)
 x_odd.before <- x[x$doc_id %% 2 == 1,]
 x_even.after <-x[x$doc_id %% 2 == 0, ]
 
-
 ```
 
 
-A few barchart functions
+*A few barchart functions*
 
-```{r, echo=FALSE, results='hide'}
-library(lattice)
-library(latticeExtra)
-library(ggplot2)
-library(plotly)
-library(pdp)
-library(patchwork)
-
+```{r, results='hide'}
 
 ## UNIVERSAL PoS
 UPOS_barchart <- function(df1, df2){
@@ -471,7 +506,7 @@ POS_barchart <- function(df1, df2){
 
 ## Bar Charts from Functions Above
 
-```{r, echo=FALSE, results='asis'}
+```{r}
 
 UPOS_barchart(x_odd.before, x_even.after)
 NOUNS_barchart(x_odd.before, x_even.after)
@@ -485,7 +520,7 @@ POS_barchart(x_odd.before, x_even.after)
 
 ## Cooccurences
 
-```{r, echo=FALSE}
+```{r}
 
 CO_OC_noun_adj_same_sent.before <- function(df1){
   
@@ -497,7 +532,7 @@ CO_OC_noun_adj_same_sent.before <- function(df1){
                        term = "lemma", 
                        group = c("doc_id", "paragraph_id", "sentence_id"))
 
-  wordnetwork <- head(cooc, 40)
+  wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   
   ggraph(wordnetwork, layout = "fr") +
@@ -519,7 +554,7 @@ CO_OC_noun_adj_same_sent.after <- function(df2){
                        term = "lemma", 
                        group = c("doc_id", "paragraph_id", "sentence_id"))
 
-  wordnetwork <- head(cooc, 40)
+  wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   
   ggraph(wordnetwork, layout = "fr") +
@@ -542,7 +577,7 @@ CO_OC_noun_adj_following.before <- function(df){
   cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   head(cooc)
   
-  wordnetwork <- head(cooc, 15)
+  wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "lightgreen") +
@@ -555,7 +590,7 @@ CO_OC_noun_adj_following.after <- function(df){
   cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   head(cooc)
   
-  wordnetwork <- head(cooc, 15)
+  wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "skyblue") +
@@ -586,13 +621,20 @@ Corrs <- function(df){
   print(y[1:25,])
 }
 
+```
+```{r corrs}
 
 Corrs(x_odd.before)
-Corrs(x_even.after)
-```
 
+Corrs(x_even.after)
+
+```
 
 ```{r final}
 ```
+
+
+
+
 
 [home](https://bregreen.github.io/)
