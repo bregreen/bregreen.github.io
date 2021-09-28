@@ -4,9 +4,13 @@ layout: default
 
 # Research
 
-Twitter Scraping Mini-Demo coming soon!
+  * Trying out Fightin' Words using NYT data (1994-2010): Primary query on "Extremist" <- [Extrem(ist) FW](https://bregreen.github.io/projects/FW/Extrem_ist-FightinWords.nb.html#)
 
-In the meantime...
+  * A 2nd Fightin' Words Practice with a More Extensive Query <-  [Extrem(ist)PLUS FW](https://bregreen.github.io/projects/FW/Extrem_istPLUS-FightinWords.nb.html#)
+
+  * Twitter Scraping Mini-Demo coming soon! **I PROMISE!**
+
+
 
 ## Previous Research
 
