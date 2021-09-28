@@ -595,4 +595,4 @@ Corrs(x_even.after)
 ```{r final}
 ```
 
-[home](https://bregreen.github.io/))
+[home](https://bregreen.github.io/)
