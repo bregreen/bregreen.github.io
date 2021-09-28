@@ -21,7 +21,7 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 * Nominated for (and accepted) the role of Graduate Student Rep. for Cornell University's Undergraduate Chapter of the National Society of Black Engineers (2021 - 2022) - [CU NSBE](https://cornellnsbe.weebly.com/)
 
-* Collaborating the **Global Internet Forum to Counter Terrorism** [GIFCT](https://gifct.org/) on their *Technical Approaches: Tooling, Algorithms & Artificial Intelligence* Working Group (2021 - 2022) 
+* Collaborating with the **Global Internet Forum to Counter Terrorism** [GIFCT](https://gifct.org/) on their *Technical Approaches: Tooling, Algorithms & Artificial Intelligence* Working Group (2021 - 2022) 
 
 * Nominated for (and accepted) the role of Academic Excellence Chair for the Cornell University Black Graduate & Professional Student Association (2021 - 2022) - [CU BGPSA](https://gradschool.cornell.edu/diversity-inclusion/student-organizations/)
 
