@@ -253,6 +253,7 @@ library(patchwork)
 
 ## UNIVERSAL PoS
 UPOS_barchart <- function(df1, df2){
+  
   stats1 <- txt_freq(df1$upos)
   stats1$key <- factor(stats1$key, levels = rev(stats1$key))
   
@@ -455,4 +456,4 @@ Corrs(x_even.after)
 ```{r final}
 ```
 
-
+[home](./)
