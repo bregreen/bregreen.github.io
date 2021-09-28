@@ -1,0 +1,456 @@
+---
+title: "Extrem(ist) Fightin' Words"
+author: "Breanna E. Green"
+subtitle: practicing
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+  html_notebook:
+    code_folding: show
+    df_print: paged
+    highlight: tango
+    theme: united
+    toc: yes
+---
+
+
+## load libraries
+
+```{r}
+### MAIN CODE FROM: https://burtmonroe.github.io/TextAsDataCourse/Tutorials/TADA-FightinWords.nb.html#
+
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+library(knitr)
+library(tm)
+```
+
+## load the FW functions
+
+```{r}
+fwgroups <- function(dtm, groups, pair = NULL, weights = rep(1,nrow(dtm)), k.prior = .1) {
+  
+  weights[is.na(weights)] <- 0
+  
+  weights <- weights/mean(weights)
+  
+  zero.doc <- rowSums(dtm)==0 | weights==0
+  zero.term <- colSums(dtm[!zero.doc,])==0
+  
+  dtm.nz <- apply(dtm[!zero.doc,!zero.term],2,"*", weights[!zero.doc])
+  
+  g.prior <- tcrossprod(rowSums(dtm.nz),colSums(dtm.nz))/sum(dtm.nz)
+  
+  # 
+  
+  g.posterior <- as.matrix(dtm.nz + k.prior*g.prior)
+  
+  groups <- groups[!zero.doc]
+  groups <- droplevels(groups)
+  
+  g.adtm <- as.matrix(aggregate(x=g.posterior,by=list(groups=groups),FUN=sum)[,-1])
+  rownames(g.adtm) <- levels(groups)
+  
+  g.ladtm <- log(g.adtm)
+  
+  g.delta <- t(scale( t(scale(g.ladtm, center=T, scale=F)), center=T, scale=F))
+  
+  g.adtm_w <- -sweep(g.adtm,1,rowSums(g.adtm)) # terms not w spoken by k
+  g.adtm_k <- -sweep(g.adtm,2,colSums(g.adtm)) # w spoken by groups other than k
+  g.adtm_kw <- sum(g.adtm) - g.adtm_w - g.adtm_k - g.adtm # total terms not w or k 
+  
+  g.se <- sqrt(1/g.adtm + 1/g.adtm_w + 1/g.adtm_k + 1/g.adtm_kw)
+  
+  g.zeta <- g.delta/g.se
+  
+  g.counts <- as.matrix(aggregate(x=dtm.nz, by = list(groups=groups), FUN=sum)[,-1])
+  
+  if (!is.null(pair)) {
+    pr.delta <- t(scale( t(scale(g.ladtm[pair,], center = T, scale =F)), center=T, scale=F))
+    pr.adtm_w <- -sweep(g.adtm[pair,],1,rowSums(g.adtm[pair,]))
+    pr.adtm_k <- -sweep(g.adtm[pair,],2,colSums(g.adtm[pair,])) # w spoken by groups other than k
+    pr.adtm_kw <- sum(g.adtm[pair,]) - pr.adtm_w - pr.adtm_k - g.adtm[pair,] # total terms not w or k
+    pr.se <- sqrt(1/g.adtm[pair,] + 1/pr.adtm_w + 1/pr.adtm_k + 1/pr.adtm_kw)
+    pr.zeta <- pr.delta/pr.se
+    
+    return(list(zeta=pr.zeta[1,], delta=pr.delta[1,],se=pr.se[1,], counts = colSums(dtm.nz), acounts = colSums(g.adtm)))
+  } else {
+    return(list(zeta=g.zeta,delta=g.delta,se=g.se,counts=g.counts,acounts=g.adtm))
+  }
+}
+
+############## FIGHTIN' WORDS PLOTTING FUNCTION
+
+# helper function
+makeTransparent<-function(someColor, alpha=100)
+{
+  newColor<-col2rgb(someColor)
+  apply(newColor, 2, function(curcoldata){rgb(red=curcoldata[1], green=curcoldata[2],
+                                              blue=curcoldata[3],alpha=alpha, maxColorValue=255)})
+}
+
+fw.ggplot.groups <- function(fw.ch, groups.use = as.factor(rownames(fw.ch$zeta)), max.words = 50, max.countrank = 400, colorpalette=rep("black",length(groups.use)), sizescale=2, title="Comparison of Terms by Groups", subtitle = "", caption = "Group-specific terms are ordered by Fightin' Words statistic (Monroe, et al. 2008)") {
+  if (is.null(dim(fw.ch$zeta))) {## two-group fw object consists of vectors, not matrices
+    zetarankmat <- cbind(rank(-fw.ch$zeta),rank(fw.ch$zeta))
+    colnames(zetarankmat) <- groups.use
+    countrank <- rank(-(fw.ch$counts))
+  } else {
+    zetarankmat <- apply(-fw.ch$zeta[groups.use,],1,rank)
+    countrank <- rank(-colSums(fw.ch$counts))
+  }
+  wideplotmat <- as_tibble(cbind(zetarankmat,countrank=countrank))
+  wideplotmat$term=names(countrank)
+  #rankplot <- gather(wideplotmat, party, zetarank, 1:ncol(zetarankmat))
+  rankplot <- gather(wideplotmat, groups.use, zetarank, 1:ncol(zetarankmat))
+  rankplot$plotsize <- sizescale*(50/(rankplot$zetarank))^(1/4)
+  rankplot <- rankplot[rankplot$zetarank < max.words + 1 & rankplot$countrank<max.countrank+1,]
+  rankplot$groups.use <- factor(rankplot$groups.use,levels=groups.use)
+  
+  p <- ggplot(rankplot, aes((nrow(rankplot)-countrank)^1, -(zetarank^1), colour=groups.use)) + 
+    geom_point(show.legend=F,size=sizescale/2) + 
+    theme_classic() +
+    theme(axis.ticks=element_blank(), axis.text=element_blank() ) +
+    ylim(-max.words,40) +
+    facet_grid(groups.use ~ .) +
+    geom_text_repel(aes(label = term), size = rankplot$plotsize, point.padding=.05,
+                    box.padding = unit(0.20, "lines"), show.legend=F) +
+    scale_colour_manual(values = alpha(colorpalette, .7)) + 
+#    labs(x="Terms used more frequently overall →", y="Terms used more frequently by group →",  title=title, subtitle=subtitle , caption = caption) 
+    labs(x=paste("Terms used more frequently overall -->"), y=paste("Terms used more frequently by group -->"),  title=title, subtitle=subtitle , caption = caption) 
+  
+}
+
+fw.keys <- function(fw.ch,n.keys=10) {
+  n.groups <- nrow(fw.ch$zeta)
+  keys <- matrix("",n.keys,n.groups)
+  colnames(keys) <- rownames(fw.ch$zeta)
+  
+  for (g in 1:n.groups) {
+    keys[,g] <- names(sort(fw.ch$zeta[g,],dec=T)[1:n.keys])
+  }
+  keys
+}
+```
+
+
+## Compare NYT Before and After "extremist"
+
+Load and clean the data
+
+  * to string & lower text
+  * pivot to long format
+  * apply text_cleaner to one column "context.text"
+
+```{r}
+text_cleaner<-function(corpus){
+  tempcorpus<-Corpus(VectorSource(corpus))
+  tempcorpus<-tm_map(tempcorpus,
+                    removePunctuation)
+  tempcorpus<-tm_map(tempcorpus,
+                    stripWhitespace)
+  tempcorpus<-tm_map(tempcorpus,
+                    removeNumbers)
+  tempcorpus<-tm_map(tempcorpus,
+                     removeWords, stopwords("english"))
+  tempcorpus<-tm_map(tempcorpus, 
+                    stemDocument)
+  return(tempcorpus)
+}
+
+extrem_NYT.dfm <- read.delim("extremist_9410_NYT.txt", header = TRUE, sep = "\t")
+
+extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, toString)
+extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, tolower)
+
+extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, toString)
+extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, tolower)
+
+extrem_NYT.dfm <- extrem_NYT.dfm %>% distinct(Context.before, .keep_all = TRUE)
+
+extrem_NYT.dfm.long <- pivot_longer(extrem_NYT.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
+
+extrem_NYT.dfm.long$Context <- as.factor(extrem_NYT.dfm.long$Context)
+
+extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
+
+```
+
+
+Calculate FW.
+
+```{r, echo=FALSE}
+library(quanteda)
+
+e <- dfm(extremecorpus$content)
+dim(e)
+
+extrem_dtm <- convert(e, to='data.frame')
+
+extrem_dtm <- extrem_dtm[-c(1)]
+
+w <- which( sapply(extrem_dtm, class ) == 'character' )
+
+fw.extrem <- fwgroups(extrem_dtm, groups=extrem_NYT.dfm.long$Context)
+
+```
+
+
+Get and show the top words per group by zeta.
+
+```{r echo=TRUE, results="asis"}
+library(knitr)
+fwkeys.extrem <- fw.keys(fw.extrem, n.keys=20)
+kable(fwkeys.extrem)
+```
+
+Plot: Before in Blue, After in Red
+
+```{r, fig.height=5, fig.width=4}
+p.fw.extrem <- fw.ggplot.groups(fw.extrem,sizescale=4,max.words=200,
+                                max.countrank=400,colorpalette=c("red","blue"))
+p.fw.extrem
+```
+
+## Calculate Parts of speech by before and after
+
+Calculate FW and keys
+```{r, results='hide'}
+### https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-usecase-postagging-lemmatisation.html
+
+library(udpipe)
+
+ud_model <- udpipe_download_model(language = "english")
+
+ud_model <- udpipe_load_model(ud_model$file_model)
+
+txt <-as.character(extrem_NYT.dfm.long$context.text)
+
+x_udp <- udpipe_annotate(ud_model, x = txt, doc_id = seq_along(txt))
+x <- as.data.frame(x_udp)
+
+x$doc_id <-as.integer(x$doc_id)
+
+x_odd.before <- x[x$doc_id %% 2 == 1,]
+x_even.after <-x[x$doc_id %% 2 == 0, ]
+
+```
+
+
+A few barchart functions
+
+```{r}
+library(lattice)
+library(latticeExtra)
+library(ggplot2)
+library(plotly)
+library(pdp)
+library(patchwork)
+
+
+## UNIVERSAL PoS
+UPOS_barchart <- function(df1, df2){
+  stats1 <- txt_freq(df1$upos)
+  stats1$key <- factor(stats1$key, levels = rev(stats1$key))
+  
+  stats2 <- txt_freq(df2$upos)
+  stats2$key <- factor(stats2$key, levels = rev(stats2$key))
+  
+  c(barchart(key ~ freq, data = stats1, col = "cadetblue", 
+        main = "UPOS (Universal Parts of Speech)\n frequency of occurrence: BEFORE vs AFTER", 
+         xlab = "Freq"), 
+    barchart(key ~ freq, data = stats2, col =  'skyblue',
+         xlab = "Freq"))
+
+}
+
+
+## NOUNS
+NOUNS_barchart <- function(df1, df2){
+  
+  stats1 <- subset(df1, upos %in% c("NOUN")) 
+  stats1 <- txt_freq(stats1$token)
+  stats1$key <- factor(stats1$key, levels = rev(stats1$key))
+  
+  stats2 <- subset(df2, upos %in% c("NOUN")) 
+  stats2 <- txt_freq(stats2$token)
+  stats2$key <- factor(stats2$key, levels = rev(stats2$key))
+  
+  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = "Most occurring nouns: BEFORE vs AFTER", xlab = "Freq"),
+      barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
+            xlab = "Freq"))
+}
+
+## ADJECTIVES
+ADJ_barchart <- function(df1, df2){
+  
+  stats1 <- subset(df1, upos %in% c("ADJ")) 
+  stats1 <- txt_freq(stats1$token)
+  stats1$key <- factor(stats1$key, levels = rev(stats1$key))
+  
+  stats2 <- subset(df2, upos %in% c("ADJ")) 
+  stats2 <- txt_freq(stats2$token)
+  stats2$key <- factor(stats2$key, levels = rev(stats2$key))
+  
+  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = "Most occurring adjectives: BEFORE vs AFTER", xlab = "Freq"),
+      barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
+         xlab = "Freq"))
+}
+
+## Using RAKE to find keywords
+RAKE_KW_barchart <- function(df1,df2){
+  
+  stats1 <- keywords_rake(x = df1, term = "lemma", group = "doc_id", 
+                         relevant = df1$upos %in% c("NOUN", "ADJ"))
+  stats1$key <- factor(stats1$keyword, levels = rev(stats1$keyword))
+  
+  stats2 <- keywords_rake(x = df2, term = "lemma", group = "doc_id", 
+                         relevant = df2$upos %in% c("NOUN", "ADJ"))
+  stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
+  
+  
+  c(barchart(key ~ rake, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
+           main = "Keywords identified by RAKE: BEFORE vs AFTER", 
+           xlab = "Rake"),
+    barchart(key ~ rake, data = head(subset(stats2, freq > 3), 20), col = "skyblue", 
+           xlab = "Rake"))
+}
+
+## Using Pointwise Mutual Information Collocations
+PWI_barchart <- function(df1, df2){
+  
+  df1$word <- tolower(df1$token)
+  stats1 <- keywords_collocation(x = df1, term = "word", group = "doc_id")
+  stats1$key <- factor(stats1$keyword, levels = rev(stats1$keyword))
+  
+  df2$word <- tolower(df2$token)
+  stats2 <- keywords_collocation(x = df2, term = "word", group = "doc_id")
+  stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
+  
+  c(barchart(key ~ pmi, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
+           main = "Keywords identified by PMI Collocation: BEFORE vs AFTER", 
+           xlab = "PMI (Pointwise Mutual Information)"),
+      barchart(key ~ pmi, data = head(subset(stats2, freq > 3), 20), col = "skyblue", 
+           xlab = "PMI (Pointwise Mutual Information)"))
+}
+
+## Using a sequence of POS tags (noun phrases / verb phrases)
+POS_barchart <- function(df1, df2){
+  
+  df1$phrase_tag <- as_phrasemachine(df1$upos, type = "upos")
+  stats1 <- keywords_phrases(x = df1$phrase_tag, term = tolower(df1$token), 
+                            pattern = "(A|N)*N(P+D*(A|N)*N)*", 
+                            is_regex = TRUE, detailed = FALSE)
+  stats1 <- subset(stats1, ngram > 1 & freq > 3)
+  stats1$key <- factor(stats1$keyword, levels = rev(stats1$keyword))
+  
+  df2$phrase_tag <- as_phrasemachine(df2$upos, type = "upos")
+  stats2 <- keywords_phrases(x = df2$phrase_tag, term = tolower(df2$token), 
+                            pattern = "(A|N)*N(P+D*(A|N)*N)*", 
+                            is_regex = TRUE, detailed = FALSE)
+  stats2 <- subset(stats2, ngram > 1 & freq > 3)
+  stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
+  
+  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = "Keywords - simple noun phrases: BEFORE vs AFTER", xlab = "Frequency"),
+      barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
+               xlab = "Frequency"))
+}
+```
+
+
+## Bar Charts from Functions Above
+
+```{r, echo=FALSE}
+
+UPOS_barchart(x_odd.before, x_even.after)
+NOUNS_barchart(x_odd.before, x_even.after)
+ADJ_barchart(x_odd.before, x_even.after)
+RAKE_KW_barchart(x_odd.before, x_even.after)
+PWI_barchart(x_odd.before, x_even.after)
+POS_barchart(x_odd.before, x_even.after)
+
+
+```
+
+
+## Cooccurences
+
+```{r, echo=FALSE}
+
+CO_OC_noun_adj_same_sent <- function(df){
+  cooc <- cooccurrence(x = subset(df, upos %in% c("NOUN", "ADJ")), 
+                       term = "lemma", 
+                       group = c("doc_id", "paragraph_id", "sentence_id"))
+  head(cooc)
+  library(igraph)
+  library(ggraph)
+  library(ggplot2)
+  wordnetwork <- head(cooc, 30)
+  wordnetwork <- graph_from_data_frame(wordnetwork)
+  ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+  theme_graph(base_family = "Arial Narrow") +
+  theme(legend.position = "none") +
+  labs(title = "Cooccurrences within sentence", subtitle = "Nouns & Adjective")
+}
+
+CO_OC_noun_adj_same_sent(x)
+CO_OC_noun_adj_same_sent(x_odd.before)
+CO_OC_noun_adj_same_sent(x_even.after)
+
+
+
+##########################################
+
+CO_OC_noun_adj_following <- function(df){
+  cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
+  head(cooc)
+  
+  wordnetwork <- head(cooc, 15)
+  wordnetwork <- graph_from_data_frame(wordnetwork)
+  ggraph(wordnetwork, layout = "fr") +
+    geom_edge_link(aes(width = cooc, edge_alpha = cooc)) +
+    geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+    theme_graph(base_family = "Arial Narrow") +
+    labs(title = "Words following one another", subtitle = "Nouns & Adjective")
+}
+
+CO_OC_noun_adj_following(x)
+CO_OC_noun_adj_following(x_odd.before)
+CO_OC_noun_adj_following(x_even.after)
+
+```
+
+
+
+## Cooccurences (part 2)
+
+```{r}
+
+Corrs <- function(df){
+  df$id <- unique_identifier(df, fields = c("sentence_id", "doc_id"))
+  dtm <- subset(df, upos %in% c("NOUN", "ADJ"))
+  dtm <- document_term_frequencies(dtm, document = "id", term = "lemma")
+  dtm <- document_term_matrix(dtm)
+  dtm <- dtm_remove_lowfreq(dtm, minfreq = 5)
+  termcorrelations <- dtm_cor(dtm)
+  y <- as_cooccurrence(termcorrelations)
+  y <- subset(y, term1 < term2 & abs(cooc) > 0.2)
+  y <- y[order(abs(y$cooc), decreasing = TRUE), ]
+  head(y)
+}
+
+Corrs(x)
+Corrs(x_odd.before)
+Corrs(x_even.after)
+```
+
+
+
