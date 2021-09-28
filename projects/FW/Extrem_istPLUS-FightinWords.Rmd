@@ -269,7 +269,7 @@ p.fw.query_item
 
 
 
-```{r}
+```{r, echo=TRUE, results='asis'}
 
 extrem_dtm_topn <- convert(e, to='data.frame')
 extrem_dtm_topn$Number.of.hit <- extrem_NYT.dfm.long$Number.of.hit
