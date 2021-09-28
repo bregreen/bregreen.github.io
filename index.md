@@ -17,8 +17,13 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 
-
 ## Recent Articles and News
+
+* Nominated for (and accepted) the role of Graduate Student Rep. for Cornell University's Undergraduate Chapter of the National Society of Black Engineers (2021 - 2022) - [CU NSBE](https://cornellnsbe.weebly.com/)
+
+* Participating the the Global Internet Forum to Counter Terrorism on their *Technical Approaches: Tooling, Algorithms & Artificial Intelligence* Working Group (2021 - 2022) - [GIFCT](https://gifct.org/)
+
+* Nominated for (and accepted) the role of Academic Excellence Chair for the Cornell University Black Graduate & Professional Student Association (2021 - 2022) - [CU BGPSA](https://gradschool.cornell.edu/diversity-inclusion/student-organizations/)
 
 * I spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
 
