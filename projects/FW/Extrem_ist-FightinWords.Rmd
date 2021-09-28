@@ -384,48 +384,86 @@ POS_barchart(x_odd.before, x_even.after)
 
 ```{r, echo=FALSE}
 
-CO_OC_noun_adj_same_sent <- function(df){
-  cooc <- cooccurrence(x = subset(df, upos %in% c("NOUN", "ADJ")), 
-                       term = "lemma", 
-                       group = c("doc_id", "paragraph_id", "sentence_id"))
-  head(cooc)
+CO_OC_noun_adj_same_sent.before <- function(df1){
+  
   library(igraph)
   library(ggraph)
   library(ggplot2)
-  wordnetwork <- head(cooc, 30)
+  
+  cooc <- cooccurrence(x = subset(df1, upos %in% c("NOUN", "ADJ")), 
+                       term = "lemma", 
+                       group = c("doc_id", "paragraph_id", "sentence_id"))
+
+  wordnetwork <- head(cooc, 40)
   wordnetwork <- graph_from_data_frame(wordnetwork)
+  
   ggraph(wordnetwork, layout = "fr") +
-  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
-  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
-  theme_graph(base_family = "Arial Narrow") +
-  theme(legend.position = "none") +
-  labs(title = "Cooccurrences within sentence", subtitle = "Nouns & Adjective")
+    geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+    geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+    theme_graph(base_family = "Arial Narrow") +
+    theme(legend.position = "none") +
+    labs(title = "Cooccurrences within sentence: BEFORE", subtitle = "Nouns & Adjective")
+  
 }
 
-CO_OC_noun_adj_same_sent(x)
-CO_OC_noun_adj_same_sent(x_odd.before)
-CO_OC_noun_adj_same_sent(x_even.after)
+CO_OC_noun_adj_same_sent.after <- function(df2){
+  
+  library(igraph)
+  library(ggraph)
+  library(ggplot2)
+  
+  cooc <- cooccurrence(x = subset(df2, upos %in% c("NOUN", "ADJ")), 
+                       term = "lemma", 
+                       group = c("doc_id", "paragraph_id", "sentence_id"))
 
+  wordnetwork <- head(cooc, 40)
+  wordnetwork <- graph_from_data_frame(wordnetwork)
+  
+  ggraph(wordnetwork, layout = "fr") +
+    geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "lightgreen") +
+    geom_node_text(aes(label = name), col = "darkblue", size = 4) +
+    theme_graph(base_family = "Arial Narrow") +
+    theme(legend.position = "none") +
+    labs(title = "Cooccurrences within sentence: AFTER", subtitle = "Nouns & Adjective")
+  
+}
+
+
+CO_OC_noun_adj_same_sent.before(x_odd.before)
+CO_OC_noun_adj_same_sent.after(x_even.after)
 
 
 ##########################################
 
-CO_OC_noun_adj_following <- function(df){
+CO_OC_noun_adj_following.before <- function(df){
   cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   head(cooc)
   
   wordnetwork <- head(cooc, 15)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   ggraph(wordnetwork, layout = "fr") +
-    geom_edge_link(aes(width = cooc, edge_alpha = cooc)) +
+    geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "lightgreen") +
     geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
     theme_graph(base_family = "Arial Narrow") +
-    labs(title = "Words following one another", subtitle = "Nouns & Adjective")
+    labs(title = "Words following one another: BEFORE", subtitle = "Nouns & Adjective")
 }
 
-CO_OC_noun_adj_following(x)
-CO_OC_noun_adj_following(x_odd.before)
-CO_OC_noun_adj_following(x_even.after)
+CO_OC_noun_adj_following.after <- function(df){
+  cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
+  head(cooc)
+  
+  wordnetwork <- head(cooc, 15)
+  wordnetwork <- graph_from_data_frame(wordnetwork)
+  ggraph(wordnetwork, layout = "fr") +
+    geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "skyblue") +
+    geom_node_text(aes(label = name), col = "darkblue", size = 4) +
+    theme_graph(base_family = "Arial Narrow") +
+    labs(title = "Words following one another: AFTER", subtitle = "Nouns & Adjective")
+}
+
+
+CO_OC_noun_adj_following.before(x_odd.before)
+CO_OC_noun_adj_following.after(x_even.after)
 
 ```
 
@@ -434,6 +472,7 @@ CO_OC_noun_adj_following(x_even.after)
 ## Cooccurences (part 2)
 
 ```{r}
+
 
 Corrs <- function(df){
   df$id <- unique_identifier(df, fields = c("sentence_id", "doc_id"))
@@ -445,10 +484,10 @@ Corrs <- function(df){
   y <- as_cooccurrence(termcorrelations)
   y <- subset(y, term1 < term2 & abs(cooc) > 0.2)
   y <- y[order(abs(y$cooc), decreasing = TRUE), ]
-  head(y)
+  print(y[1:25,])
 }
 
-Corrs(x)
+
 Corrs(x_odd.before)
 Corrs(x_even.after)
 ```
@@ -456,4 +495,4 @@ Corrs(x_even.after)
 ```{r final}
 ```
 
-[home](./)
+[home](https://bregreen.github.io/)
