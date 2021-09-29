@@ -188,7 +188,7 @@ extrem_AP.dfm <- read.delim("extremist_9410_AP.txt", header = TRUE, sep = "\t")
 extrem_AP.dfm$pubdate = substr(extrem_AP.dfm$Text.ID,9,16)
 extrem_AP.dfm$pubdate <- as.POSIXct(extrem_AP.dfm$pubdate, format = "%Y%m%d")
 extrem_AP.dfm$pubdate <- as.Date(extrem_AP.dfm$pubdate, format="%Y-%m-%d")
-extrem_Ap.dfm$pubyear <- year(extrem_AP.dfm$pubdate)
+extrem_AP.dfm$pubyear <- year(extrem_AP.dfm$pubdate)
 
 # extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, toString)
 # extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, tolower)
@@ -564,6 +564,7 @@ Corrs(x_odd.before)
 Corrs(x_even.after)
 
 ```
+
 
 
 
