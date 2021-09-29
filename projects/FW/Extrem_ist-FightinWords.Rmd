@@ -634,7 +634,7 @@ transition_time2 <- function (time, range = NULL) {
 }
 ```
 
-```{r extra_loads_odd_before, echo=FALSE}
+```{r extra_loads_odd_before, echo=FALSE, results=FALSE}
 library(ggraph)
 library(ggforce)
 library(gganimate)
@@ -679,7 +679,7 @@ ggraph(wordnetwork, layout = "fr") +
 # last_animation()
 
 ```
-```{r extra_loads_even_after, echo=FALSE}
+```{r extra_loads_even_after, echo=FALSE, results=FALSE}
 
 cooc_year<- data.frame()
 
@@ -714,7 +714,7 @@ ggraph(wordnetwork, layout = "fr") +
 
 ```
 
-```{r cooc2_before, echo=FALSE}
+```{r cooc2_before, echo=FALSE, results=FALSE}
 
 cooc2_year<- data.frame()
 
@@ -748,7 +748,7 @@ ggraph(wordnetwork, layout = "fr") +
 # last_animation()
 
 ```
-```{r cooc2_after, echo=FALSE}
+```{r cooc2_after, echo=FALSE, results=FALSE}
 
 cooc2_year<- data.frame()
 
