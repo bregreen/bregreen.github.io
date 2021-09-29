@@ -185,15 +185,17 @@ text_cleaner<-function(corpus){
 
 ```{r, echo=FALSE, results= FALSE}
 
-extrem_NYT.dfm_all <-read.delim("~/Documents/GitHub/70corr_extremist_9410_NYT.txt", header=TRUE, sep="\t")
-extrem_NYT.dfm_all$pubdate = substr(extrem_NYT.dfm_all$Text.ID,9,16)
-extrem_NYT.dfm_all$pubdate <- as.POSIXct(extrem_NYT.dfm_all$pubdate, format = "%Y%m%d")
+extrem_AP.dfm_all <-read.delim("~/Documents/GitHub/70corr_extremist_9410_AP.txt", header=TRUE, sep="\t")
+extrem_AP.dfm_all$pubdate = substr(extrem_AP.dfm_all$Text.ID,9,16)
+extrem_AP.dfm_all$pubdate <- as.POSIXct(extrem_AP.dfm_all$pubdate, format = "%Y%m%d")
+extrem_AP.dfm_all$pubdate <- as.Date(extrem_AP.dfm_all$pubdate, format="%Y-%m-%d")
+extrem_Ap.dfm_all$pubyear <- year(extrem_AP.dfm_all$pubdate)
 
 ####################################################################
 
 set.seed(2217)
-extrem_NYT.dfm <- as.data.frame(sample_n(extrem_NYT.dfm_all, 15000))
-rm(extrem_NYT.dfm_all)
+extrem_AP.dfm <- as.data.frame(sample_n(extrem_AP.dfm_all, 15000))
+rm(extrem_AP.dfm_all)
 
 ####################################################################
 
@@ -206,16 +208,16 @@ rm(extrem_NYT.dfm_all)
 
 ####################################################################
 
-extrem_NYT.dfm <- extrem_NYT.dfm %>% distinct(Context.before, .keep_all = TRUE)
+extrem_AP.dfm <- extrem_AP.dfm %>% distinct(Context.before, .keep_all = TRUE)
 
-extrem_NYT.dfm.long <- pivot_longer(extrem_NYT.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
+extrem_AP.dfm.long <- pivot_longer(extrem_AP.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
 
-extrem_NYT.dfm.long$Context <- as.factor(extrem_NYT.dfm.long$Context)
+extrem_AP.dfm.long$Context <- as.factor(extrem_AP.dfm.long$Context)
 
 
 ####################################################################
 
-extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
+extremecorpus <-text_cleaner(extrem_AP.dfm.long$context.text)
 
 ```
 
@@ -245,7 +247,7 @@ w <- which( sapply(extrem_dtm, class ) == 'character' )
 
 #############################################
 
-fw.extrem <- fwgroups(extrem_dtm, groups=extrem_NYT.dfm.long$Context)
+fw.extrem <- fwgroups(extrem_dtm, groups=extrem_AP.dfm.long$Context)
 
 rm(extrem_dtm)
 
@@ -277,17 +279,17 @@ p.fw.extrem
 
 ```{r, message=FALSE, fig.height=8, fig.width=4}
 
-extrem_NYT.dfm.long$Query.item <- as.factor(extrem_NYT.dfm.long$Query.item)
+extrem_AP.dfm.long$Query.item <- as.factor(extrem_AP.dfm.long$Query.item)
 
-top_n <-as.data.frame(sort(table(extrem_NYT.dfm.long$Query.item), decreasing = TRUE)[1:5]) 
+top_n <-as.data.frame(sort(table(extrem_AP.dfm.long$Query.item), decreasing = TRUE)[1:5]) 
 message(dim(top_n))
 colnames(top_n) <- c('term', 'Freq')
 message(top_n)
 
 extrem_dtm_topn <- convert(e, to='data.frame')
-extrem_dtm_topn$Number.of.hit <- extrem_NYT.dfm.long$Number.of.hit
+extrem_dtm_topn$Number.of.hit <- extrem_AP.dfm.long$Number.of.hit
 
-topn_terms <- extrem_NYT.dfm.long %>%
+topn_terms <- extrem_AP.dfm.long %>%
       filter(Query.item %in% top_n$term)
 
 extrem_dtm_topn_keep <- extrem_dtm_topn %>% 
@@ -318,10 +320,10 @@ p.fw.query_item
 ```{r, message=FALSE, fig.height=5, fig.width=4}
 
 extrem_dtm_topn <- convert(e, to='data.frame')
-extrem_dtm_topn$Number.of.hit <- extrem_NYT.dfm.long$Number.of.hit
-extrem_dtm_topn$Context <- extrem_NYT.dfm.long$Context
+extrem_dtm_topn$Number.of.hit <- extrem_AP.dfm.long$Number.of.hit
+extrem_dtm_topn$Context <- extrem_AP.dfm.long$Context
 
-topn_terms <- extrem_NYT.dfm.long %>%
+topn_terms <- extrem_AP.dfm.long %>%
       filter(Query.item %in% top_n$term)
 
 extrem_dtm_topn_keep <- extrem_dtm_topn %>% 
@@ -374,7 +376,7 @@ Calculate FW and keys
 
 ud_model <- udpipe_load_model(ud_model$file_model)
 
-txt <-as.character(extrem_NYT.dfm.long$context.text)
+txt <-as.character(extrem_AP.dfm.long$context.text)
 
 x_udp <- udpipe_annotate(ud_model, x = txt, doc_id = seq_along(txt))
 x <- as.data.frame(x_udp)

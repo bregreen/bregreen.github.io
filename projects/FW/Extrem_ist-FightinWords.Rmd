@@ -1,7 +1,7 @@
 ---
 title: "Extrem(ist) Fightin' Words"
 author: "Breanna E. Green"
-subtitle: 
+subtitle: 'Associated Press 1994-2010: Keyword:"Extremist"'
 output:
   html_document:
     toc: yes
@@ -37,6 +37,7 @@ library(latticeExtra)
 library(plotly)
 library(pdp)
 library(patchwork)
+library(lubridate)
 
 ```
 
@@ -117,7 +118,6 @@ fw.ggplot.groups <- function(fw.ch, groups.use = as.factor(rownames(fw.ch$zeta))
   }
   wideplotmat <- as_tibble(cbind(zetarankmat,countrank=countrank))
   wideplotmat$term=names(countrank)
-  #rankplot <- gather(wideplotmat, party, zetarank, 1:ncol(zetarankmat))
   rankplot <- gather(wideplotmat, groups.use, zetarank, 1:ncol(zetarankmat))
   rankplot$plotsize <- sizescale*(50/(rankplot$zetarank))^(1/4)
   rankplot <- rankplot[rankplot$zetarank < max.words + 1 & rankplot$countrank<max.countrank+1,]
@@ -132,7 +132,6 @@ fw.ggplot.groups <- function(fw.ch, groups.use = as.factor(rownames(fw.ch$zeta))
     geom_text_repel(aes(label = term), size = rankplot$plotsize, point.padding=.05,
                     box.padding = unit(0.20, "lines"), show.legend=F) +
     scale_colour_manual(values = alpha(colorpalette, .7)) + 
-#    labs(x="Terms used more frequently overall →", y="Terms used more frequently by group →",  title=title, subtitle=subtitle , caption = caption) 
     labs(x=paste("Terms used more frequently overall -->"), y=paste("Terms used more frequently by group -->"),  title=title, subtitle=subtitle , caption = caption) 
   
 }
@@ -150,7 +149,7 @@ fw.keys <- function(fw.ch,n.keys=10) {
 ```
 
 
-## Compare NYT 1994-2010: Before and After "extremist"
+## Compare Associated Press 1994-2010: Before and After "extremist"
 
 *Load and clean the data*
 
@@ -185,10 +184,11 @@ text_cleaner<-function(corpus){
 
 ```{r clean_text, echo=FALSE, results= FALSE}
 
-extrem_NYT.dfm <- read.delim("extremist_9410_NYT.txt", header = TRUE, sep = "\t")
-extrem_NYT.dfm$pubdate = substr(extrem_NYT.dfm$Text.ID,9,16)
-extrem_NYT.dfm$pubdate <- as.POSIXct(extrem_NYT.dfm$pubdate, format = "%Y%m%d")
-
+extrem_AP.dfm <- read.delim("extremist_9410_AP.txt", header = TRUE, sep = "\t")
+extrem_AP.dfm$pubdate = substr(extrem_AP.dfm$Text.ID,9,16)
+extrem_AP.dfm$pubdate <- as.POSIXct(extrem_AP.dfm$pubdate, format = "%Y%m%d")
+extrem_AP.dfm$pubdate <- as.Date(extrem_AP.dfm$pubdate, format="%Y-%m-%d")
+extrem_Ap.dfm$pubyear <- year(extrem_AP.dfm$pubdate)
 
 # extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, toString)
 # extrem_NYT.dfm$Context.before = lapply(extrem_NYT.dfm$Context.before, tolower)
@@ -196,13 +196,13 @@ extrem_NYT.dfm$pubdate <- as.POSIXct(extrem_NYT.dfm$pubdate, format = "%Y%m%d")
 # extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, toString)
 # extrem_NYT.dfm$Context.after = lapply(extrem_NYT.dfm$Context.after, tolower)
 
-extrem_NYT.dfm <- extrem_NYT.dfm %>% distinct(Context.before, .keep_all = TRUE)
+extrem_AP.dfm <- extrem_AP.dfm %>% distinct(Context.before, .keep_all = TRUE)
 
-extrem_NYT.dfm.long <- pivot_longer(extrem_NYT.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
+extrem_AP.dfm.long <- pivot_longer(extrem_AP.dfm, cols=c(Context.before, Context.after), names_to = "Context", values_to = "context.text")
 
-extrem_NYT.dfm.long$Context <- as.factor(extrem_NYT.dfm.long$Context)
+extrem_AP.dfm.long$Context <- as.factor(extrem_AP.dfm.long$Context)
 
-extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
+extremecorpus <-text_cleaner(extrem_AP.dfm.long$context.text)
 
 ```
 
@@ -210,9 +210,21 @@ extremecorpus <-text_cleaner(extrem_NYT.dfm.long$context.text)
 Calculate FW.
 
 ```{r, message=FALSE, echo=FALSE}
-
+#############################################
 e <- dfm(extremecorpus$content)
 message(dim(e))
+
+#############################################
+
+e <- dfm_select(e, pattern = stopwords("english"), selection = "remove")
+e <- dfm_select(e, min_nchar = 2)
+e <- dfm_trim(e, min_termfreq = 100, min_docfreq = .05, verbose=TRUE)
+
+message(dim(e))
+message(sparsity(e))
+sparsity(e)
+
+#############################################
 
 extrem_dtm <- convert(e, to='data.frame')
 extrem_dtm <- extrem_dtm[-c(1)]
@@ -224,7 +236,7 @@ w <- which( sapply(extrem_dtm, class ) == 'character' )
 
 ##################################################################
 
-fw.extrem <- fwgroups(extrem_dtm, groups=extrem_NYT.dfm.long$Context)
+fw.extrem <- fwgroups(extrem_dtm, groups=extrem_AP.dfm.long$Context)
 
 ##################################################################
 
@@ -268,12 +280,13 @@ p.fw.extrem
 
 ud_model <- udpipe_load_model(ud_model$file_model)
 
-txt <-as.character(extrem_NYT.dfm.long$context.text)
+txt <-as.character(extrem_AP.dfm.long$context.text)
 
 x_udp <- udpipe_annotate(ud_model, x = txt, doc_id = seq_along(txt))
 x <- as.data.frame(x_udp)
 
 x$doc_id <-as.integer(x$doc_id)
+
 
 ##################################################################
 
@@ -554,11 +567,220 @@ Corrs(x_even.after)
 
 
 # Extrem(ist) Fightin' Words Over Time
+```{r}
+library(tweenr)
+
+TransitionTime2 <- ggproto(
+  "TransitionTime2",
+  TransitionTime,
+  expand_panel = function (self, data, type, id, match, ease, enter, exit, params, 
+                           layer_index) {
+    row_time <- self$get_row_vars(data)
+    if (is.null(row_time)) 
+      return(data)
+    data$group <- paste0(row_time$before, row_time$after)
+    time <- as.integer(row_time$time)
+    states <- split(data, time)
+    times <- as.integer(names(states))
+    nframes <- diff(times)
+    nframes[1] <- nframes[1] + 1
+    if (times[1] <= 1) {
+      all_frames <- states[[1]]
+      states <- states[-1]
+    }
+    else {
+      all_frames <- data[0, , drop = FALSE]
+      nframes <- c(times[1] - 1, nframes)
+    }
+    if (times[length(times)] < params$nframes) {
+      states <- c(states, list(data[0, , drop = FALSE]))
+      nframes <- c(nframes, params$nframes - times[length(times)])
+    }
+    for (i in seq_along(states)) {
+      all_frames <- switch(type, point = tween_state(all_frames, 
+                                                     states[[i]], ease, nframes[i], 
+                                                     !!id, enter, exit), 
+                           path = transform_path(all_frames, 
+                                                 states[[i]], ease, nframes[i], 
+                                                 !!id, enter, exit, match), 
+                           polygon = transform_polygon(all_frames, 
+                                                       states[[i]], ease, nframes[i], 
+                                                       !!id, enter, exit, match), 
+                           sf = transform_sf(all_frames, 
+                                             states[[i]], ease, nframes[i], 
+                                             !!id, enter, exit), 
+                           stop(type, 
+                                " layers not currently supported by transition_time", 
+                                call. = FALSE))
+    }
+    true_frame <- seq(times[1], times[length(times)])
+    all_frames <- all_frames[
+      all_frames$.frame %in% 
+        # which(true_frame > 0 & true_frame <= params$nframes),
+        true_frame[which(true_frame > 0 & true_frame <= params$nframes)], # tweak line A
+      , 
+      drop = FALSE]
+    # all_frames$.frame <- all_frames$.frame - min(all_frames$.frame) + 1 # remove line B
+    all_frames$group <- paste0(all_frames$group, "<", all_frames$.frame, ">")
+    all_frames$.frame <- NULL
+    all_frames
+  })
+
+transition_time2 <- function (time, range = NULL) {
+  time_quo <- enquo(time)
+  gganimate:::require_quo(time_quo, "time")
+  ggproto(NULL, TransitionTime2, 
+          params = list(time_quo = time_quo, range = range))
+}
+```
+
+```{r extra_loads_odd_before, fig.width=10}
+library(ggraph)
+library(ggforce)
+library(gganimate)
+library(ggplot2)
+library(igraph)
+library(animation)
+library(lubridate)
 
 
+results<-merge(x=x,y=extrem_AP.dfm.long, by.x='doc_id',  by.y = 0  ,all.x=TRUE)
+results_odd.before <- results[results$doc_id %% 2 == 1,]
+results_even.after <-results[results$doc_id %% 2 == 0, ]
+
+cooc_year<- data.frame()
+
+for(y in unique(results_odd.before$pubyear)){
+  print(y)
+  cooc <- cooccurrence(x = subset(filter(results_odd.before, pubyear == y), upos %in% c("NOUN", "ADJ")), 
+                       term = "lemma", 
+                       group = c("doc_id", "paragraph_id", "sentence_id"))
+  cooc$year <- y
+  cooc<- head(cooc, 14)
+  cooc_year <- rbind(cooc_year, cooc)
+}
+
+dim(cooc_year)
+wordnetwork <- cooc_year
+
+p<- ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+  theme_graph(base_family = "Arial Narrow") +
+  theme(legend.position = "none") +
+  # facet_wrap_paginate(~year)+
+  scale_alpha_identity()+
+  labs(title = "Cooccurrences within sentence: BEFORE", subtitle = "Nouns & Adjective {frame_time}")+
+  transition_time2(year)
+  ease_aes('linear')
+
+p
+plot(p)
+# last_animation()
+
+```
+```{r extra_loads_even_after, fig.width=10}
+
+cooc_year<- data.frame()
+
+for(y in unique(results_even.after$pubyear)){
+  print(y)
+  cooc <- cooccurrence(x = subset(filter(results_even.after, pubyear == y), upos %in% c("NOUN", "ADJ")), 
+                       term = "lemma", 
+                       group = c("doc_id", "paragraph_id", "sentence_id"))
+  cooc$year <- y
+  cooc<- head(cooc, 14)
+  cooc_year <- rbind(cooc_year, cooc)
+}
+
+dim(cooc_year)
+wordnetwork <- cooc_year
+
+p2<- ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+  theme_graph(base_family = "Arial Narrow") +
+  theme(legend.position = "none") +
+  # facet_wrap_paginate(~year)+
+  scale_alpha_identity()+
+  labs(title = "Cooccurrences within sentence: AFTER", subtitle = "Nouns & Adjective {frame_time}")+
+  transition_time2(year)
+  ease_aes('linear')
+
+p2
+plot(p2)
+# last_animation()
+
+```
+
+```{r cooc2_before, fig.width=10}
+
+cooc2_year<- data.frame()
+
+for(y in unique(results_odd.before$pubyear)){
+  print(y)
+  a<- filter(results_odd.before, pubyear == y)
+  
+  cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
+  cooc$year <- y
+  cooc<- head(cooc, 25)
+  cooc2_year <- rbind(cooc2_year, cooc)
+}
 
 
+dim(cooc2_year)
+wordnetwork <- cooc2_year
 
+p3<- ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+  theme_graph(base_family = "Arial Narrow") +
+  theme(legend.position = "none") +
+  # facet_wrap_paginate(~year)+
+  scale_alpha_identity()+
+  labs(title = "Cooccurrences within sentence: BEFORE", subtitle = "Nouns & Adjective {frame_time}")+
+  transition_time2(year)
+  ease_aes('linear')
+
+p3
+plot(p3)
+# last_animation()
+
+```
+```{r cooc2_after, fig.width=10}
+
+cooc2_year<- data.frame()
+
+for(y in unique(results_even.after$pubyear)){
+  print(y)
+  a<- filter(results_even.after, pubyear == y)
+  
+  cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
+  cooc$year <- y
+  cooc<- head(cooc, 25)
+  cooc2_year <- rbind(cooc2_year, cooc)
+}
+
+
+dim(cooc2_year)
+wordnetwork <- cooc2_year
+
+p4<- ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
+  geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
+  theme_graph(base_family = "Arial Narrow") +
+  theme(legend.position = "none") +
+  # facet_wrap_paginate(~year)+
+  scale_alpha_identity()+
+  labs(title = "Cooccurrences within sentence: AFTER", subtitle = "Nouns & Adjective {frame_time}")+
+  transition_time2(year)
+  ease_aes('linear')
+
+p4
+plot(p4)
+# last_animation()
+
+```
 
 
 
