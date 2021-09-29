@@ -634,7 +634,7 @@ transition_time2 <- function (time, range = NULL) {
 }
 ```
 
-```{r extra_loads_odd_before, echo=FALSE,fig.width=10}
+```{r extra_loads_odd_before, echo=FALSE}
 library(ggraph)
 library(ggforce)
 library(gganimate)
@@ -662,7 +662,7 @@ for(y in unique(results_odd.before$pubyear)){
 
 wordnetwork <- cooc_year
 
-p<- ggraph(wordnetwork, layout = "fr") +
+ggraph(wordnetwork, layout = "fr") +
   geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
   geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
   theme_graph(base_family = "Arial Narrow") +
@@ -673,13 +673,13 @@ p<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-plot(p)
-p
+# plot(p)
+# p
 
 # last_animation()
 
 ```
-```{r extra_loads_even_after, echo=FALSE, fig.width=10}
+```{r extra_loads_even_after, echo=FALSE}
 
 cooc_year<- data.frame()
 
@@ -696,7 +696,7 @@ for(y in unique(results_even.after$pubyear)){
 
 wordnetwork <- cooc_year
 
-p2<- ggraph(wordnetwork, layout = "fr") +
+ggraph(wordnetwork, layout = "fr") +
   geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
   geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
   theme_graph(base_family = "Arial Narrow") +
@@ -707,14 +707,14 @@ p2<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-plot(p2)
-p2
+# plot(p2)
+# p2
 
 # last_animation()
 
 ```
 
-```{r cooc2_before, echo=FALSE, fig.width=10}
+```{r cooc2_before, echo=FALSE}
 
 cooc2_year<- data.frame()
 
@@ -724,14 +724,14 @@ for(y in unique(results_odd.before$pubyear)){
   
   cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   cooc$year <- y
-  cooc<- head(cooc, 25)
+  cooc<- head(cooc, 12)
   cooc2_year <- rbind(cooc2_year, cooc)
 }
 
 
 wordnetwork <- cooc2_year
 
-p3<- ggraph(wordnetwork, layout = "fr") +
+ggraph(wordnetwork, layout = "fr") +
   geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
   geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
   theme_graph(base_family = "Arial Narrow") +
@@ -742,13 +742,13 @@ p3<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-plot(p3)
-p3
+# plot(p3)
+# p3
 
 # last_animation()
 
 ```
-```{r cooc2_after, echo=FALSE, fig.width=10}
+```{r cooc2_after, echo=FALSE}
 
 cooc2_year<- data.frame()
 
@@ -758,14 +758,14 @@ for(y in unique(results_even.after$pubyear)){
   
   cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   cooc$year <- y
-  cooc<- head(cooc, 25)
+  cooc<- head(cooc, 12)
   cooc2_year <- rbind(cooc2_year, cooc)
 }
 
 
 wordnetwork <- cooc2_year
 
-p4<- ggraph(wordnetwork, layout = "fr") +
+ggraph(wordnetwork, layout = "fr") +
   geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
   geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
   theme_graph(base_family = "Arial Narrow") +
@@ -776,8 +776,8 @@ p4<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-plot(p4)
-p4
+# plot(p4)
+# p4
 # last_animation()
 
 ```
