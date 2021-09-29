@@ -634,7 +634,7 @@ transition_time2 <- function (time, range = NULL) {
 }
 ```
 
-```{r extra_loads_odd_before, fig.width=10}
+```{r extra_loads_odd_before, echo=FALSE,fig.width=10}
 library(ggraph)
 library(ggforce)
 library(gganimate)
@@ -651,7 +651,7 @@ results_even.after <-results[results$doc_id %% 2 == 0, ]
 cooc_year<- data.frame()
 
 for(y in unique(results_odd.before$pubyear)){
-  print(y)
+  # print(y)
   cooc <- cooccurrence(x = subset(filter(results_odd.before, pubyear == y), upos %in% c("NOUN", "ADJ")), 
                        term = "lemma", 
                        group = c("doc_id", "paragraph_id", "sentence_id"))
@@ -660,7 +660,6 @@ for(y in unique(results_odd.before$pubyear)){
   cooc_year <- rbind(cooc_year, cooc)
 }
 
-dim(cooc_year)
 wordnetwork <- cooc_year
 
 p<- ggraph(wordnetwork, layout = "fr") +
@@ -674,17 +673,18 @@ p<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-p
 plot(p)
+p
+
 # last_animation()
 
 ```
-```{r extra_loads_even_after, fig.width=10}
+```{r extra_loads_even_after, echo=FALSE, fig.width=10}
 
 cooc_year<- data.frame()
 
 for(y in unique(results_even.after$pubyear)){
-  print(y)
+  # print(y)
   cooc <- cooccurrence(x = subset(filter(results_even.after, pubyear == y), upos %in% c("NOUN", "ADJ")), 
                        term = "lemma", 
                        group = c("doc_id", "paragraph_id", "sentence_id"))
@@ -693,7 +693,7 @@ for(y in unique(results_even.after$pubyear)){
   cooc_year <- rbind(cooc_year, cooc)
 }
 
-dim(cooc_year)
+
 wordnetwork <- cooc_year
 
 p2<- ggraph(wordnetwork, layout = "fr") +
@@ -707,18 +707,19 @@ p2<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-p2
 plot(p2)
+p2
+
 # last_animation()
 
 ```
 
-```{r cooc2_before, fig.width=10}
+```{r cooc2_before, echo=FALSE, fig.width=10}
 
 cooc2_year<- data.frame()
 
 for(y in unique(results_odd.before$pubyear)){
-  print(y)
+  # print(y)
   a<- filter(results_odd.before, pubyear == y)
   
   cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
@@ -728,7 +729,6 @@ for(y in unique(results_odd.before$pubyear)){
 }
 
 
-dim(cooc2_year)
 wordnetwork <- cooc2_year
 
 p3<- ggraph(wordnetwork, layout = "fr") +
@@ -742,17 +742,18 @@ p3<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-p3
 plot(p3)
+p3
+
 # last_animation()
 
 ```
-```{r cooc2_after, fig.width=10}
+```{r cooc2_after, echo=FALSE, fig.width=10}
 
 cooc2_year<- data.frame()
 
 for(y in unique(results_even.after$pubyear)){
-  print(y)
+  # print(y)
   a<- filter(results_even.after, pubyear == y)
   
   cooc <- cooccurrence(a$lemma, relevant = a$upos %in% c("NOUN", "ADJ"), skipgram = 1)
@@ -762,7 +763,6 @@ for(y in unique(results_even.after$pubyear)){
 }
 
 
-dim(cooc2_year)
 wordnetwork <- cooc2_year
 
 p4<- ggraph(wordnetwork, layout = "fr") +
@@ -776,8 +776,8 @@ p4<- ggraph(wordnetwork, layout = "fr") +
   transition_time2(year)
   ease_aes('linear')
 
-p4
 plot(p4)
+p4
 # last_animation()
 
 ```
