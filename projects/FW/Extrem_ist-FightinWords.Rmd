@@ -18,7 +18,7 @@ output:
 
 ## Load Libraries
 
-```{r load libraries, results='hide'}
+```{r load libraries, results='hide', error=FALSE}
 
 ### https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-usecase-postagging-lemmatisation.html
 library(udpipe)
@@ -151,7 +151,7 @@ fw.keys <- function(fw.ch,n.keys=10) {
 
 ## Compare Associated Press 1994-2010: Before and After "extremist"
 
-*Load and clean the data*
+### *Load and clean the data*
   * pivot to long format
   * apply text_cleaner to column containing text --> "context.text"
 
@@ -180,7 +180,7 @@ text_cleaner<-function(corpus){
 
 ```
 
-```{r clean_text, echo=FALSE, results= FALSE}
+```{r clean_text, echo=FALSE, results=FALSE, error=FALSE}
 
 extrem_AP.dfm <- read.delim("extremist_9410_AP.txt", header = TRUE, sep = "\t")
 extrem_AP.dfm$pubdate = substr(extrem_AP.dfm$Text.ID,9,16)
@@ -205,7 +205,7 @@ extremecorpus <-text_cleaner(extrem_AP.dfm.long$context.text)
 ```
 
 
-Calculate FW.
+### Calculate FW.
 
 ```{r check_sparsity, message=FALSE, echo=FALSE}
 #############################################
