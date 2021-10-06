@@ -152,12 +152,10 @@ fw.keys <- function(fw.ch,n.keys=10) {
 ## Compare Associated Press 1994-2010: Before and After "extremist"
 
 *Load and clean the data*
-
-  * to string & lower text
   * pivot to long format
-  * apply text_cleaner to one column "context.text"
+  * apply text_cleaner to column containing text --> "context.text"
 
-```{r}
+```{r text_cleaning, echo=FALSE}
 
 ######################################
 
@@ -209,7 +207,7 @@ extremecorpus <-text_cleaner(extrem_AP.dfm.long$context.text)
 
 Calculate FW.
 
-```{r, message=FALSE, echo=FALSE}
+```{r check_sparsity, message=FALSE, echo=FALSE}
 #############################################
 e <- dfm(extremecorpus$content)
 message(dim(e))
@@ -230,10 +228,6 @@ extrem_dtm <- convert(e, to='data.frame')
 extrem_dtm <- extrem_dtm[-c(1)]
 w <- which( sapply(extrem_dtm, class ) == 'character' )
 
-```
-
-```{r, message=FALSE, echo=TRUE}
-
 ##################################################################
 
 fw.extrem <- fwgroups(extrem_dtm, groups=extrem_AP.dfm.long$Context)
@@ -246,9 +240,9 @@ message(rm(e))
 ```
 
 
-Get and show the top words per group by zeta.
+Show the top words per group by zeta.
 
-```{r echo=TRUE}
+```{r top_words_table, echo=TRUE}
 ##################################################################
 
 fwkeys.extrem <- fw.keys(fw.extrem, n.keys=20)
@@ -265,17 +259,18 @@ kable(fwkeys.extrem)
 
 *Plot: Comparing Words Before (in Blue), and After (in Red)*
 
-```{r, fig.height=5, fig.width=4}
+```{r top_words_plot, fig.height=5, fig.width=8}
 p.fw.extrem <- fw.ggplot.groups(fw.extrem,sizescale=4,max.words=200,
                                 max.countrank=400,colorpalette=c("red","blue"),
                                  title = 'Comparison of Terms Before and After "Extremist"')
-p.fw.extrem
+plot(p.fw.extrem)
 
 ```
 
 ## Calculate Parts of speech by before and after
 
-```{r, results='hide'}
+```{r parts_of_speech_ud_model, results='hide'}
+
 ##################################################################
 
 ud_model <- udpipe_load_model(ud_model$file_model)
@@ -293,7 +288,8 @@ x$doc_id <-as.integer(x$doc_id)
 
 ```
 
-```{r, results='hide'}
+```{r separate_oddeven_beforeafter, results='hide'}
+
 ##################################################################
 
 x_odd.before <- x[x$doc_id %% 2 == 1,]
@@ -458,7 +454,7 @@ POS_barchart(x_odd.before, x_even.after)
 
 ## Cooccurences
 
-```{r, echo=FALSE, fig.width=6}
+```{r co_oc1, echo=FALSE, fig.width=6}
 
 CO_OC_noun_adj_same_sent.before <- function(df1, year='All'){
   
@@ -549,11 +545,9 @@ CO_OC_noun_adj_following.after(x_even.after)
 
 ```
 
+## Top Word Correlations
 
-
-## Cooccurences (part 2)
-
-```{r, echo=FALSE}
+```{r corrsfuncts, echo=FALSE}
 
 Corrs <- function(df, year='All'){
   df.name <- deparse(substitute(df))
@@ -572,7 +566,7 @@ Corrs <- function(df, year='All'){
 
 ```
 
-```{r}
+```{r corrs}
 
 Corrs(x_odd.before)
 Corrs(x_even.after)
@@ -580,7 +574,9 @@ Corrs(x_even.after)
 ```
 
 
-```{r by_year, echo=FALSE, error=FALSE}
+## Cooccurences & Top Word Correlations (part 2 -- Subset By Year)
+
+```{r by_year, echo=FALSE, error=FALSE, fig.width=8}
 
 by_year <- function(df, yr){
    dtm <- subset(df, pubyear == yr)
@@ -594,7 +590,9 @@ for(year in unique(extrem_AP.dfm.long$pubyear)){
   mini_df <- by_year(extrem_AP.dfm.long, year)
 
   extremecorpus <-text_cleaner(mini_df$context.text)
-    #############################################
+  
+  #############################################
+  
   e <- dfm(extremecorpus$content)
   message(dim(e))
 
@@ -633,18 +631,13 @@ for(year in unique(extrem_AP.dfm.long$pubyear)){
   print(p.fw.extrem)
 }
 
-
-
-
 # sss <- subset(extrem_AP.dfm.long, pubyear == 2000)
-# 
 # sss <- by_year(extrem_AP.dfm.long, 2002)
-
 
 ```
 
 
-```{r other_graphs, echo=FALSE}
+```{r other_graphs, echo=FALSE, fig.width=8}
 
 # ud_model <- udpipe_load_model(ud_model$file_model)
 
@@ -710,13 +703,11 @@ for(yr in unique(extrem_AP.dfm.long$pubyear)){
 
 ```
 
-```{r final, echo=FALSE}
+```{r final_remove_all_env, echo=FALSE}
 
 rm(list=ls())
 
 ```
-
-
 
 
 
