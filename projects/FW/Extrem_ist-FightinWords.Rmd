@@ -306,7 +306,7 @@ x_even.after <-x[x$doc_id %% 2 == 0, ]
 ```{r barchartfuncts, echo=FALSE}
 
 ## UNIVERSAL PoS
-UPOS_barchart <- function(df1, df2){
+UPOS_barchart <- function(df1, df2, year='All'){
   
   stats1 <- txt_freq(df1$upos)
   stats1$key <- factor(stats1$key, levels = rev(stats1$key))
@@ -314,17 +314,18 @@ UPOS_barchart <- function(df1, df2){
   stats2 <- txt_freq(df2$upos)
   stats2$key <- factor(stats2$key, levels = rev(stats2$key))
   
-  c(barchart(key ~ freq, data = stats1, col = "cadetblue", 
-        main = "UPOS (Universal Parts of Speech)\n frequency of occurrence: BEFORE vs AFTER", 
+  p<-c(barchart(key ~ freq, data = stats1, col = "cadetblue", 
+        main = paste("UPOS (Universal Parts of Speech)\n frequency of occurrence: BEFORE vs AFTER 'Extremist'", year), 
          xlab = "Freq"), 
     barchart(key ~ freq, data = stats2, col =  'skyblue',
          xlab = "Freq"))
+ plot(p)
 
 }
 
 
 ## NOUNS
-NOUNS_barchart <- function(df1, df2){
+NOUNS_barchart <- function(df1, df2, year='All'){
   
   stats1 <- subset(df1, upos %in% c("NOUN")) 
   stats1 <- txt_freq(stats1$token)
@@ -334,14 +335,15 @@ NOUNS_barchart <- function(df1, df2){
   stats2 <- txt_freq(stats2$token)
   stats2$key <- factor(stats2$key, levels = rev(stats2$key))
   
-  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
-           main = "Most occurring nouns: BEFORE vs AFTER", xlab = "Freq"),
+  p<-c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = paste("Most occurring nouns: BEFORE vs AFTER 'Extremist'", year), xlab = "Freq"),
       barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
             xlab = "Freq"))
+  plot(p)
 }
 
 ## ADJECTIVES
-ADJ_barchart <- function(df1, df2){
+ADJ_barchart <- function(df1, df2, year='All'){
   
   stats1 <- subset(df1, upos %in% c("ADJ")) 
   stats1 <- txt_freq(stats1$token)
@@ -351,14 +353,15 @@ ADJ_barchart <- function(df1, df2){
   stats2 <- txt_freq(stats2$token)
   stats2$key <- factor(stats2$key, levels = rev(stats2$key))
   
-  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
-           main = "Most occurring adjectives: BEFORE vs AFTER", xlab = "Freq"),
+  p<-c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = paste("Most occurring adjectives: BEFORE vs AFTER 'Extremist'", year), xlab = "Freq"),
       barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
          xlab = "Freq"))
+ plot(p)
 }
 
 ## Using RAKE to find keywords
-RAKE_KW_barchart <- function(df1,df2){
+RAKE_KW_barchart <- function(df1,df2, year='All'){
   
   stats1 <- keywords_rake(x = df1, term = "lemma", group = "doc_id", 
                          relevant = df1$upos %in% c("NOUN", "ADJ"))
@@ -369,15 +372,16 @@ RAKE_KW_barchart <- function(df1,df2){
   stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
   
   
-  c(barchart(key ~ rake, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
-           main = "Keywords identified by RAKE: BEFORE vs AFTER", 
+  p<-c(barchart(key ~ rake, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
+           main = paste("Keywords identified by RAKE: BEFORE vs AFTER 'Extremist'", year), 
            xlab = "Rake"),
     barchart(key ~ rake, data = head(subset(stats2, freq > 3), 20), col = "skyblue", 
            xlab = "Rake"))
+ plot(p)
 }
 
 ## Using Pointwise Mutual Information Collocations
-PWI_barchart <- function(df1, df2){
+PWI_barchart <- function(df1, df2, year='All'){
   
   df1$word <- tolower(df1$token)
   stats1 <- keywords_collocation(x = df1, term = "word", group = "doc_id")
@@ -387,15 +391,16 @@ PWI_barchart <- function(df1, df2){
   stats2 <- keywords_collocation(x = df2, term = "word", group = "doc_id")
   stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
   
-  c(barchart(key ~ pmi, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
-           main = "Keywords identified by PMI Collocation: BEFORE vs AFTER", 
+  p<-c(barchart(key ~ pmi, data = head(subset(stats1, freq > 3), 20), col = "cadetblue", 
+           main = paste("Keywords identified by PMI Collocation: BEFORE vs AFTER 'Extremist'", year), 
            xlab = "PMI (Pointwise Mutual Information)"),
       barchart(key ~ pmi, data = head(subset(stats2, freq > 3), 20), col = "skyblue", 
            xlab = "PMI (Pointwise Mutual Information)"))
+ plot(p)
 }
 
 ## Using a sequence of POS tags (noun phrases / verb phrases)
-POS_barchart <- function(df1, df2){
+POS_barchart <- function(df1, df2, year='All'){
   
   df1$phrase_tag <- as_phrasemachine(df1$upos, type = "upos")
   stats1 <- keywords_phrases(x = df1$phrase_tag, term = tolower(df1$token), 
@@ -411,10 +416,11 @@ POS_barchart <- function(df1, df2){
   stats2 <- subset(stats2, ngram > 1 & freq > 3)
   stats2$key <- factor(stats2$keyword, levels = rev(stats2$keyword))
   
-  c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
-           main = "Keywords - simple noun phrases: BEFORE vs AFTER", xlab = "Frequency"),
+  p<-c(barchart(key ~ freq, data = head(stats1, 20), col = "cadetblue", 
+           main = paste("Keywords - simple noun phrases: BEFORE vs AFTER 'Extremist'", year), xlab = "Frequency"),
       barchart(key ~ freq, data = head(stats2, 20), col = "skyblue", 
                xlab = "Frequency"))
+  plot(p)
 }
 ```
 
@@ -454,7 +460,7 @@ POS_barchart(x_odd.before, x_even.after)
 
 ```{r, echo=FALSE, fig.width=6}
 
-CO_OC_noun_adj_same_sent.before <- function(df1){
+CO_OC_noun_adj_same_sent.before <- function(df1, year='All'){
   
   library(igraph)
   library(ggraph)
@@ -467,16 +473,18 @@ CO_OC_noun_adj_same_sent.before <- function(df1){
   wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   
-  ggraph(wordnetwork, layout = "fr") +
+  p <- ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "pink") +
     geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
     theme_graph(base_family = "Arial Narrow") +
     theme(legend.position = "none") +
-    labs(title = "Cooccurrences within sentence: BEFORE", subtitle = "Nouns & Adjective")
+    labs(title = paste("Cooccurrences within sentence: BEFORE 'Extremist':", year), subtitle = "Nouns & Adjective")
+ 
+  plot(p)
   
 }
 
-CO_OC_noun_adj_same_sent.after <- function(df2){
+CO_OC_noun_adj_same_sent.after <- function(df2, year='All'){
   
   library(igraph)
   library(ggraph)
@@ -489,13 +497,14 @@ CO_OC_noun_adj_same_sent.after <- function(df2){
   wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
   
-  ggraph(wordnetwork, layout = "fr") +
+  p<-ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "lightgreen") +
     geom_node_text(aes(label = name), col = "darkblue", size = 4) +
     theme_graph(base_family = "Arial Narrow") +
     theme(legend.position = "none") +
-    labs(title = "Cooccurrences within sentence: AFTER", subtitle = "Nouns & Adjective")
+    labs(title = paste("Cooccurrences within sentence: AFTER 'Extremist':", year), subtitle = "Nouns & Adjective")
   
+  plot(p)
 }
 
 
@@ -505,30 +514,33 @@ CO_OC_noun_adj_same_sent.after(x_even.after)
 
 ##########################################
 
-CO_OC_noun_adj_following.before <- function(df){
+CO_OC_noun_adj_following.before <- function(df, year='All'){
   cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   head(cooc)
   
   wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
-  ggraph(wordnetwork, layout = "fr") +
+  p<- ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "lightgreen") +
     geom_node_text(aes(label = name), col = "darkgreen", size = 4) +
     theme_graph(base_family = "Arial Narrow") +
-    labs(title = "Words following one another: BEFORE", subtitle = "Nouns & Adjective")
+    labs(title = paste("Words following one another: BEFORE 'Extremist':", year), subtitle = "Nouns & Adjective")
+  
+  plot(p)
 }
 
-CO_OC_noun_adj_following.after <- function(df){
+CO_OC_noun_adj_following.after <- function(df, year='All'){
   cooc <- cooccurrence(df$lemma, relevant = df$upos %in% c("NOUN", "ADJ"), skipgram = 1)
   head(cooc)
   
   wordnetwork <- head(cooc, 60)
   wordnetwork <- graph_from_data_frame(wordnetwork)
-  ggraph(wordnetwork, layout = "fr") +
+  p<-ggraph(wordnetwork, layout = "fr") +
     geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "skyblue") +
     geom_node_text(aes(label = name), col = "darkblue", size = 4) +
     theme_graph(base_family = "Arial Narrow") +
-    labs(title = "Words following one another: AFTER", subtitle = "Nouns & Adjective")
+    labs(title = paste("Words following one another: AFTER 'Extremist':", year), subtitle = "Nouns & Adjective")
+  plot(p)
 }
 
 
@@ -543,7 +555,9 @@ CO_OC_noun_adj_following.after(x_even.after)
 
 ```{r, echo=FALSE}
 
-Corrs <- function(df){
+Corrs <- function(df, year='All'){
+  df.name <- deparse(substitute(df))
+  print(paste('Top 25 Co-occurences for:', df.name, year))
   df$id <- unique_identifier(df, fields = c("sentence_id", "doc_id"))
   dtm <- subset(df, upos %in% c("NOUN", "ADJ"))
   dtm <- document_term_frequencies(dtm, document = "id", term = "lemma")
@@ -553,7 +567,7 @@ Corrs <- function(df){
   y <- as_cooccurrence(termcorrelations)
   y <- subset(y, term1 < term2 & abs(cooc) > 0.2)
   y <- y[order(abs(y$cooc), decreasing = TRUE), ]
-  y[1:25,]
+  print(y[1:25,])
 }
 
 ```
@@ -566,17 +580,141 @@ Corrs(x_even.after)
 ```
 
 
+```{r by_year, echo=FALSE, error=FALSE}
+
+by_year <- function(df, yr){
+   dtm <- subset(df, pubyear == yr)
+   return(dtm)
+}
 
 
+for(year in unique(extrem_AP.dfm.long$pubyear)){
+  print(paste('Plots for year:', year))
+
+  mini_df <- by_year(extrem_AP.dfm.long, year)
+
+  extremecorpus <-text_cleaner(mini_df$context.text)
+    #############################################
+  e <- dfm(extremecorpus$content)
+  message(dim(e))
+
+  #############################################
+
+  e <- dfm_select(e, pattern = stopwords("english"), selection = "remove")
+  e <- dfm_select(e, min_nchar = 2)
+  e <- dfm_trim(e, min_termfreq = 3, min_docfreq = .05, verbose=TRUE)
+
+  message(dim(e))
+  message(sparsity(e))
+  sparsity(e)
+
+  #############################################
+
+  extrem_dtm <- convert(e, to='data.frame')
+  extrem_dtm <- extrem_dtm[-c(1)]
+  w <- which( sapply(extrem_dtm, class ) == 'character' )
+
+  fw.extrem <- fwgroups(extrem_dtm, groups=mini_df$Context)
+
+  ##################################################################
+  
+  fwkeys.extrem <- fw.keys(fw.extrem, n.keys=20)
+  cols <- rev(colnames(fwkeys.extrem))
+  fwkeys.extrem <- fwkeys.extrem[,cols]
+  
+  ##################################################################
+  
+  kable(fwkeys.extrem)
+  
+  ##################################################################
+  p.fw.extrem <- fw.ggplot.groups(fw.extrem,sizescale=4,max.words=200,
+                                  max.countrank=400,colorpalette=c("red","blue"),
+                                   title = paste('Comparison of Terms Before and After "Extremist":', year))
+  print(p.fw.extrem)
+}
+
+
+
+
+# sss <- subset(extrem_AP.dfm.long, pubyear == 2000)
+# 
+# sss <- by_year(extrem_AP.dfm.long, 2002)
+
+
+```
+
+
+```{r other_graphs, echo=FALSE}
+
+# ud_model <- udpipe_load_model(ud_model$file_model)
+
+for(yr in unique(extrem_AP.dfm.long$pubyear)){
+  print(paste('Plots for year:', yr))
+
+  mini_df <- by_year(extrem_AP.dfm.long, yr)
+  
+  txt <-as.character(mini_df$context.text)
+  
+  x_udp <- udpipe_annotate(ud_model, x = txt, doc_id = seq_along(txt))
+  x <- as.data.frame(x_udp)
+  
+  x$doc_id <-as.integer(x$doc_id)
+  
+  ##################################################################
+
+  x_odd.before <- x[x$doc_id %% 2 == 1,]
+  x_even.after <-x[x$doc_id %% 2 == 0, ]
+
+  ##################################################################
+  ##################################################################
+  
+  UPOS_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  NOUNS_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  ADJ_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  RAKE_KW_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  PWI_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  POS_barchart(x_odd.before, x_even.after, year=yr)
+  
+  ##################################################################
+  
+  CO_OC_noun_adj_same_sent.before(x_odd.before, year=yr)
+  CO_OC_noun_adj_same_sent.after(x_even.after, year=yr)
+  
+  ##################################################################
+  
+  CO_OC_noun_adj_following.before(x_odd.before, year=yr)
+  CO_OC_noun_adj_following.after(x_even.after, year=yr)
+
+  ##################################################################
+  
+  Corrs(x_odd.before, year=yr)
+  Corrs(x_even.after, year=yr)
+  
+}
+
+
+```
 
 ```{r final, echo=FALSE}
 
 rm(list=ls())
 
 ```
-
-
-
 
 
 
