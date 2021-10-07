@@ -634,7 +634,7 @@ for(year in unique(extrem_AP.dfm.long$pubyear)){
   p.fw.extrem <- fw.ggplot.groups(fw.extrem,sizescale=4,max.words=200,
                                   max.countrank=400,colorpalette=c("red","blue"),
                                    title = paste('Comparison of Terms Before and After "Extremist":', year))
-  print(p.fw.extrem)
+  plot(p.fw.extrem)
 }
 
 # sss <- subset(extrem_AP.dfm.long, pubyear == 2000)
