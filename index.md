@@ -6,7 +6,7 @@ title: Home
 # Welcome
 
 
-I am second year [Information Science](http://infosci.cornell.edu/) PhD student at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
+I am a second year [Information Science](http://infosci.cornell.edu/) PhD student at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
 
 I'm interested in the ways in which both activist and extremist identities and ideologies are built and maintained using various social media platforms. 
 
