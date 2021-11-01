@@ -4,7 +4,7 @@ layout: default
 
 # Research
 
-  * Trying out Fightin' Words using NYT data (1994-2010): Primary query on "Extremist" <- [Extrem(ist) FW](https://bregreen.github.io/projects/FW/Extrem_ist-FightinWords.nb.html#)
+  * Trying out Fightin' Words using Associated Press data (1994-2010): Primary query on "Extremist" <- [Extrem(ist) FW](https://bregreen.github.io/projects/FW/Extrem_ist-FightinWords.nb.html#)
 
   * A 2nd Fightin' Words Practice with a More Extensive Query <-  [Extrem(ist)PLUS FW](https://bregreen.github.io/projects/FW/Extrem_istPLUS-FightinWords.nb.html#)
 
