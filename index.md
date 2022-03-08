@@ -15,8 +15,6 @@ Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [P
 After UTSA, I spent a few years working as a Research Analyst in the Institutional Research department of a large community college in Texas. 
 
 
-
-
 ## Recent Updates
 
 * Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)
@@ -36,4 +34,6 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 ## Contact Me
-For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at __BEGreen(AT)infosci(DOT)cornell(DOT)edu.__
+For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at __BEGreen(AT)infosci(DOT)cornell(DOT)edu__.
+
+
