@@ -17,7 +17,9 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 
-## Recent Articles and News
+## Recent Updates
+
+* Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)
 
 * Accepted nomination for the role of Graduate Student Rep. for Cornell University's Undergraduate Chapter of the National Society of Black Engineers (2021 - 2022) - [CU NSBE](https://cornellnsbe.weebly.com/)
 
