@@ -1,7 +1,7 @@
 ---
 layout: default
 Title: Research
-permalink: /research/
+
 ---
 
 # Research
@@ -32,4 +32,4 @@ Prairie View A&M University – Prairie View, Texas<br>
 
 
 
-[home](/home/)
+[home](./)
