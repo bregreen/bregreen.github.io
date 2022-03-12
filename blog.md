@@ -15,4 +15,4 @@ Thank you!
 
 
 
-[home](./home/)
+[home](/home/)
