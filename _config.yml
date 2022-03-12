@@ -1,6 +1,7 @@
 title: Breanna E. Green
 logo: /assets/img/BW.jpg
 description: A website to view B. E. Green recent works and projects.
+baseurl: /
 show_downloads: true
 icon: /assets/img/cartoon_avi.jpg
 google_analytics:
