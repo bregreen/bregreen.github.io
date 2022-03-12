@@ -3,6 +3,7 @@ layout: default
 title: "Breanna E. Green CV"
 description: Up to date as of - January 2021
 date: 2021-01-01
+permalink: /cv/
 ---
 
 ## CV current as of Jan. 2021
