@@ -32,4 +32,4 @@ Prairie View A&M University – Prairie View, Texas<br>
 
 
 
-[home](./)
+[home](/home/)

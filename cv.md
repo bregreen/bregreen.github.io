@@ -36,4 +36,4 @@ permalink: /cv/
 
 
 
-[home](./)
+[home](/home/)
