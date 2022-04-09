@@ -31,57 +31,6 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 -   [Cornell Sloan Fellowship Recipient - 2020 - 2025](https://www.engineering.cornell.edu/engdiversity/current-students/graduate-students/diversity-fellowship-programs)
 
 
-<!-- The Timeline -->
-
-<ul class="timeline">
-
-	<!-- Item 1 -->
-	<li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">Cornell University</span>
-				<span class="time-wrapper"><span class="time">2020 - present</span></span>
-			</div>
-			<div class="desc"> Information Science PhD Student</div>
-		</div>
-	</li>
-  
-	<!-- Item 2 -->
-	<li>
-		<div class="direction-l">
-			<div class="flag-wrapper">
-				<span class="flag">Research Analyst</span>
-				<span class="time-wrapper"><span class="time">2017 - 2020</span></span>
-			</div>
-			<div class="desc">My first employer, right out of my M.S. program.</div>
-		</div>
-	</li>
-
-	<!-- Item 3 -->
-	<li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">University of Texas at San Antonio</span>
-				<span class="time-wrapper"><span class="time">2015 - 2017</span></span>
-			</div>
-			<div class="desc">M.S. Psychology</div>
-		</div>
-	</li>
-  
-  	<!-- Item 4 -->
-	<li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">Prairie View A&M University</span>
-				<span class="time-wrapper"><span class="time">2010 - 2014</span></span>
-			</div>
-			<div class="desc">B.S. Psychology</div>
-		</div>
-	</li>
-</ul>
-
-
-
 ## Contact Me
 
 For questions related to my research, inquiries to collaborate, or prospective graduate students that are looking to ask a few questions, please email me at **BEGreen(AT)infosci(DOT)cornell(DOT)edu**.
