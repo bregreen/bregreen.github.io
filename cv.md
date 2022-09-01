@@ -1,9 +1,8 @@
 ---
-layout: default
 title: "Breanna E. Green CV"
+layout: default
+date: '2022-08-01'
 description: Up to date as of - August 2022
-date: 2022-08-01
-
 ---
 
 ## CV current as of Aug. 2022

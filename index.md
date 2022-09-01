@@ -1,12 +1,12 @@
 ---
+title: "Home"
 layout: default
-title: Home
 permalink: /
 ---
 
 # Welcome
 
-I am a third year [Information Science](http://infosci.cornell.edu/) PhD student at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
+A third year [Information Science](http://infosci.cornell.edu/) PhD student at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
 
 I'm interested in the ways in which both activist and extremist identities and ideologies are built and maintained using various social media platforms. I employ semi-supervised and unsupervised learning methods to examine text as data, particularly from sources such as Twitter, YouTube and Gab. 
 
