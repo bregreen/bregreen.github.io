@@ -16,6 +16,8 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 ## Recent Updates
 
+-   Panelist at [APSA 2022](https://convention2.allacademic.com/one/apsa/apsa22/index.php?cmd=Online+Program+View+Session&selected_session_id=2022029&PHPSESSID=sork86megslu6jc0kf6b6vpl9p) - *Listening and Reacting to Communication* - Examining Associations of Voter Turnout in 2021 VA Gubernatorial Election
+
 -   Completed a Summer 2022 Graduate Data Science Internship at [Liberty Mutual](https://jobs.libertymutualgroup.com/careers/digital-technology/data-science/) - Talent Analytics
 
 -   Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)

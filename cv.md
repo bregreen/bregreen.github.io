@@ -24,12 +24,12 @@ description: Up to date as of - August 2022
 ## Resume current as of Aug. 2022
 
 
-<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2022-08.pdf">Download PDF</a>.</p>
+<p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2022_08.pdf">Download PDF</a>.</p>
 
 
-<object data="https://bregreen.github.io/assets/pdfs/Resume_2022-08.pdf" type="application/pdf" width="100%" height="875px">
-    <embed src="https://bregreen.github.io/assets/pdfs/Resume_2022-08.pdf" type="application/pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://bregreen.github.io/assets/pdfs/Resume_2022-08.pdf">Download PDF</a>.</p>
+<object data="https://bregreen.github.io/assets/pdfs/Resume_2022_08.pdf" type="application/pdf" width="100%" height="875px">
+    <embed src="https://bregreen.github.io/assets/pdfs/Resume_2022_08.pdf" type="application/pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://bregreen.github.io/assets/pdfs/Resume_2022_08.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
