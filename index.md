@@ -22,13 +22,13 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 -   Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)
 
--   Accepted nomination for the role of Graduate Student Rep. for Cornell University's Undergraduate Chapter of the National Society of Black Engineers (2021 - 2022) - [CU NSBE](https://cornellnsbe.weebly.com/)
+-   Graduate Student Rep. for Cornell University's Undergraduate Chapter of the National Society of Black Engineers (2021 - 2023) - [CU NSBE](https://cornellnsbe.weebly.com/)
 
 -   Collaborating with the **Global Internet Forum to Counter Terrorism** [GIFCT](https://gifct.org/) on their *Technical Approaches: Tooling, Algorithms & Artificial Intelligence* Working Group (2021 - 2022)
 
--   Accepted nomination for the role of Academic Excellence Chair for the Cornell University Black Graduate & Professional Student Association (2021 - 2022) - [CU BGPSA](https://gradschool.cornell.edu/diversity-inclusion/student-organizations/)
+-   Academic Excellence Chair for the Cornell University Black Graduate & Professional Student Association (2021 - 2022) - [CU BGPSA](https://gradschool.cornell.edu/diversity-inclusion/student-organizations/)
 
--   I spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
+-   Spoke at my first virtual conference! August 20, 2020 -[TEx Transfer Student Success Conference for UofH Downtown (Session Focus: IT)](https://www.uhd.edu/transferstudents/accelerated-transfer-academy/Pages/default.aspx)
 
 -   I was featured in a Summer 2020 [1MWIS article (a global network of women in STEM)](https://www.1mwis.com/profiles/breanna-green)
 
