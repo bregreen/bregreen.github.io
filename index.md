@@ -29,6 +29,8 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 -   Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)
 
+-   Co-Author & Awardee of an [Alfred P. Sloan Foundation](https://sloan.org/) Mini-Grant to support Sloan UCEM Scholar community development, mental health, and wellbeing: Systemtic Change Award of $10,000 -- Andrea Robinson and Breanna Green
+
 -   [Cornell Sloan Fellowship Recipient - 2020 - 2025](https://www.engineering.cornell.edu/engdiversity/current-students/graduate-students/diversity-fellowship-programs)
 
 ## Previous Updates
