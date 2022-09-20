@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Public Writings
+title: Blog
 ---
 
 ### 2022

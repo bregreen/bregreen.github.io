@@ -13,6 +13,7 @@ She, Her(s)
 ## Interests
 
 * Computational Social Science
+* Text as Data & NLP
 * Identity Development
 
 ## First Gen Scholar
