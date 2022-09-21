@@ -27,6 +27,10 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 -   Awarded [GHC Student Scholarship](https://ghc.anitab.org/attend/scholarships/) to attend the virtual component of the 2022 Grace Hopper Celebration
 
+-   2022 Graduate Diversity and Inclusion Distinguished Award Winner: [Exemplary Service Award - Early Career Student](https://gradschool.cornell.edu/diversity-inclusion/graduate-diversity-inclusion-awards/)
+
+-   2022 Diversity Programs in Engineering's (DPE) Annual Award Winner: [The Robert Mozia Graduate Student Distinguished Service Award](https://sites.coecis.cornell.edu/dpenews/dpe-annual-awards-2022/leadership-service-2022/)
+
 -   Awarded the 2022 - 2023 [GEM Fellowship](https://www.gemfellowship.org/) - Employer Fellow - Sponsoring Company: [Lam Research](https://www.lamresearch.com/)
 
 -   Co-Author & Awardee of an [Alfred P. Sloan Foundation](https://sloan.org/) Mini-Grant to support Sloan UCEM Scholar community development, mental health, and wellbeing: Systemtic Change Award of $10,000 -- Andrea Robinson and Breanna Green
