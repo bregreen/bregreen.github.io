@@ -1,7 +1,7 @@
 ---
 layout: post  
 title: "Is This Moral...?"
-date: 2022-09-19
+date: 2022-09-21
 tags: Survey
 category: Post
 permalink: /
