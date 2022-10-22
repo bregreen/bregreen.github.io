@@ -11,7 +11,7 @@ title: Blog
 
 #### October
 
-[I was going to be a Data Science Librarian!](https://bregreen.github.io/posts/2022/09/20221021.html#)
+[I was going to be a Data Science Librarian!](https://bregreen.github.io/posts/2022/10/20221021.html#)
 
 
 [home](./)
