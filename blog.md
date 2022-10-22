@@ -9,5 +9,9 @@ title: Blog
 
 [What field am I in again...?](https://bregreen.github.io/posts/2022/09/20220919.html#)
 
+#### October
+
+[I was going to be a Data Science Librarian!](https://bregreen.github.io/posts/2022/09/20221021.html#)
+
 
 [home](./)

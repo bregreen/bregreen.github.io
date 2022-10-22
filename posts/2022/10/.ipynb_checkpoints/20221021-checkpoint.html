@@ -1,0 +1,5004 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>I was going to be a Data Science Librarian!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="20221021_files/libs/clipboard/clipboard.min.js"></script>
+<script src="20221021_files/libs/quarto-html/quarto.js"></script>
+<script src="20221021_files/libs/quarto-html/popper.min.js"></script>
+<script src="20221021_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="20221021_files/libs/quarto-html/anchor.min.js"></script>
+<link href="20221021_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="20221021_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="20221021_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="20221021_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="20221021_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">I was going to be a Data Science Librarian!</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>So, there comes a time in every young PhD student’s life when they say, “Nah… this ain’t it”. That is, you’ll hear a ton of people who decide the doctoral program isn’t for them. This could be due to a slew of reasons, including (non-exhaustive) they’ve lost passion, got burnout, found new interests, or got really tired of being broke and tired. I experienced what I like to call my PhD Quarter Life Crisis – that weird time between your second and third year where you may feel aimless and simply inadaquate. I couldn’t tell if I was doing enough. My progress felt (and continues to feel) very slow growing. I desperately want to publish something, ANYTHING. But it’s hard to get a project to that point.</p>
+<p>So I started applying for jobs. Particularly roles that would 1) bring me back home to Texas and have me closer to friends &amp; family, 2) looked interesting and where I knew I would excel, and 3) would keep me in academia (<em>bonus: a salary doesn’t hurt</em>).</p>
+<p>Thus, I present to you a mini-project I did to look up academic roles at public Texas institutions of higher education.</p>
+<p>Note: All data used here is publically available by Texas mandate. File can be found <a href="https://texascollegesalaries.com/faq">here</a>.</p>
+<p>Other interesting data sources: - https://texascollegesalaries.com/institutions - https://salaries.texastribune.org/departments/library-and-archives-commission/ - https://govsalaries.com/state/TX</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Again, I was looking at a Data Science Librarian Role (however, at a non-public university!)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">### read in data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>uni_ <span class="op">=</span> pd.read_csv(<span class="st">'TCS_All_Data_4-28-22.csv'</span>, thousands<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">### update hire date to datetime</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>uni_[<span class="st">'hire_date_dt'</span>] <span class="op">=</span> pd.to_datetime(uni_[<span class="st">'hire_date'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>uni_[<span class="st">'race'</span>] <span class="op">=</span> uni_.race.<span class="bu">str</span>.lower()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">### add 2 "inflation" columns</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">### universities (in Texas at least) often increase wages to keep up with inflation</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">### I wanted to project 3 years forward</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>uni_[<span class="st">'salary2'</span>] <span class="op">=</span> pd.to_numeric(uni_[<span class="st">'salary'</span>])</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>uni_[<span class="st">'salary3'</span>] <span class="op">=</span> (uni_[<span class="st">'salary2'</span>]<span class="op">*</span><span class="fl">.028</span>)<span class="op">+</span>(uni_[<span class="st">'salary2'</span>])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>uni_[<span class="st">'salary4'</span>] <span class="op">=</span> (uni_[<span class="st">'salary3'</span>]<span class="op">*</span><span class="fl">.028</span>)<span class="op">+</span>(uni_[<span class="st">'salary3'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">### look at some data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display(uni_.shape, uni_.head())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">### What schools do we have?</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>display(<span class="bu">sorted</span>(uni_.agency.unique()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>(80009, 15)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>UT Austin</td>
+      <td>Accounting</td>
+      <td>Soren Aandahl</td>
+      <td>Lecturer</td>
+      <td>Part-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/16/2021</td>
+      <td>88000.0</td>
+      <td>192000</td>
+      <td>3/31/2022</td>
+      <td>2021-01-16</td>
+      <td>88000.0</td>
+      <td>90464.000</td>
+      <td>92996.992000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>UT Austin</td>
+      <td>Marketing</td>
+      <td>Christopher Aarons</td>
+      <td>Assistant Professor of Instruction</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/1/2019</td>
+      <td>64711.0</td>
+      <td>192001</td>
+      <td>3/31/2022</td>
+      <td>2019-09-01</td>
+      <td>64711.0</td>
+      <td>66522.908</td>
+      <td>68385.549424</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>UT Austin</td>
+      <td>Computer Science</td>
+      <td>Scott J Aaronson</td>
+      <td>Professor</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/28/2016</td>
+      <td>251500.0</td>
+      <td>192002</td>
+      <td>3/31/2022</td>
+      <td>2016-04-28</td>
+      <td>251500.0</td>
+      <td>258542.000</td>
+      <td>265781.176000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>UT Austin</td>
+      <td>UTeach-Natural Sciences</td>
+      <td>Vivian Abagiu</td>
+      <td>Communications Coordinator</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>10/15/2015</td>
+      <td>72000.0</td>
+      <td>192003</td>
+      <td>3/31/2022</td>
+      <td>2015-10-15</td>
+      <td>72000.0</td>
+      <td>74016.000</td>
+      <td>76088.448000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>UT Austin</td>
+      <td>University of Texas Elementary School</td>
+      <td>Anna Marie Abalos</td>
+      <td>Food Preparation/Service Worker</td>
+      <td>Part-time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>8/19/2021</td>
+      <td>31200.0</td>
+      <td>192004</td>
+      <td>3/31/2022</td>
+      <td>2021-08-19</td>
+      <td>31200.0</td>
+      <td>32073.600</td>
+      <td>32971.660800</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>['Austin Community College',
+ 'Lamar University',
+ 'Lone Star Community College',
+ 'Sam Houston State University',
+ 'Sul Ross',
+ 'TAMU Commerce',
+ 'TAMU Prairie View',
+ 'Texas A&amp;M',
+ 'Texas A&amp;M Health Science Center',
+ 'Texas State University',
+ 'Texas Tech',
+ "Texas Woman's University",
+ 'UNT',
+ 'UT Arlington',
+ 'UT Austin',
+ 'UT Dallas',
+ 'UT Permian Basin',
+ 'UT San Antonio',
+ 'UT Tyler',
+ 'University of Houston',
+ 'University of Houston System']</code></pre>
+</div>
+</div>
+<section id="we-dont-have-all-the-tx-schools-but-this-is-great-lets-dig-around." class="level2">
+<h2 class="anchored" data-anchor-id="we-dont-have-all-the-tx-schools-but-this-is-great-lets-dig-around.">We don’t have all the TX schools, but this is great! Let’s dig around.</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Looking for 'lib'rary roles (without much discrimination) and Full-Time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>FT_lib <span class="op">=</span> uni_[uni_.job_title.<span class="bu">str</span>.contains(<span class="st">'Lib'</span>) <span class="op">&amp;</span> uni_.employment_time.<span class="bu">str</span>.contains(<span class="st">'Full'</span>)].copy(deep<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>FT_lib.sort_values(by<span class="op">=</span>[<span class="st">'race'</span>, <span class="st">'gender'</span>,<span class="st">'salary'</span>,], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>display(FT_lib.shape, FT_lib.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>(804, 15)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>74223</th>
+      <td>Sam Houston State University</td>
+      <td>Newton Gresham Library</td>
+      <td>Sarah I. Sellers</td>
+      <td>Library Associate</td>
+      <td>Full-Time</td>
+      <td>american indian or alaskan native</td>
+      <td>Female</td>
+      <td>11/1/2017</td>
+      <td>35040.00</td>
+      <td>184691</td>
+      <td>3/28/2022</td>
+      <td>2017-11-01</td>
+      <td>35040.00</td>
+      <td>36021.12000</td>
+      <td>37029.711360</td>
+    </tr>
+    <tr>
+      <th>406</th>
+      <td>Texas State University</td>
+      <td>University Libraries</td>
+      <td>Karen E Cowen</td>
+      <td>Library Assistant IV</td>
+      <td>Full-time</td>
+      <td>american indian or alaskan native</td>
+      <td>Female</td>
+      <td>8/21/2000</td>
+      <td>49128.60</td>
+      <td>74505</td>
+      <td>8/20/2021</td>
+      <td>2000-08-21</td>
+      <td>49128.60</td>
+      <td>50504.20080</td>
+      <td>51918.318422</td>
+    </tr>
+    <tr>
+      <th>59769</th>
+      <td>Texas Woman's University</td>
+      <td>Library</td>
+      <td>Julie Reed Sullivan</td>
+      <td>Librarian Digital Content</td>
+      <td>Full-Time</td>
+      <td>american indian or alaskan native</td>
+      <td>Female</td>
+      <td>2/22/1993</td>
+      <td>61055.00</td>
+      <td>211345</td>
+      <td>3/22/2022</td>
+      <td>1993-02-22</td>
+      <td>61055.00</td>
+      <td>62764.54000</td>
+      <td>64521.947120</td>
+    </tr>
+    <tr>
+      <th>418</th>
+      <td>Texas State University</td>
+      <td>University Libraries</td>
+      <td>Elizabeth Karen Cruces</td>
+      <td>Librarian</td>
+      <td>Full-time</td>
+      <td>american indian or alaskan native</td>
+      <td>Female</td>
+      <td>3/1/2021</td>
+      <td>62499.96</td>
+      <td>75561</td>
+      <td>8/20/2021</td>
+      <td>2021-03-01</td>
+      <td>62499.96</td>
+      <td>64249.95888</td>
+      <td>66048.957729</td>
+    </tr>
+    <tr>
+      <th>74696</th>
+      <td>Sam Houston State University</td>
+      <td>Newton Gresham Library</td>
+      <td>Akira Y. Wu</td>
+      <td>Library Assistant II</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>12/1/2020</td>
+      <td>33360.00</td>
+      <td>185163</td>
+      <td>3/28/2022</td>
+      <td>2020-12-01</td>
+      <td>33360.00</td>
+      <td>34294.08000</td>
+      <td>35254.314240</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Let's also check out data related roles, full-time</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>FT_data <span class="op">=</span> uni_[uni_.job_title.<span class="bu">str</span>.contains(<span class="st">'Data'</span>) <span class="op">&amp;</span> uni_.employment_time.<span class="bu">str</span>.contains(<span class="st">'Full'</span>)].copy(deep<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>FT_data.sort_values(by<span class="op">=</span>[<span class="st">'race'</span>, <span class="st">'gender'</span>,<span class="st">'salary'</span>,], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>display(FT_data.shape, FT_data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>(195, 15)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>74160</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>Victorria A. Saldana</td>
+      <td>Data Center Operations Spec I</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>11/1/2021</td>
+      <td>41616.00</td>
+      <td>184628</td>
+      <td>3/28/2022</td>
+      <td>2021-11-01</td>
+      <td>41616.00</td>
+      <td>42781.24800</td>
+      <td>43979.122944</td>
+    </tr>
+    <tr>
+      <th>1122</th>
+      <td>Texas A&amp;M</td>
+      <td>Dean</td>
+      <td>Xiaoping Li</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>7/2/2018</td>
+      <td>48502.44</td>
+      <td>155323</td>
+      <td>3/1/2022</td>
+      <td>2018-07-02</td>
+      <td>48502.44</td>
+      <td>49860.50832</td>
+      <td>51256.602553</td>
+    </tr>
+    <tr>
+      <th>1181</th>
+      <td>Texas A&amp;M</td>
+      <td>Tamu Libraries</td>
+      <td>Ethelyn V Mejia</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>6/1/2005</td>
+      <td>51188.16</td>
+      <td>156457</td>
+      <td>3/1/2022</td>
+      <td>2005-06-01</td>
+      <td>51188.16</td>
+      <td>52621.42848</td>
+      <td>54094.828477</td>
+    </tr>
+    <tr>
+      <th>57665</th>
+      <td>UT Austin</td>
+      <td>Governmental Affairs and Initiatives</td>
+      <td>Susan Yuanyuan Whitman</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/2/2008</td>
+      <td>55000.00</td>
+      <td>208164</td>
+      <td>3/31/2022</td>
+      <td>2008-09-02</td>
+      <td>55000.00</td>
+      <td>56540.00000</td>
+      <td>58123.120000</td>
+    </tr>
+    <tr>
+      <th>572</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Admissions</td>
+      <td>Liu Shi</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/1/2008</td>
+      <td>60009.96</td>
+      <td>147134</td>
+      <td>3/1/2022</td>
+      <td>2008-09-01</td>
+      <td>60009.96</td>
+      <td>61690.23888</td>
+      <td>63417.565569</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>FT_data.sort_values(by<span class="op">=</span>[<span class="st">'salary'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>58445</th>
+      <td>Texas Woman's University</td>
+      <td>Library</td>
+      <td>Dolores Aguilar</td>
+      <td>Data Entry Oper II</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>12/1/2006</td>
+      <td>24046.00</td>
+      <td>210021</td>
+      <td>3/22/2022</td>
+      <td>2006-12-01</td>
+      <td>24046.00</td>
+      <td>24719.28800</td>
+      <td>25411.428064</td>
+    </tr>
+    <tr>
+      <th>29916</th>
+      <td>Sul Ross</td>
+      <td>Student Support Services Department</td>
+      <td>Lisa Griffith</td>
+      <td>Data Tracking Admin Specialist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/25/2018</td>
+      <td>24293.00</td>
+      <td>62890</td>
+      <td>8/13/2020</td>
+      <td>2018-09-25</td>
+      <td>24293.00</td>
+      <td>24973.20400</td>
+      <td>25672.453712</td>
+    </tr>
+    <tr>
+      <th>30047</th>
+      <td>Sul Ross</td>
+      <td>Trio Talent Search</td>
+      <td>Stephanie Weintraut</td>
+      <td>Talent Search Data Spec/Sec</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>3/16/2020</td>
+      <td>24341.00</td>
+      <td>63214</td>
+      <td>8/13/2020</td>
+      <td>2020-03-16</td>
+      <td>24341.00</td>
+      <td>25022.54800</td>
+      <td>25723.179344</td>
+    </tr>
+    <tr>
+      <th>5369</th>
+      <td>UT Tyler</td>
+      <td>Admissions</td>
+      <td>Brittany Johnson</td>
+      <td>Admissions Data Spec I</td>
+      <td>Full-Time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>5/16/2013</td>
+      <td>30514.32</td>
+      <td>27456</td>
+      <td>7/29/2020</td>
+      <td>2013-05-16</td>
+      <td>30514.32</td>
+      <td>31368.72096</td>
+      <td>32247.045147</td>
+    </tr>
+    <tr>
+      <th>19931</th>
+      <td>Texas State University</td>
+      <td>Materials Mgmt &amp; Logistics</td>
+      <td>Jennifer Ann Mireles</td>
+      <td>Data Entry Operator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>5/10/2010</td>
+      <td>31985.76</td>
+      <td>75435</td>
+      <td>8/20/2021</td>
+      <td>2010-05-10</td>
+      <td>31985.76</td>
+      <td>32881.36128</td>
+      <td>33802.039396</td>
+    </tr>
+    <tr>
+      <th>14222</th>
+      <td>Sul Ross</td>
+      <td>Gear Up Grant</td>
+      <td>Monica Garcia</td>
+      <td>Gear Up Data Tracking Spec Alp</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Female</td>
+      <td>8/1/2006</td>
+      <td>32000.00</td>
+      <td>62848</td>
+      <td>8/13/2020</td>
+      <td>2006-08-01</td>
+      <td>32000.00</td>
+      <td>32896.00000</td>
+      <td>33817.088000</td>
+    </tr>
+    <tr>
+      <th>22052</th>
+      <td>UT Tyler</td>
+      <td>Admissions</td>
+      <td>April Bedan</td>
+      <td>Admissions Data Spec II</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>7/20/2011</td>
+      <td>32601.24</td>
+      <td>26983</td>
+      <td>7/29/2020</td>
+      <td>2011-07-20</td>
+      <td>32601.24</td>
+      <td>33514.07472</td>
+      <td>34452.468812</td>
+    </tr>
+    <tr>
+      <th>61611</th>
+      <td>UT San Antonio</td>
+      <td>ENROLLMENT OPERATIONS</td>
+      <td>Cameron Schmoker</td>
+      <td>Enrollment Data Mgmt OFCR I</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/18/2020</td>
+      <td>34000.00</td>
+      <td>112929</td>
+      <td>7/27/2021</td>
+      <td>2020-05-18</td>
+      <td>34000.00</td>
+      <td>34952.00000</td>
+      <td>35930.656000</td>
+    </tr>
+    <tr>
+      <th>43578</th>
+      <td>UT Tyler</td>
+      <td>Graduate Admissions</td>
+      <td>Genaro Tovar-Murillo</td>
+      <td>Data Specialist</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>8/22/2016</td>
+      <td>34680.00</td>
+      <td>28034</td>
+      <td>7/29/2020</td>
+      <td>2016-08-22</td>
+      <td>34680.00</td>
+      <td>35651.04000</td>
+      <td>36649.269120</td>
+    </tr>
+    <tr>
+      <th>23670</th>
+      <td>University of Houston</td>
+      <td>Human Resources</td>
+      <td>Haloise Redding</td>
+      <td>HR Data Control Clerk</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>12/2/2019</td>
+      <td>35297.60</td>
+      <td>123517</td>
+      <td>2/18/2022</td>
+      <td>2019-12-02</td>
+      <td>35297.60</td>
+      <td>36285.93280</td>
+      <td>37301.938918</td>
+    </tr>
+    <tr>
+      <th>14179</th>
+      <td>UT San Antonio</td>
+      <td>ENROLLMENT OPERATIONS</td>
+      <td>Belinda Perez</td>
+      <td>Enrollment Data Mgmt OFCR II</td>
+      <td>Full-time</td>
+      <td>not provided</td>
+      <td>Female</td>
+      <td>12/1/2015</td>
+      <td>36000.00</td>
+      <td>112478</td>
+      <td>7/27/2021</td>
+      <td>2015-12-01</td>
+      <td>36000.00</td>
+      <td>37008.00000</td>
+      <td>38044.224000</td>
+    </tr>
+    <tr>
+      <th>8079</th>
+      <td>UT Permian Basin</td>
+      <td>Admissions</td>
+      <td>Lina Illan</td>
+      <td>Admissions Data Specialist</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>3/18/2019</td>
+      <td>37000.00</td>
+      <td>35717</td>
+      <td>8/3/2020</td>
+      <td>2019-03-18</td>
+      <td>37000.00</td>
+      <td>38036.00000</td>
+      <td>39101.008000</td>
+    </tr>
+    <tr>
+      <th>74224</th>
+      <td>Sam Houston State University</td>
+      <td>Public Safety Services</td>
+      <td>Carrie L. Seltz</td>
+      <td>Specialist I- Parking Data Sp</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>7/9/2018</td>
+      <td>37500.00</td>
+      <td>184692</td>
+      <td>3/28/2022</td>
+      <td>2018-07-09</td>
+      <td>37500.00</td>
+      <td>38550.00000</td>
+      <td>39629.400000</td>
+    </tr>
+    <tr>
+      <th>79775</th>
+      <td>Austin Community College</td>
+      <td>Dean Health Sciences</td>
+      <td>David K Gustafson</td>
+      <td>Coordinator, Data Management</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>7/1/2019</td>
+      <td>38237.00</td>
+      <td>191218</td>
+      <td>3/29/2022</td>
+      <td>2019-07-01</td>
+      <td>38237.00</td>
+      <td>39307.63600</td>
+      <td>40408.249808</td>
+    </tr>
+    <tr>
+      <th>53498</th>
+      <td>UT Tyler</td>
+      <td>Career Success</td>
+      <td>Christopher Barrett</td>
+      <td>Data Specialist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/19/2018</td>
+      <td>38250.00</td>
+      <td>26970</td>
+      <td>7/29/2020</td>
+      <td>2018-11-19</td>
+      <td>38250.00</td>
+      <td>39321.00000</td>
+      <td>40421.988000</td>
+    </tr>
+    <tr>
+      <th>23425</th>
+      <td>UT Permian Basin</td>
+      <td>Admissions</td>
+      <td>Kathryn Griffin</td>
+      <td>Admissions Data Specialist I</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>12/14/2015</td>
+      <td>39270.00</td>
+      <td>35715</td>
+      <td>8/3/2020</td>
+      <td>2015-12-14</td>
+      <td>39270.00</td>
+      <td>40369.56000</td>
+      <td>41499.907680</td>
+    </tr>
+    <tr>
+      <th>54764</th>
+      <td>UT Permian Basin</td>
+      <td>Admissions</td>
+      <td>Jonathan Marrs</td>
+      <td>Admissions Data Specialist I</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/3/2013</td>
+      <td>39270.00</td>
+      <td>35719</td>
+      <td>8/3/2020</td>
+      <td>2013-09-03</td>
+      <td>39270.00</td>
+      <td>40369.56000</td>
+      <td>41499.907680</td>
+    </tr>
+    <tr>
+      <th>53721</th>
+      <td>UT Tyler</td>
+      <td>University Advancement</td>
+      <td>Ian Ostmeyer</td>
+      <td>Data Specialist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/13/2017</td>
+      <td>39535.20</td>
+      <td>27738</td>
+      <td>7/29/2020</td>
+      <td>2017-11-13</td>
+      <td>39535.20</td>
+      <td>40642.18560</td>
+      <td>41780.166797</td>
+    </tr>
+    <tr>
+      <th>45452</th>
+      <td>Sam Houston State University</td>
+      <td>Div Teacher Education</td>
+      <td>Rachel R. Bennett</td>
+      <td>Ed Prep Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/16/2013</td>
+      <td>39936.00</td>
+      <td>182771</td>
+      <td>3/28/2022</td>
+      <td>2013-08-16</td>
+      <td>39936.00</td>
+      <td>41054.20800</td>
+      <td>42203.725824</td>
+    </tr>
+    <tr>
+      <th>44773</th>
+      <td>UNT</td>
+      <td>Facilities-Gen</td>
+      <td>Tiffanie Trueblood</td>
+      <td>Database Coordinator</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/23/2017</td>
+      <td>40635.24</td>
+      <td>182099</td>
+      <td>3/29/2022</td>
+      <td>2017-01-23</td>
+      <td>40635.24</td>
+      <td>41773.02672</td>
+      <td>42942.671468</td>
+    </tr>
+    <tr>
+      <th>59364</th>
+      <td>Texas Woman's University</td>
+      <td>Nursing DEN</td>
+      <td>Enmaline Lizardo</td>
+      <td>Nursing Data &amp; Admissions Mgr</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>8/19/2018</td>
+      <td>41124.00</td>
+      <td>210940</td>
+      <td>3/22/2022</td>
+      <td>2018-08-19</td>
+      <td>41124.00</td>
+      <td>42275.47200</td>
+      <td>43459.185216</td>
+    </tr>
+    <tr>
+      <th>58180</th>
+      <td>UT Austin</td>
+      <td>ITS Networking</td>
+      <td>Gregory Eugene Young</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>6/17/2021</td>
+      <td>41600.00</td>
+      <td>208678</td>
+      <td>3/31/2022</td>
+      <td>2021-06-17</td>
+      <td>41600.00</td>
+      <td>42764.80000</td>
+      <td>43962.214400</td>
+    </tr>
+    <tr>
+      <th>53671</th>
+      <td>UT Tyler</td>
+      <td>Institutional Research</td>
+      <td>Kevin McDaniel</td>
+      <td>Data Specialist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/1/2015</td>
+      <td>41616.00</td>
+      <td>27619</td>
+      <td>7/29/2020</td>
+      <td>2015-04-01</td>
+      <td>41616.00</td>
+      <td>42781.24800</td>
+      <td>43979.122944</td>
+    </tr>
+    <tr>
+      <th>74160</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>Victorria A. Saldana</td>
+      <td>Data Center Operations Spec I</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>11/1/2021</td>
+      <td>41616.00</td>
+      <td>184628</td>
+      <td>3/28/2022</td>
+      <td>2021-11-01</td>
+      <td>41616.00</td>
+      <td>42781.24800</td>
+      <td>43979.122944</td>
+    </tr>
+    <tr>
+      <th>58583</th>
+      <td>Texas Woman's University</td>
+      <td>College of Professional Education</td>
+      <td>Renee Blanchard</td>
+      <td>Coord Data Systems</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/25/2008</td>
+      <td>41770.00</td>
+      <td>210159</td>
+      <td>3/22/2022</td>
+      <td>2008-08-25</td>
+      <td>41770.00</td>
+      <td>42939.56000</td>
+      <td>44141.867680</td>
+    </tr>
+    <tr>
+      <th>62974</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>John M. Hancock</td>
+      <td>Data Center Operations Spec I</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/9/2021</td>
+      <td>42264.00</td>
+      <td>183521</td>
+      <td>3/28/2022</td>
+      <td>2021-11-09</td>
+      <td>42264.00</td>
+      <td>43447.39200</td>
+      <td>44663.918976</td>
+    </tr>
+    <tr>
+      <th>63045</th>
+      <td>Sam Houston State University</td>
+      <td>Proposal Administration</td>
+      <td>Sydney R. Hereford</td>
+      <td>Intrnl Data Collect &amp; Analytic</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/1/2021</td>
+      <td>42408.00</td>
+      <td>183592</td>
+      <td>3/28/2022</td>
+      <td>2021-09-01</td>
+      <td>42408.00</td>
+      <td>43595.42400</td>
+      <td>44816.095872</td>
+    </tr>
+    <tr>
+      <th>76195</th>
+      <td>Lone Star Community College</td>
+      <td>VP Instruction</td>
+      <td>Abraham Liandro</td>
+      <td>Coord I, Data Entry Title III</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Male</td>
+      <td>1/6/2022</td>
+      <td>42861.00</td>
+      <td>186663</td>
+      <td>3/24/2022</td>
+      <td>2022-01-06</td>
+      <td>42861.00</td>
+      <td>44061.10800</td>
+      <td>45294.819024</td>
+    </tr>
+    <tr>
+      <th>63147</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>Kyle D. Huffman</td>
+      <td>Data Center Operations Spec I</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>10/16/2021</td>
+      <td>43224.00</td>
+      <td>183694</td>
+      <td>3/28/2022</td>
+      <td>2021-10-16</td>
+      <td>43224.00</td>
+      <td>44434.27200</td>
+      <td>45678.431616</td>
+    </tr>
+    <tr>
+      <th>73994</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>Vanessa J. Pridgen</td>
+      <td>Data Center Operations Spec I</td>
+      <td>Full-Time</td>
+      <td>native hawaiian or other pacific islander</td>
+      <td>Female</td>
+      <td>11/1/2021</td>
+      <td>43296.00</td>
+      <td>184462</td>
+      <td>3/28/2022</td>
+      <td>2021-11-01</td>
+      <td>43296.00</td>
+      <td>44508.28800</td>
+      <td>45754.520064</td>
+    </tr>
+    <tr>
+      <th>78658</th>
+      <td>Austin Community College</td>
+      <td>Cynthia Y La</td>
+      <td>Dustin A Jaquez</td>
+      <td>Coordinator, AE Enrollment Data</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>2/10/2020</td>
+      <td>43656.00</td>
+      <td>190101</td>
+      <td>3/29/2022</td>
+      <td>2020-02-10</td>
+      <td>43656.00</td>
+      <td>44878.36800</td>
+      <td>46134.962304</td>
+    </tr>
+    <tr>
+      <th>29803</th>
+      <td>UT San Antonio</td>
+      <td>ENROLLMENT SRVCS MKT &amp; COMM</td>
+      <td>Paige Petersen</td>
+      <td>CRM Data Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/1/2020</td>
+      <td>43703.00</td>
+      <td>112507</td>
+      <td>7/27/2021</td>
+      <td>2020-01-01</td>
+      <td>43703.00</td>
+      <td>44926.68400</td>
+      <td>46184.631152</td>
+    </tr>
+    <tr>
+      <th>29065</th>
+      <td>UT San Antonio</td>
+      <td>ENROLLMENT SRVCS MKT &amp; COMM</td>
+      <td>Johnna Arnott</td>
+      <td>CRM Data Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>3/15/2017</td>
+      <td>43703.00</td>
+      <td>110180</td>
+      <td>7/27/2021</td>
+      <td>2017-03-15</td>
+      <td>43703.00</td>
+      <td>44926.68400</td>
+      <td>46184.631152</td>
+    </tr>
+    <tr>
+      <th>40152</th>
+      <td>Texas A&amp;M</td>
+      <td>Tamu Libraries</td>
+      <td>Eric N Pennington</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Male</td>
+      <td>2/9/2015</td>
+      <td>43949.64</td>
+      <td>156481</td>
+      <td>3/1/2022</td>
+      <td>2015-02-09</td>
+      <td>43949.64</td>
+      <td>45180.22992</td>
+      <td>46445.276358</td>
+    </tr>
+    <tr>
+      <th>3109</th>
+      <td>UT Austin</td>
+      <td>ITS Networking</td>
+      <td>Austen Berley</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/19/2019</td>
+      <td>45000.00</td>
+      <td>193200</td>
+      <td>3/31/2022</td>
+      <td>2019-08-19</td>
+      <td>45000.00</td>
+      <td>46260.00000</td>
+      <td>47555.280000</td>
+    </tr>
+    <tr>
+      <th>60114</th>
+      <td>Texas Woman's University</td>
+      <td>Office of Admissions Processing</td>
+      <td>Caitlin Webber</td>
+      <td>Asst Dir Data Quality</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/28/2006</td>
+      <td>46310.00</td>
+      <td>211690</td>
+      <td>3/22/2022</td>
+      <td>2006-08-28</td>
+      <td>46310.00</td>
+      <td>47606.68000</td>
+      <td>48939.667040</td>
+    </tr>
+    <tr>
+      <th>74205</th>
+      <td>Sam Houston State University</td>
+      <td>Advancement Services</td>
+      <td>Shelda B. Scott</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/1/2020</td>
+      <td>46344.00</td>
+      <td>184673</td>
+      <td>3/28/2022</td>
+      <td>2020-09-01</td>
+      <td>46344.00</td>
+      <td>47641.63200</td>
+      <td>48975.597696</td>
+    </tr>
+    <tr>
+      <th>79163</th>
+      <td>Austin Community College</td>
+      <td>Information Technology</td>
+      <td>Edwin G Salas-Zepeda</td>
+      <td>Analyst, IT Data Security</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>1/29/2021</td>
+      <td>46432.00</td>
+      <td>190606</td>
+      <td>3/29/2022</td>
+      <td>2021-01-29</td>
+      <td>46432.00</td>
+      <td>47732.09600</td>
+      <td>49068.594688</td>
+    </tr>
+    <tr>
+      <th>78172</th>
+      <td>Austin Community College</td>
+      <td>Dean, Continuing Education</td>
+      <td>Jacob V Williamson</td>
+      <td>Coordinator, Data Management</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/8/2018</td>
+      <td>46931.00</td>
+      <td>189615</td>
+      <td>3/29/2022</td>
+      <td>2018-01-08</td>
+      <td>46931.00</td>
+      <td>48245.06800</td>
+      <td>49595.929904</td>
+    </tr>
+    <tr>
+      <th>27788</th>
+      <td>UT Austin</td>
+      <td>College of Liberal Arts</td>
+      <td>Timothy Ralph Matthews</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/6/2017</td>
+      <td>47150.00</td>
+      <td>201537</td>
+      <td>3/31/2022</td>
+      <td>2017-11-06</td>
+      <td>47150.00</td>
+      <td>48470.20000</td>
+      <td>49827.365600</td>
+    </tr>
+    <tr>
+      <th>1122</th>
+      <td>Texas A&amp;M</td>
+      <td>Dean</td>
+      <td>Xiaoping Li</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>7/2/2018</td>
+      <td>48502.44</td>
+      <td>155323</td>
+      <td>3/1/2022</td>
+      <td>2018-07-02</td>
+      <td>48502.44</td>
+      <td>49860.50832</td>
+      <td>51256.602553</td>
+    </tr>
+    <tr>
+      <th>58535</th>
+      <td>Texas Woman's University</td>
+      <td>Library</td>
+      <td>Virginia Bartush</td>
+      <td>Librarian Data Assessment &amp; Org Mgmt</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>3/15/2016</td>
+      <td>48540.00</td>
+      <td>210111</td>
+      <td>3/22/2022</td>
+      <td>2016-03-15</td>
+      <td>48540.00</td>
+      <td>49899.12000</td>
+      <td>51296.295360</td>
+    </tr>
+    <tr>
+      <th>2140</th>
+      <td>UT Austin</td>
+      <td>CIO/ITS COO Office</td>
+      <td>Scarlett M Angell</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/3/2005</td>
+      <td>49387.00</td>
+      <td>192458</td>
+      <td>3/31/2022</td>
+      <td>2005-01-03</td>
+      <td>49387.00</td>
+      <td>50769.83600</td>
+      <td>52191.391408</td>
+    </tr>
+    <tr>
+      <th>13325</th>
+      <td>UNT</td>
+      <td>Parking Services</td>
+      <td>Christian Michael Bridge</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>8/1/2017</td>
+      <td>49920.00</td>
+      <td>178457</td>
+      <td>3/29/2022</td>
+      <td>2017-08-01</td>
+      <td>49920.00</td>
+      <td>51317.76000</td>
+      <td>52754.657280</td>
+    </tr>
+    <tr>
+      <th>77532</th>
+      <td>Texas Woman's University</td>
+      <td>University Advancement</td>
+      <td>Jessica Wilson</td>
+      <td>Coord Data Syst &amp; Research</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/31/2022</td>
+      <td>50000.00</td>
+      <td>211747</td>
+      <td>3/22/2022</td>
+      <td>2022-01-31</td>
+      <td>50000.00</td>
+      <td>51400.00000</td>
+      <td>52839.200000</td>
+    </tr>
+    <tr>
+      <th>79911</th>
+      <td>Austin Community College</td>
+      <td>Human Resources</td>
+      <td>Mayra R Briones</td>
+      <td>Coordinator, Benefits Data</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>9/13/2021</td>
+      <td>50155.00</td>
+      <td>191354</td>
+      <td>3/29/2022</td>
+      <td>2021-09-13</td>
+      <td>50155.00</td>
+      <td>51559.34000</td>
+      <td>53003.001520</td>
+    </tr>
+    <tr>
+      <th>56477</th>
+      <td>UT Austin</td>
+      <td>ITS Networking</td>
+      <td>Jody Thomas</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/12/2016</td>
+      <td>50193.83</td>
+      <td>206977</td>
+      <td>3/31/2022</td>
+      <td>2016-09-12</td>
+      <td>50193.83</td>
+      <td>51599.25724</td>
+      <td>53044.036443</td>
+    </tr>
+    <tr>
+      <th>43730</th>
+      <td>Texas A&amp;M</td>
+      <td>Student Life Studies</td>
+      <td>Robert M Tirso</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>9/1/2015</td>
+      <td>50600.04</td>
+      <td>159485</td>
+      <td>3/1/2022</td>
+      <td>2015-09-01</td>
+      <td>50600.04</td>
+      <td>52016.84112</td>
+      <td>53473.312671</td>
+    </tr>
+    <tr>
+      <th>32369</th>
+      <td>UNT</td>
+      <td>University Library-Gen</td>
+      <td>Christopher James Hergert</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>3/11/2019</td>
+      <td>50689.32</td>
+      <td>179730</td>
+      <td>3/29/2022</td>
+      <td>2019-03-11</td>
+      <td>50689.32</td>
+      <td>52108.62096</td>
+      <td>53567.662347</td>
+    </tr>
+    <tr>
+      <th>74001</th>
+      <td>Sam Houston State University</td>
+      <td>IT ISS - Data Center</td>
+      <td>Paul B. Provost</td>
+      <td>Data Center Operations Spec II</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/1/2021</td>
+      <td>51000.00</td>
+      <td>184469</td>
+      <td>3/28/2022</td>
+      <td>2021-04-01</td>
+      <td>51000.00</td>
+      <td>52428.00000</td>
+      <td>53895.984000</td>
+    </tr>
+    <tr>
+      <th>1181</th>
+      <td>Texas A&amp;M</td>
+      <td>Tamu Libraries</td>
+      <td>Ethelyn V Mejia</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>6/1/2005</td>
+      <td>51188.16</td>
+      <td>156457</td>
+      <td>3/1/2022</td>
+      <td>2005-06-01</td>
+      <td>51188.16</td>
+      <td>52621.42848</td>
+      <td>54094.828477</td>
+    </tr>
+    <tr>
+      <th>49153</th>
+      <td>Texas A&amp;M</td>
+      <td>Tamu Innovation Partners</td>
+      <td>ERIC RIDDLE</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/21/2020</td>
+      <td>51461.88</td>
+      <td>157188</td>
+      <td>3/1/2022</td>
+      <td>2020-01-21</td>
+      <td>51461.88</td>
+      <td>52902.81264</td>
+      <td>54384.091394</td>
+    </tr>
+    <tr>
+      <th>78856</th>
+      <td>Austin Community College</td>
+      <td>Instl. Research &amp; Analytics</td>
+      <td>Judi Lynn Kelly</td>
+      <td>Specialist, Data</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/31/2015</td>
+      <td>51482.00</td>
+      <td>190299</td>
+      <td>3/29/2022</td>
+      <td>2015-08-31</td>
+      <td>51482.00</td>
+      <td>52923.49600</td>
+      <td>54405.353888</td>
+    </tr>
+    <tr>
+      <th>14797</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Data Research Services</td>
+      <td>Stefanie L Davidson</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/13/2007</td>
+      <td>51554.76</td>
+      <td>147392</td>
+      <td>3/1/2022</td>
+      <td>2007-09-13</td>
+      <td>51554.76</td>
+      <td>52998.29328</td>
+      <td>54482.245492</td>
+    </tr>
+    <tr>
+      <th>44927</th>
+      <td>UNT</td>
+      <td>Facilities-Gen</td>
+      <td>Ellen Michele Wall</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>5/16/2016</td>
+      <td>51999.96</td>
+      <td>182252</td>
+      <td>3/29/2022</td>
+      <td>2016-05-16</td>
+      <td>51999.96</td>
+      <td>53455.95888</td>
+      <td>54952.725729</td>
+    </tr>
+    <tr>
+      <th>13000</th>
+      <td>UNT</td>
+      <td>DSI-Clear</td>
+      <td>Audon Gilbert Archibald</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>two or more races</td>
+      <td>Male</td>
+      <td>6/28/2021</td>
+      <td>52000.00</td>
+      <td>178133</td>
+      <td>3/29/2022</td>
+      <td>2021-06-28</td>
+      <td>52000.00</td>
+      <td>53456.00000</td>
+      <td>54952.768000</td>
+    </tr>
+    <tr>
+      <th>46402</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Admissions</td>
+      <td>John R Burdick</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>12/9/2019</td>
+      <td>52100.04</td>
+      <td>147079</td>
+      <td>3/1/2022</td>
+      <td>2019-12-09</td>
+      <td>52100.04</td>
+      <td>53558.84112</td>
+      <td>55058.488671</td>
+    </tr>
+    <tr>
+      <th>21144</th>
+      <td>TAMU Commerce</td>
+      <td>Graduate Studies &amp; Research</td>
+      <td>Kimberly K Betterton</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/29/2013</td>
+      <td>52160.00</td>
+      <td>115430</td>
+      <td>2/28/2022</td>
+      <td>2013-01-29</td>
+      <td>52160.00</td>
+      <td>53620.48000</td>
+      <td>55121.853440</td>
+    </tr>
+    <tr>
+      <th>41929</th>
+      <td>UT Austin</td>
+      <td>ITS University Data Center</td>
+      <td>Damian Robbins</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/20/2018</td>
+      <td>52250.00</td>
+      <td>204703</td>
+      <td>3/31/2022</td>
+      <td>2018-08-20</td>
+      <td>52250.00</td>
+      <td>53713.00000</td>
+      <td>55216.964000</td>
+    </tr>
+    <tr>
+      <th>12366</th>
+      <td>UT Austin</td>
+      <td>ITS Networking</td>
+      <td>David Garza</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>10/6/2010</td>
+      <td>52498.00</td>
+      <td>197123</td>
+      <td>3/31/2022</td>
+      <td>2010-10-06</td>
+      <td>52498.00</td>
+      <td>53967.94400</td>
+      <td>55479.046432</td>
+    </tr>
+    <tr>
+      <th>13010</th>
+      <td>UNT</td>
+      <td>Education-Ed Prep</td>
+      <td>Alyssa Caroline Armstrong</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/21/2015</td>
+      <td>53299.68</td>
+      <td>178143</td>
+      <td>3/29/2022</td>
+      <td>2015-09-21</td>
+      <td>53299.68</td>
+      <td>54792.07104</td>
+      <td>56326.249029</td>
+    </tr>
+    <tr>
+      <th>28300</th>
+      <td>UT Austin</td>
+      <td>University Development Office</td>
+      <td>Eva Mikes</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/19/2018</td>
+      <td>54200.00</td>
+      <td>202049</td>
+      <td>3/31/2022</td>
+      <td>2018-09-19</td>
+      <td>54200.00</td>
+      <td>55717.60000</td>
+      <td>57277.692800</td>
+    </tr>
+    <tr>
+      <th>13413</th>
+      <td>UNT</td>
+      <td>University Library-Gen</td>
+      <td>Kristi Ann Burns</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>3/16/2015</td>
+      <td>54377.52</td>
+      <td>178545</td>
+      <td>3/29/2022</td>
+      <td>2015-03-16</td>
+      <td>54377.52</td>
+      <td>55900.09056</td>
+      <td>57465.293096</td>
+    </tr>
+    <tr>
+      <th>55843</th>
+      <td>UT Austin</td>
+      <td>College of Natural Sciences</td>
+      <td>Donald W Spencer</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>7/1/2013</td>
+      <td>54900.00</td>
+      <td>206345</td>
+      <td>3/31/2022</td>
+      <td>2013-07-01</td>
+      <td>54900.00</td>
+      <td>56437.20000</td>
+      <td>58017.441600</td>
+    </tr>
+    <tr>
+      <th>57665</th>
+      <td>UT Austin</td>
+      <td>Governmental Affairs and Initiatives</td>
+      <td>Susan Yuanyuan Whitman</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/2/2008</td>
+      <td>55000.00</td>
+      <td>208164</td>
+      <td>3/31/2022</td>
+      <td>2008-09-02</td>
+      <td>55000.00</td>
+      <td>56540.00000</td>
+      <td>58123.120000</td>
+    </tr>
+    <tr>
+      <th>55372</th>
+      <td>UT Austin</td>
+      <td>Governmental Affairs and Initiatives</td>
+      <td>Sumod Ravindra Shinde</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>1/25/2021</td>
+      <td>55350.00</td>
+      <td>205874</td>
+      <td>3/31/2022</td>
+      <td>2021-01-25</td>
+      <td>55350.00</td>
+      <td>56899.80000</td>
+      <td>58492.994400</td>
+    </tr>
+    <tr>
+      <th>79791</th>
+      <td>Austin Community College</td>
+      <td>E3 Alliance</td>
+      <td>Rodrigo M Lopez</td>
+      <td>Analyst, Data - E3 Alliance</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>9/1/2019</td>
+      <td>55702.00</td>
+      <td>191234</td>
+      <td>3/29/2022</td>
+      <td>2019-09-01</td>
+      <td>55702.00</td>
+      <td>57261.65600</td>
+      <td>58864.982368</td>
+    </tr>
+    <tr>
+      <th>45325</th>
+      <td>Sam Houston State University</td>
+      <td>Human Resources</td>
+      <td>Jonathan R. Alvarez</td>
+      <td>Coordinator II Data Analysis</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>5/16/2021</td>
+      <td>56100.00</td>
+      <td>182646</td>
+      <td>3/28/2022</td>
+      <td>2021-05-16</td>
+      <td>56100.00</td>
+      <td>57670.80000</td>
+      <td>59285.582400</td>
+    </tr>
+    <tr>
+      <th>45105</th>
+      <td>UNT</td>
+      <td>Student Services Assessment</td>
+      <td>Samuel Kyle Williamson</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/8/2016</td>
+      <td>56160.00</td>
+      <td>182427</td>
+      <td>3/29/2022</td>
+      <td>2016-08-08</td>
+      <td>56160.00</td>
+      <td>57732.48000</td>
+      <td>59348.989440</td>
+    </tr>
+    <tr>
+      <th>55822</th>
+      <td>UT Austin</td>
+      <td>ITS University Data Center</td>
+      <td>Jonathan Chad Spear</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/1/2014</td>
+      <td>56223.00</td>
+      <td>206324</td>
+      <td>3/31/2022</td>
+      <td>2014-05-01</td>
+      <td>56223.00</td>
+      <td>57797.24400</td>
+      <td>59415.566832</td>
+    </tr>
+    <tr>
+      <th>59090</th>
+      <td>Texas Woman's University</td>
+      <td>University Advancement</td>
+      <td>Ashley Hanisko</td>
+      <td>Mgr Data Syst &amp; Research</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/1/2017</td>
+      <td>56650.00</td>
+      <td>210666</td>
+      <td>3/22/2022</td>
+      <td>2017-08-01</td>
+      <td>56650.00</td>
+      <td>58236.20000</td>
+      <td>59866.813600</td>
+    </tr>
+    <tr>
+      <th>44034</th>
+      <td>UNT</td>
+      <td>Space Mgmt &amp; Planning</td>
+      <td>Alaina-Rose Replogle</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>3/1/2019</td>
+      <td>57153.84</td>
+      <td>181364</td>
+      <td>3/29/2022</td>
+      <td>2019-03-01</td>
+      <td>57153.84</td>
+      <td>58754.14752</td>
+      <td>60399.263651</td>
+    </tr>
+    <tr>
+      <th>63371</th>
+      <td>Sam Houston State University</td>
+      <td>SHSU Online Operations</td>
+      <td>Kevin J. Leach</td>
+      <td>Database Admin III-SHSU Online</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/18/2022</td>
+      <td>58008.00</td>
+      <td>183918</td>
+      <td>3/28/2022</td>
+      <td>2022-01-18</td>
+      <td>58008.00</td>
+      <td>59632.22400</td>
+      <td>61301.926272</td>
+    </tr>
+    <tr>
+      <th>43639</th>
+      <td>Texas A&amp;M</td>
+      <td>Vp For Facilities</td>
+      <td>Dominic Ramos</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>8/6/2019</td>
+      <td>58240.08</td>
+      <td>157746</td>
+      <td>3/1/2022</td>
+      <td>2019-08-06</td>
+      <td>58240.08</td>
+      <td>59870.80224</td>
+      <td>61547.184703</td>
+    </tr>
+    <tr>
+      <th>34008</th>
+      <td>UT Austin</td>
+      <td>ITS Networking</td>
+      <td>Donald R Newcomb</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>3/20/1995</td>
+      <td>58905.18</td>
+      <td>202787</td>
+      <td>3/31/2022</td>
+      <td>1995-03-20</td>
+      <td>58905.18</td>
+      <td>60554.52504</td>
+      <td>62250.051741</td>
+    </tr>
+    <tr>
+      <th>10142</th>
+      <td>UT Austin</td>
+      <td>Inst Reporting, Research and Info Systems</td>
+      <td>Cheyenne Elliott</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>two or more races</td>
+      <td>Female</td>
+      <td>1/18/2022</td>
+      <td>59000.00</td>
+      <td>196165</td>
+      <td>3/31/2022</td>
+      <td>2022-01-18</td>
+      <td>59000.00</td>
+      <td>60652.00000</td>
+      <td>62350.256000</td>
+    </tr>
+    <tr>
+      <th>73058</th>
+      <td>Lamar University</td>
+      <td>IT Data Security</td>
+      <td>Alex Ohene</td>
+      <td>Info Security Analyst Data Ris</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Not Provided</td>
+      <td>3/16/2020</td>
+      <td>59225.00</td>
+      <td>164873</td>
+      <td>2/28/2022</td>
+      <td>2020-03-16</td>
+      <td>59225.00</td>
+      <td>60883.30000</td>
+      <td>62588.032400</td>
+    </tr>
+    <tr>
+      <th>56856</th>
+      <td>UT Austin</td>
+      <td>University Development Office</td>
+      <td>Travis Tyler</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/24/2022</td>
+      <td>60000.00</td>
+      <td>207356</td>
+      <td>3/31/2022</td>
+      <td>2022-01-24</td>
+      <td>60000.00</td>
+      <td>61680.00000</td>
+      <td>63407.040000</td>
+    </tr>
+    <tr>
+      <th>4518</th>
+      <td>Texas A&amp;M</td>
+      <td>Tamu Libraries</td>
+      <td>Amarachi C Okeugo</td>
+      <td>Database Administrator I</td>
+      <td>Full-Time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>6/1/2021</td>
+      <td>60000.00</td>
+      <td>156472</td>
+      <td>3/1/2022</td>
+      <td>2021-06-01</td>
+      <td>60000.00</td>
+      <td>61680.00000</td>
+      <td>63407.040000</td>
+    </tr>
+    <tr>
+      <th>39531</th>
+      <td>UT Austin</td>
+      <td>University Development Office</td>
+      <td>Alphonso Porras</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>1/24/2022</td>
+      <td>60000.00</td>
+      <td>203947</td>
+      <td>3/31/2022</td>
+      <td>2022-01-24</td>
+      <td>60000.00</td>
+      <td>61680.00000</td>
+      <td>63407.040000</td>
+    </tr>
+    <tr>
+      <th>572</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Admissions</td>
+      <td>Liu Shi</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/1/2008</td>
+      <td>60009.96</td>
+      <td>147134</td>
+      <td>3/1/2022</td>
+      <td>2008-09-01</td>
+      <td>60009.96</td>
+      <td>61690.23888</td>
+      <td>63417.565569</td>
+    </tr>
+    <tr>
+      <th>2843</th>
+      <td>Texas A&amp;M</td>
+      <td>Human Resources</td>
+      <td>Mallika Natarajan</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>7/1/1999</td>
+      <td>60685.80</td>
+      <td>157795</td>
+      <td>3/1/2022</td>
+      <td>1999-07-01</td>
+      <td>60685.80</td>
+      <td>62385.00240</td>
+      <td>64131.782467</td>
+    </tr>
+    <tr>
+      <th>30106</th>
+      <td>Texas A&amp;M</td>
+      <td>Vp For Facilities</td>
+      <td>Ginger L Urso</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>10/12/2011</td>
+      <td>60886.08</td>
+      <td>157747</td>
+      <td>3/1/2022</td>
+      <td>2011-10-12</td>
+      <td>60886.08</td>
+      <td>62590.89024</td>
+      <td>64343.435167</td>
+    </tr>
+    <tr>
+      <th>31641</th>
+      <td>Texas A&amp;M Health Science Center</td>
+      <td>Rural And Community Health Institute</td>
+      <td>Lori G Fry</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>10/3/2016</td>
+      <td>61256.04</td>
+      <td>161408</td>
+      <td>3/1/2022</td>
+      <td>2016-10-03</td>
+      <td>61256.04</td>
+      <td>62971.20912</td>
+      <td>64734.402975</td>
+    </tr>
+    <tr>
+      <th>2069</th>
+      <td>University of Houston</td>
+      <td>Data Science Institute</td>
+      <td>Ishita Sharma</td>
+      <td>Data Scientist, HPE DSI</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>7/27/2020</td>
+      <td>61819.08</td>
+      <td>123982</td>
+      <td>2/18/2022</td>
+      <td>2020-07-27</td>
+      <td>61819.08</td>
+      <td>63550.01424</td>
+      <td>65329.414639</td>
+    </tr>
+    <tr>
+      <th>41454</th>
+      <td>UT Austin</td>
+      <td>Utilities, Energy, and Facilities Management</td>
+      <td>ABEL Ramirez Maldonado</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>7/15/2019</td>
+      <td>62060.00</td>
+      <td>204229</td>
+      <td>3/31/2022</td>
+      <td>2019-07-15</td>
+      <td>62060.00</td>
+      <td>63797.68000</td>
+      <td>65584.015040</td>
+    </tr>
+    <tr>
+      <th>52641</th>
+      <td>TAMU Commerce</td>
+      <td>Human Resources Management</td>
+      <td>David A Giles</td>
+      <td>Employee Relations Administrator &amp; Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/8/2015</td>
+      <td>62500.00</td>
+      <td>115693</td>
+      <td>2/28/2022</td>
+      <td>2015-09-08</td>
+      <td>62500.00</td>
+      <td>64250.00000</td>
+      <td>66049.000000</td>
+    </tr>
+    <tr>
+      <th>56826</th>
+      <td>UT Austin</td>
+      <td>Construction Industry Institute</td>
+      <td>Cori Turner</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>1/27/2015</td>
+      <td>62510.00</td>
+      <td>207326</td>
+      <td>3/31/2022</td>
+      <td>2015-01-27</td>
+      <td>62510.00</td>
+      <td>64260.28000</td>
+      <td>66059.567840</td>
+    </tr>
+    <tr>
+      <th>74504</th>
+      <td>Sam Houston State University</td>
+      <td>IT Enterprise Services</td>
+      <td>Prathyusha Uduthalapally</td>
+      <td>ERP Database Admin III</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Female</td>
+      <td>7/5/2016</td>
+      <td>62784.00</td>
+      <td>184972</td>
+      <td>3/28/2022</td>
+      <td>2016-07-05</td>
+      <td>62784.00</td>
+      <td>64541.95200</td>
+      <td>66349.126656</td>
+    </tr>
+    <tr>
+      <th>24934</th>
+      <td>UT Austin</td>
+      <td>Utilities, Energy, and Facilities Management</td>
+      <td>Christopher R Hohl</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/13/2015</td>
+      <td>62850.00</td>
+      <td>198686</td>
+      <td>3/31/2022</td>
+      <td>2015-04-13</td>
+      <td>62850.00</td>
+      <td>64609.80000</td>
+      <td>66418.874400</td>
+    </tr>
+    <tr>
+      <th>30714</th>
+      <td>Texas A&amp;M</td>
+      <td>Sponsored Research Services</td>
+      <td>Kathleen Rieck</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>11/13/2018</td>
+      <td>63000.00</td>
+      <td>158738</td>
+      <td>3/1/2022</td>
+      <td>2018-11-13</td>
+      <td>63000.00</td>
+      <td>64764.00000</td>
+      <td>66577.392000</td>
+    </tr>
+    <tr>
+      <th>3200</th>
+      <td>UT Austin</td>
+      <td>Red McCombs School of Business</td>
+      <td>Doug Bickford</td>
+      <td>Data Communication Specialist</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/28/1997</td>
+      <td>63080.00</td>
+      <td>193291</td>
+      <td>3/31/2022</td>
+      <td>1997-04-28</td>
+      <td>63080.00</td>
+      <td>64846.24000</td>
+      <td>66661.934720</td>
+    </tr>
+    <tr>
+      <th>4190</th>
+      <td>UT San Antonio</td>
+      <td>AUDIT &amp; CONSULTING SVCS</td>
+      <td>Joselyn De La Cruz Rameau</td>
+      <td>Internal Audit Data Analyst</td>
+      <td>Full-time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>3/18/2019</td>
+      <td>65000.00</td>
+      <td>110767</td>
+      <td>7/27/2021</td>
+      <td>2019-03-18</td>
+      <td>65000.00</td>
+      <td>66820.00000</td>
+      <td>68690.960000</td>
+    </tr>
+    <tr>
+      <th>74360</th>
+      <td>Sam Houston State University</td>
+      <td>Nursing Program</td>
+      <td>Chas A. Stephens</td>
+      <td>Nursing Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>7/1/2011</td>
+      <td>65040.00</td>
+      <td>184828</td>
+      <td>3/28/2022</td>
+      <td>2011-07-01</td>
+      <td>65040.00</td>
+      <td>66861.12000</td>
+      <td>68733.231360</td>
+    </tr>
+    <tr>
+      <th>61259</th>
+      <td>Texas A&amp;M</td>
+      <td>Human Resources</td>
+      <td>Wesley A Wynn</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>7/21/1997</td>
+      <td>65542.44</td>
+      <td>157818</td>
+      <td>3/1/2022</td>
+      <td>1997-07-21</td>
+      <td>65542.44</td>
+      <td>67377.62832</td>
+      <td>69264.201913</td>
+    </tr>
+    <tr>
+      <th>591</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Data Research Services</td>
+      <td>Dholamulla K Preethika</td>
+      <td>Lead Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/10/2018</td>
+      <td>66234.60</td>
+      <td>147397</td>
+      <td>3/1/2022</td>
+      <td>2018-09-10</td>
+      <td>66234.60</td>
+      <td>68089.16880</td>
+      <td>69995.665526</td>
+    </tr>
+    <tr>
+      <th>44473</th>
+      <td>UNT</td>
+      <td>Data Analytics &amp; Instl Rsrch</td>
+      <td>Shannon Leigh Smith</td>
+      <td>Data Warehouse Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>11/5/2011</td>
+      <td>66980.40</td>
+      <td>181800</td>
+      <td>3/29/2022</td>
+      <td>2011-11-05</td>
+      <td>66980.40</td>
+      <td>68855.85120</td>
+      <td>70783.815034</td>
+    </tr>
+    <tr>
+      <th>26034</th>
+      <td>UT Austin</td>
+      <td>Special Education</td>
+      <td>Eun Sook Kim</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>3/16/2020</td>
+      <td>67000.00</td>
+      <td>199785</td>
+      <td>3/31/2022</td>
+      <td>2020-03-16</td>
+      <td>67000.00</td>
+      <td>68876.00000</td>
+      <td>70804.528000</td>
+    </tr>
+    <tr>
+      <th>78418</th>
+      <td>Austin Community College</td>
+      <td>E3 Alliance</td>
+      <td>Joshua W Scott</td>
+      <td>Manager, Data Systems - E3 Alliance</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/4/2015</td>
+      <td>67002.00</td>
+      <td>189861</td>
+      <td>3/29/2022</td>
+      <td>2015-05-04</td>
+      <td>67002.00</td>
+      <td>68878.05600</td>
+      <td>70806.641568</td>
+    </tr>
+    <tr>
+      <th>73296</th>
+      <td>Lamar University</td>
+      <td>IT Operations</td>
+      <td>Michael L. Smith</td>
+      <td>Mgr- IT Data Center and Sys Ad</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Not Provided</td>
+      <td>8/1/2005</td>
+      <td>67502.00</td>
+      <td>165112</td>
+      <td>2/28/2022</td>
+      <td>2005-08-01</td>
+      <td>67502.00</td>
+      <td>69392.05600</td>
+      <td>71335.033568</td>
+    </tr>
+    <tr>
+      <th>54773</th>
+      <td>UT Permian Basin</td>
+      <td>Inst Effect Research &amp; Plng</td>
+      <td>Trinnon Stephens</td>
+      <td>Data Warehouse Rsrch Spec</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/22/2010</td>
+      <td>67908.60</td>
+      <td>35768</td>
+      <td>8/3/2020</td>
+      <td>2010-09-22</td>
+      <td>67908.60</td>
+      <td>69810.04080</td>
+      <td>71764.721942</td>
+    </tr>
+    <tr>
+      <th>21959</th>
+      <td>University of Houston</td>
+      <td>Research Management Systems</td>
+      <td>Darla Goodwin</td>
+      <td>Advancement Data Manager</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/12/2002</td>
+      <td>67984.80</td>
+      <td>119080</td>
+      <td>2/18/2022</td>
+      <td>2002-08-12</td>
+      <td>67984.80</td>
+      <td>69888.37440</td>
+      <td>71845.248883</td>
+    </tr>
+    <tr>
+      <th>46190</th>
+      <td>Texas A&amp;M</td>
+      <td>Provost Information Technology Office</td>
+      <td>Mussie Abreha</td>
+      <td>Database Administrator I</td>
+      <td>Full-Time</td>
+      <td>two or more races</td>
+      <td>Male</td>
+      <td>11/17/2020</td>
+      <td>68380.08</td>
+      <td>147320</td>
+      <td>3/1/2022</td>
+      <td>2020-11-17</td>
+      <td>68380.08</td>
+      <td>70294.72224</td>
+      <td>72262.974463</td>
+    </tr>
+    <tr>
+      <th>61459</th>
+      <td>Texas A&amp;M</td>
+      <td>Athletics Department</td>
+      <td>Scott M Battley</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/15/2010</td>
+      <td>68632.56</td>
+      <td>158243</td>
+      <td>3/1/2022</td>
+      <td>2010-09-15</td>
+      <td>68632.56</td>
+      <td>70554.27168</td>
+      <td>72529.791287</td>
+    </tr>
+    <tr>
+      <th>75959</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>Junior Ismail</td>
+      <td>Database Admin II</td>
+      <td>Full-Time</td>
+      <td>black or african american</td>
+      <td>Male</td>
+      <td>10/18/2021</td>
+      <td>69770.00</td>
+      <td>186425</td>
+      <td>3/24/2022</td>
+      <td>2021-10-18</td>
+      <td>69770.00</td>
+      <td>71723.56000</td>
+      <td>73731.819680</td>
+    </tr>
+    <tr>
+      <th>44459</th>
+      <td>UNT</td>
+      <td>Vice Provost Student Success</td>
+      <td>Marian Ford Smith</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>7/29/2015</td>
+      <td>69810.60</td>
+      <td>181787</td>
+      <td>3/29/2022</td>
+      <td>2015-07-29</td>
+      <td>69810.60</td>
+      <td>71765.29680</td>
+      <td>73774.725110</td>
+    </tr>
+    <tr>
+      <th>37146</th>
+      <td>UT Austin</td>
+      <td>University Development Office</td>
+      <td>Neelambika Patil</td>
+      <td>Database Analyst</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>3/26/2018</td>
+      <td>70000.00</td>
+      <td>203464</td>
+      <td>3/31/2022</td>
+      <td>2018-03-26</td>
+      <td>70000.00</td>
+      <td>71960.00000</td>
+      <td>73974.880000</td>
+    </tr>
+    <tr>
+      <th>43074</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas Real Estate Research Center</td>
+      <td>Joshua G Roberson</td>
+      <td>Lead Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>9/16/2003</td>
+      <td>70868.16</td>
+      <td>149209</td>
+      <td>3/1/2022</td>
+      <td>2003-09-16</td>
+      <td>70868.16</td>
+      <td>72852.46848</td>
+      <td>74892.337597</td>
+    </tr>
+    <tr>
+      <th>79525</th>
+      <td>Austin Community College</td>
+      <td>Information Technology</td>
+      <td>Cory Raugutt</td>
+      <td>Analyst, Database &amp; Reporting</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>10/3/2016</td>
+      <td>71507.00</td>
+      <td>190968</td>
+      <td>3/29/2022</td>
+      <td>2016-10-03</td>
+      <td>71507.00</td>
+      <td>73509.19600</td>
+      <td>75567.453488</td>
+    </tr>
+    <tr>
+      <th>75004</th>
+      <td>Lone Star Community College</td>
+      <td>Strategic Business Development</td>
+      <td>Christina Boutte</td>
+      <td>Bus Analyst, Demographic Data</td>
+      <td>Full-Time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>1/1/2009</td>
+      <td>71837.17</td>
+      <td>185470</td>
+      <td>3/24/2022</td>
+      <td>2009-01-01</td>
+      <td>71837.17</td>
+      <td>73848.61076</td>
+      <td>75916.371861</td>
+    </tr>
+    <tr>
+      <th>25013</th>
+      <td>UT Austin</td>
+      <td>Governmental Affairs and Initiatives</td>
+      <td>Joe Hootman</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/5/2021</td>
+      <td>72500.00</td>
+      <td>198765</td>
+      <td>3/31/2022</td>
+      <td>2021-04-05</td>
+      <td>72500.00</td>
+      <td>74530.00000</td>
+      <td>76616.840000</td>
+    </tr>
+    <tr>
+      <th>78991</th>
+      <td>Austin Community College</td>
+      <td>Human Resources</td>
+      <td>Caryn A Christopher</td>
+      <td>Coordinator, HR Data</td>
+      <td>Full-time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>9/14/2009</td>
+      <td>73129.00</td>
+      <td>190434</td>
+      <td>3/29/2022</td>
+      <td>2009-09-14</td>
+      <td>73129.00</td>
+      <td>75176.61200</td>
+      <td>77281.557136</td>
+    </tr>
+    <tr>
+      <th>30799</th>
+      <td>Texas A&amp;M</td>
+      <td>Vice President For Research</td>
+      <td>Keely B Dunn</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>11/1/2021</td>
+      <td>73500.00</td>
+      <td>158911</td>
+      <td>3/1/2022</td>
+      <td>2021-11-01</td>
+      <td>73500.00</td>
+      <td>75558.00000</td>
+      <td>77673.624000</td>
+    </tr>
+    <tr>
+      <th>19953</th>
+      <td>Texas State University</td>
+      <td>Human Resources</td>
+      <td>Kathryn L Bonner</td>
+      <td>Mgr, HR Master Data Center</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>12/11/2013</td>
+      <td>74787.60</td>
+      <td>75485</td>
+      <td>8/20/2021</td>
+      <td>2013-12-11</td>
+      <td>74787.60</td>
+      <td>76881.65280</td>
+      <td>79034.339078</td>
+    </tr>
+    <tr>
+      <th>46492</th>
+      <td>Texas A&amp;M</td>
+      <td>Student Financial Aid Operations Accts</td>
+      <td>Chad E Barger</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>2/23/2015</td>
+      <td>74979.00</td>
+      <td>147444</td>
+      <td>3/1/2022</td>
+      <td>2015-02-23</td>
+      <td>74979.00</td>
+      <td>77078.41200</td>
+      <td>79236.607536</td>
+    </tr>
+    <tr>
+      <th>26446</th>
+      <td>UT Austin</td>
+      <td>Jack S Blanton Museum of Art</td>
+      <td>Shelby Lakins</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/8/2016</td>
+      <td>75000.00</td>
+      <td>200196</td>
+      <td>3/31/2022</td>
+      <td>2016-08-08</td>
+      <td>75000.00</td>
+      <td>77100.00000</td>
+      <td>79258.800000</td>
+    </tr>
+    <tr>
+      <th>62793</th>
+      <td>Sam Houston State University</td>
+      <td>IT Infrastructure and Support</td>
+      <td>Michael W. Frey</td>
+      <td>Data Center Operations Sprvsr</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/27/2018</td>
+      <td>75048.00</td>
+      <td>183340</td>
+      <td>3/28/2022</td>
+      <td>2018-08-27</td>
+      <td>75048.00</td>
+      <td>77149.34400</td>
+      <td>79309.525632</td>
+    </tr>
+    <tr>
+      <th>47799</th>
+      <td>Texas A&amp;M</td>
+      <td>International Ocean Discovery Program</td>
+      <td>Vincent P Percuoco</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/27/2014</td>
+      <td>75227.28</td>
+      <td>152148</td>
+      <td>3/1/2022</td>
+      <td>2014-05-27</td>
+      <td>75227.28</td>
+      <td>77333.64384</td>
+      <td>79498.985868</td>
+    </tr>
+    <tr>
+      <th>35864</th>
+      <td>TAMU Prairie View</td>
+      <td>Institutional Research</td>
+      <td>Ranvesh Srivastava</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>12/1/2015</td>
+      <td>75331.91</td>
+      <td>117043</td>
+      <td>3/15/2022</td>
+      <td>2015-12-01</td>
+      <td>75331.91</td>
+      <td>77441.20348</td>
+      <td>79609.557177</td>
+    </tr>
+    <tr>
+      <th>77699</th>
+      <td>Austin Community College</td>
+      <td>Computer Information Tech</td>
+      <td>Murtaza Ally</td>
+      <td>Faculty, Computer Science, Database, Web Progr...</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>1/10/2022</td>
+      <td>75366.00</td>
+      <td>189141</td>
+      <td>3/29/2022</td>
+      <td>2022-01-10</td>
+      <td>75366.00</td>
+      <td>77476.24800</td>
+      <td>79645.582944</td>
+    </tr>
+    <tr>
+      <th>62370</th>
+      <td>Texas A&amp;M Health Science Center</td>
+      <td>School Of Public Health</td>
+      <td>Scott A Horel</td>
+      <td>Senior Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/1/2002</td>
+      <td>75393.60</td>
+      <td>161088</td>
+      <td>3/1/2022</td>
+      <td>2002-09-01</td>
+      <td>75393.60</td>
+      <td>77504.62080</td>
+      <td>79674.750182</td>
+    </tr>
+    <tr>
+      <th>39249</th>
+      <td>UT Austin</td>
+      <td>UTeach-Natural Sciences</td>
+      <td>Martha P Perez</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>3/31/2011</td>
+      <td>75698.00</td>
+      <td>203665</td>
+      <td>3/31/2022</td>
+      <td>2011-03-31</td>
+      <td>75698.00</td>
+      <td>77817.54400</td>
+      <td>79996.435232</td>
+    </tr>
+    <tr>
+      <th>63156</th>
+      <td>Sam Houston State University</td>
+      <td>IT Enterprise Services</td>
+      <td>Joseph D. Hurley</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>3/16/2014</td>
+      <td>75960.00</td>
+      <td>183703</td>
+      <td>3/28/2022</td>
+      <td>2014-03-16</td>
+      <td>75960.00</td>
+      <td>78086.88000</td>
+      <td>80273.312640</td>
+    </tr>
+    <tr>
+      <th>26164</th>
+      <td>UT Austin</td>
+      <td>UHS and CMHC</td>
+      <td>Luke Michal Klima</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/27/2012</td>
+      <td>78000.00</td>
+      <td>199915</td>
+      <td>3/31/2022</td>
+      <td>2012-08-27</td>
+      <td>78000.00</td>
+      <td>80184.00000</td>
+      <td>82429.152000</td>
+    </tr>
+    <tr>
+      <th>2832</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas A&amp;M Information Technology</td>
+      <td>Jianyao Xie</td>
+      <td>Database Administrator I</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>11/5/2018</td>
+      <td>78802.80</td>
+      <td>157437</td>
+      <td>3/1/2022</td>
+      <td>2018-11-05</td>
+      <td>78802.80</td>
+      <td>81009.27840</td>
+      <td>83277.538195</td>
+    </tr>
+    <tr>
+      <th>37375</th>
+      <td>Texas A&amp;M</td>
+      <td>Research Information Systems</td>
+      <td>Shijie Li</td>
+      <td>Database Administrator II</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>1/1/2020</td>
+      <td>79453.92</td>
+      <td>158596</td>
+      <td>3/1/2022</td>
+      <td>2020-01-01</td>
+      <td>79453.92</td>
+      <td>81678.62976</td>
+      <td>83965.631393</td>
+    </tr>
+    <tr>
+      <th>33121</th>
+      <td>UNT</td>
+      <td>Data Analytics &amp; Instl Rsrch</td>
+      <td>Nadia Mankins</td>
+      <td>Senior Data Warehouse Analyst</td>
+      <td>Full-Time</td>
+      <td>two or more races</td>
+      <td>Female</td>
+      <td>5/14/2018</td>
+      <td>81092.76</td>
+      <td>180482</td>
+      <td>3/29/2022</td>
+      <td>2018-05-14</td>
+      <td>81092.76</td>
+      <td>83363.35728</td>
+      <td>85697.531284</td>
+    </tr>
+    <tr>
+      <th>4085</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Barbara Fozoh</td>
+      <td>ES Database Administrator 2</td>
+      <td>Full-Time</td>
+      <td>black or african american</td>
+      <td>Female</td>
+      <td>5/4/2020</td>
+      <td>81690.00</td>
+      <td>123933</td>
+      <td>2/18/2022</td>
+      <td>2020-05-04</td>
+      <td>81690.00</td>
+      <td>83977.32000</td>
+      <td>86328.684960</td>
+    </tr>
+    <tr>
+      <th>37720</th>
+      <td>UNT</td>
+      <td>Analytical Info Solutions</td>
+      <td>Matthew Kody Morgan</td>
+      <td>Data Warehouse Architect</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/18/2018</td>
+      <td>82594.56</td>
+      <td>180826</td>
+      <td>3/29/2022</td>
+      <td>2018-06-18</td>
+      <td>82594.56</td>
+      <td>84907.20768</td>
+      <td>87284.609495</td>
+    </tr>
+    <tr>
+      <th>41322</th>
+      <td>UNT</td>
+      <td>Data Analytics &amp; Instl Rsrch</td>
+      <td>Rohini Ramesh Patankar</td>
+      <td>Senior Data Warehouse Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>10/31/2016</td>
+      <td>82623.84</td>
+      <td>181099</td>
+      <td>3/29/2022</td>
+      <td>2016-10-31</td>
+      <td>82623.84</td>
+      <td>84937.30752</td>
+      <td>87315.552131</td>
+    </tr>
+    <tr>
+      <th>27247</th>
+      <td>UT Austin</td>
+      <td>UTeach-Natural Sciences</td>
+      <td>Mary B Lummus Robinson</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/1/2010</td>
+      <td>83875.00</td>
+      <td>200997</td>
+      <td>3/31/2022</td>
+      <td>2010-08-01</td>
+      <td>83875.00</td>
+      <td>86223.50000</td>
+      <td>88637.758000</td>
+    </tr>
+    <tr>
+      <th>42988</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Data Research Services</td>
+      <td>Marco A Cortez</td>
+      <td>Lead Data Analyst</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>4/14/2014</td>
+      <td>83906.28</td>
+      <td>147391</td>
+      <td>3/1/2022</td>
+      <td>2014-04-14</td>
+      <td>83906.28</td>
+      <td>86255.65584</td>
+      <td>88670.814204</td>
+    </tr>
+    <tr>
+      <th>46481</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Data Research Services</td>
+      <td>Brock Boothe</td>
+      <td>Lead Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/30/2019</td>
+      <td>84161.04</td>
+      <td>147390</td>
+      <td>3/1/2022</td>
+      <td>2019-05-30</td>
+      <td>84161.04</td>
+      <td>86517.54912</td>
+      <td>88940.040495</td>
+    </tr>
+    <tr>
+      <th>25239</th>
+      <td>UT Austin</td>
+      <td>Dell Medical School</td>
+      <td>Jermaine Hurling</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>black or african american</td>
+      <td>Male</td>
+      <td>3/22/2021</td>
+      <td>85000.00</td>
+      <td>198990</td>
+      <td>3/31/2022</td>
+      <td>2021-03-22</td>
+      <td>85000.00</td>
+      <td>87380.00000</td>
+      <td>89826.640000</td>
+    </tr>
+    <tr>
+      <th>51914</th>
+      <td>Texas State University</td>
+      <td>Mobile/Web Systems</td>
+      <td>Andrew Alexander Pilling</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>3/5/2012</td>
+      <td>85836.24</td>
+      <td>76697</td>
+      <td>8/20/2021</td>
+      <td>2012-03-05</td>
+      <td>85836.24</td>
+      <td>88239.65472</td>
+      <td>90710.365052</td>
+    </tr>
+    <tr>
+      <th>76453</th>
+      <td>Lone Star Community College</td>
+      <td>CSI Creative and Strategic Ini</td>
+      <td>Anne Money</td>
+      <td>Director, OD Data Initiatives</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>6/25/2001</td>
+      <td>85973.17</td>
+      <td>186921</td>
+      <td>3/24/2022</td>
+      <td>2001-06-25</td>
+      <td>85973.17</td>
+      <td>88380.41876</td>
+      <td>90855.070485</td>
+    </tr>
+    <tr>
+      <th>27730</th>
+      <td>UT Austin</td>
+      <td>University Development Office</td>
+      <td>Thomas A Marx</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>9/28/2009</td>
+      <td>86194.00</td>
+      <td>201480</td>
+      <td>3/31/2022</td>
+      <td>2009-09-28</td>
+      <td>86194.00</td>
+      <td>88607.43200</td>
+      <td>91088.440096</td>
+    </tr>
+    <tr>
+      <th>52117</th>
+      <td>Texas State University</td>
+      <td>Enterprise Systems</td>
+      <td>James David Daniel</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/17/2015</td>
+      <td>87675.60</td>
+      <td>77271</td>
+      <td>8/20/2021</td>
+      <td>2015-08-17</td>
+      <td>87675.60</td>
+      <td>90130.51680</td>
+      <td>92654.171270</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Rupaswy Parvataneni</td>
+      <td>ES Database Administrator 2</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>4/1/2015</td>
+      <td>87900.96</td>
+      <td>122689</td>
+      <td>2/18/2022</td>
+      <td>2015-04-01</td>
+      <td>87900.96</td>
+      <td>90362.18688</td>
+      <td>92892.328113</td>
+    </tr>
+    <tr>
+      <th>61852</th>
+      <td>Texas A&amp;M</td>
+      <td>Research Information Systems</td>
+      <td>Adam R Jordan</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/2/2014</td>
+      <td>87961.68</td>
+      <td>158595</td>
+      <td>3/1/2022</td>
+      <td>2014-06-02</td>
+      <td>87961.68</td>
+      <td>90424.60704</td>
+      <td>92956.496037</td>
+    </tr>
+    <tr>
+      <th>2857</th>
+      <td>Texas A&amp;M</td>
+      <td>Vice President For Research</td>
+      <td>Jing Liu</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>1/4/2016</td>
+      <td>89686.68</td>
+      <td>158852</td>
+      <td>3/1/2022</td>
+      <td>2016-01-04</td>
+      <td>89686.68</td>
+      <td>92197.90704</td>
+      <td>94779.448437</td>
+    </tr>
+    <tr>
+      <th>8455</th>
+      <td>UT Austin</td>
+      <td>ITS Applications</td>
+      <td>Kevin C Chang</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>4/22/2013</td>
+      <td>90000.00</td>
+      <td>194482</td>
+      <td>3/31/2022</td>
+      <td>2013-04-22</td>
+      <td>90000.00</td>
+      <td>92520.00000</td>
+      <td>95110.560000</td>
+    </tr>
+    <tr>
+      <th>25111</th>
+      <td>UT Austin</td>
+      <td>ITS Applications</td>
+      <td>Joshua S Hsu</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>11/12/1996</td>
+      <td>90000.00</td>
+      <td>198863</td>
+      <td>3/31/2022</td>
+      <td>1996-11-12</td>
+      <td>90000.00</td>
+      <td>92520.00000</td>
+      <td>95110.560000</td>
+    </tr>
+    <tr>
+      <th>5998</th>
+      <td>UT Austin</td>
+      <td>Population Research Center</td>
+      <td>Jenny Buontempo</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/1/2016</td>
+      <td>90200.00</td>
+      <td>193915</td>
+      <td>3/31/2022</td>
+      <td>2016-09-01</td>
+      <td>90200.00</td>
+      <td>92725.60000</td>
+      <td>95321.916800</td>
+    </tr>
+    <tr>
+      <th>37374</th>
+      <td>Texas A&amp;M</td>
+      <td>Research Information Systems</td>
+      <td>JYOTHI CHANDRA SEKHAR GARAPATI</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>2/3/2020</td>
+      <td>90351.72</td>
+      <td>158594</td>
+      <td>3/1/2022</td>
+      <td>2020-02-03</td>
+      <td>90351.72</td>
+      <td>92881.56816</td>
+      <td>95482.252068</td>
+    </tr>
+    <tr>
+      <th>76437</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>Mohammed Minhaj</td>
+      <td>Database Admin II</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Male</td>
+      <td>11/9/2015</td>
+      <td>91067.18</td>
+      <td>186905</td>
+      <td>3/24/2022</td>
+      <td>2015-11-09</td>
+      <td>91067.18</td>
+      <td>93617.06104</td>
+      <td>96238.338749</td>
+    </tr>
+    <tr>
+      <th>46449</th>
+      <td>Texas A&amp;M</td>
+      <td>Provost Information Technology Office</td>
+      <td>Steven T Chester</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/3/2000</td>
+      <td>91082.16</td>
+      <td>147327</td>
+      <td>3/1/2022</td>
+      <td>2000-01-03</td>
+      <td>91082.16</td>
+      <td>93632.46048</td>
+      <td>96254.169373</td>
+    </tr>
+    <tr>
+      <th>24842</th>
+      <td>UT Austin</td>
+      <td>ITS Applications</td>
+      <td>Kirk Hill</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/29/2018</td>
+      <td>92000.00</td>
+      <td>198594</td>
+      <td>3/31/2022</td>
+      <td>2018-01-29</td>
+      <td>92000.00</td>
+      <td>94576.00000</td>
+      <td>97224.128000</td>
+    </tr>
+    <tr>
+      <th>47255</th>
+      <td>Texas A&amp;M</td>
+      <td>Dean</td>
+      <td>Christopher E Cantrell</td>
+      <td>Lead Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/8/2015</td>
+      <td>92250.00</td>
+      <td>150425</td>
+      <td>3/1/2022</td>
+      <td>2015-06-08</td>
+      <td>92250.00</td>
+      <td>94833.00000</td>
+      <td>97488.324000</td>
+    </tr>
+    <tr>
+      <th>74355</th>
+      <td>Sam Houston State University</td>
+      <td>COM - Assessment &amp; Accreditation</td>
+      <td>Shawn M. Staudaher</td>
+      <td>Data Analyst</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/1/2020</td>
+      <td>92712.00</td>
+      <td>184823</td>
+      <td>3/28/2022</td>
+      <td>2020-06-01</td>
+      <td>92712.00</td>
+      <td>95307.93600</td>
+      <td>97976.558208</td>
+    </tr>
+    <tr>
+      <th>74851</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>L David Ashworth</td>
+      <td>Database Admin II SQL Server</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/23/2014</td>
+      <td>92889.03</td>
+      <td>185317</td>
+      <td>3/24/2022</td>
+      <td>2014-06-23</td>
+      <td>92889.03</td>
+      <td>95489.92284</td>
+      <td>98163.640680</td>
+    </tr>
+    <tr>
+      <th>34288</th>
+      <td>Texas A&amp;M</td>
+      <td>Provost Information Technology Office</td>
+      <td>Inkoo Kim</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>10/22/1998</td>
+      <td>93536.16</td>
+      <td>147334</td>
+      <td>3/1/2022</td>
+      <td>1998-10-22</td>
+      <td>93536.16</td>
+      <td>96155.17248</td>
+      <td>98847.517309</td>
+    </tr>
+    <tr>
+      <th>51286</th>
+      <td>Texas State University</td>
+      <td>Enterprise Systems</td>
+      <td>Mark R Boucher</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/8/1992</td>
+      <td>93927.60</td>
+      <td>74739</td>
+      <td>8/20/2021</td>
+      <td>1992-06-08</td>
+      <td>93927.60</td>
+      <td>96557.57280</td>
+      <td>99261.184838</td>
+    </tr>
+    <tr>
+      <th>14799</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Learning Technology Services</td>
+      <td>Susan L Neitsch</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>9/1/1990</td>
+      <td>94000.08</td>
+      <td>147405</td>
+      <td>3/1/2022</td>
+      <td>1990-09-01</td>
+      <td>94000.08</td>
+      <td>96632.08224</td>
+      <td>99337.780543</td>
+    </tr>
+    <tr>
+      <th>51171</th>
+      <td>Texas State University</td>
+      <td>Enterprise Systems</td>
+      <td>Stacy J Anderson</td>
+      <td>Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/29/1990</td>
+      <td>94153.56</td>
+      <td>74374</td>
+      <td>8/20/2021</td>
+      <td>1990-05-29</td>
+      <td>94153.56</td>
+      <td>96789.85968</td>
+      <td>99499.975751</td>
+    </tr>
+    <tr>
+      <th>21802</th>
+      <td>University of Houston</td>
+      <td>Business Operations</td>
+      <td>Rebecca Cutting</td>
+      <td>Sr. Dir, Data Records</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>2/1/2016</td>
+      <td>95000.04</td>
+      <td>118247</td>
+      <td>2/18/2022</td>
+      <td>2016-02-01</td>
+      <td>95000.04</td>
+      <td>97660.04112</td>
+      <td>100394.522271</td>
+    </tr>
+    <tr>
+      <th>2868</th>
+      <td>Texas A&amp;M</td>
+      <td>Department Of Information Technology</td>
+      <td>Zhe Wang</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>8/23/1994</td>
+      <td>95040.48</td>
+      <td>159106</td>
+      <td>3/1/2022</td>
+      <td>1994-08-23</td>
+      <td>95040.48</td>
+      <td>97701.61344</td>
+      <td>100437.258616</td>
+    </tr>
+    <tr>
+      <th>79020</th>
+      <td>Austin Community College</td>
+      <td>Instl. Research &amp; Analytics</td>
+      <td>Swetha Karri</td>
+      <td>Analyst, Data Warehouse Programmer</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>1/13/2010</td>
+      <td>96136.00</td>
+      <td>190463</td>
+      <td>3/29/2022</td>
+      <td>2010-01-13</td>
+      <td>96136.00</td>
+      <td>98827.80800</td>
+      <td>101594.986624</td>
+    </tr>
+    <tr>
+      <th>79106</th>
+      <td>Austin Community College</td>
+      <td>Instl. Research &amp; Analytics</td>
+      <td>Lokraj Adhikari</td>
+      <td>Analyst, Data Warehouse Programmer</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>10/17/2011</td>
+      <td>96136.00</td>
+      <td>190549</td>
+      <td>3/29/2022</td>
+      <td>2011-10-17</td>
+      <td>96136.00</td>
+      <td>98827.80800</td>
+      <td>101594.986624</td>
+    </tr>
+    <tr>
+      <th>58273</th>
+      <td>UT Austin</td>
+      <td>John A and Katherine G Jackson School of Geosc...</td>
+      <td>Brian A Zavala</td>
+      <td>Database Coordinator</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>1/16/2003</td>
+      <td>96474.71</td>
+      <td>208771</td>
+      <td>3/31/2022</td>
+      <td>2003-01-16</td>
+      <td>96474.71</td>
+      <td>99176.00188</td>
+      <td>101952.929933</td>
+    </tr>
+    <tr>
+      <th>61040</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas A&amp;M Information Technology</td>
+      <td>Gregory S Loe</td>
+      <td>Database Administrator III</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>2/15/1996</td>
+      <td>97724.88</td>
+      <td>157345</td>
+      <td>3/1/2022</td>
+      <td>1996-02-15</td>
+      <td>97724.88</td>
+      <td>100461.17664</td>
+      <td>103274.089586</td>
+    </tr>
+    <tr>
+      <th>56347</th>
+      <td>UT Austin</td>
+      <td>Dell Medical School</td>
+      <td>Peggy A Tatro</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>2/4/2019</td>
+      <td>98838.00</td>
+      <td>206848</td>
+      <td>3/31/2022</td>
+      <td>2019-02-04</td>
+      <td>98838.00</td>
+      <td>101605.46400</td>
+      <td>104450.416992</td>
+    </tr>
+    <tr>
+      <th>31867</th>
+      <td>UNT</td>
+      <td>Data Analytics &amp; Instl Rsrch</td>
+      <td>Matthew James Fields</td>
+      <td>Principal Data Warehouse Archt</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>2/1/2015</td>
+      <td>100059.72</td>
+      <td>179228</td>
+      <td>3/29/2022</td>
+      <td>2015-02-01</td>
+      <td>100059.72</td>
+      <td>102861.39216</td>
+      <td>105741.511140</td>
+    </tr>
+    <tr>
+      <th>73106</th>
+      <td>Lamar University</td>
+      <td>IT Enterprise Application</td>
+      <td>Prabhu E. Pilli</td>
+      <td>Manager-Database Services</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Not Provided</td>
+      <td>11/1/2012</td>
+      <td>100786.00</td>
+      <td>164920</td>
+      <td>2/28/2022</td>
+      <td>2012-11-01</td>
+      <td>100786.00</td>
+      <td>103608.00800</td>
+      <td>106509.032224</td>
+    </tr>
+    <tr>
+      <th>558</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas A&amp;M Information Technology</td>
+      <td>Priya Jayaraman</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>4/1/2005</td>
+      <td>101742.12</td>
+      <td>157325</td>
+      <td>3/1/2022</td>
+      <td>2005-04-01</td>
+      <td>101742.12</td>
+      <td>104590.89936</td>
+      <td>107519.444542</td>
+    </tr>
+    <tr>
+      <th>59009</th>
+      <td>Texas Woman's University</td>
+      <td>Vice Provost IR &amp; Improvement</td>
+      <td>Gregory Gengo</td>
+      <td>Data Warehouse Architect</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/19/2010</td>
+      <td>102285.00</td>
+      <td>210585</td>
+      <td>3/22/2022</td>
+      <td>2010-01-19</td>
+      <td>102285.00</td>
+      <td>105148.98000</td>
+      <td>108093.151440</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>UT Austin</td>
+      <td>ITS Applications</td>
+      <td>James R Alexander</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/16/2000</td>
+      <td>102440.00</td>
+      <td>192248</td>
+      <td>3/31/2022</td>
+      <td>2000-05-16</td>
+      <td>102440.00</td>
+      <td>105308.32000</td>
+      <td>108256.952960</td>
+    </tr>
+    <tr>
+      <th>77141</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>Fraser Talbot</td>
+      <td>Database Admin Sr</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>6/1/2021</td>
+      <td>102741.00</td>
+      <td>187609</td>
+      <td>3/24/2022</td>
+      <td>2021-06-01</td>
+      <td>102741.00</td>
+      <td>105617.74800</td>
+      <td>108575.044944</td>
+    </tr>
+    <tr>
+      <th>78623</th>
+      <td>Austin Community College</td>
+      <td>Information Technology</td>
+      <td>Shu Liang</td>
+      <td>Administrator, Database</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>5/2/2005</td>
+      <td>102901.00</td>
+      <td>190066</td>
+      <td>3/29/2022</td>
+      <td>2005-05-02</td>
+      <td>102901.00</td>
+      <td>105782.22800</td>
+      <td>108744.130384</td>
+    </tr>
+    <tr>
+      <th>79425</th>
+      <td>Austin Community College</td>
+      <td>Information Technology</td>
+      <td>Madison Le</td>
+      <td>Administrator, Database</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>8/3/2015</td>
+      <td>102901.00</td>
+      <td>190868</td>
+      <td>3/29/2022</td>
+      <td>2015-08-03</td>
+      <td>102901.00</td>
+      <td>105782.22800</td>
+      <td>108744.130384</td>
+    </tr>
+    <tr>
+      <th>79666</th>
+      <td>Austin Community College</td>
+      <td>Instl. Research &amp; Analytics</td>
+      <td>Asha Vasudevan Pillai</td>
+      <td>Administrator, Data Warehouse</td>
+      <td>Full-time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>9/17/2018</td>
+      <td>102901.00</td>
+      <td>191109</td>
+      <td>3/29/2022</td>
+      <td>2018-09-17</td>
+      <td>102901.00</td>
+      <td>105782.22800</td>
+      <td>108744.130384</td>
+    </tr>
+    <tr>
+      <th>57647</th>
+      <td>UT Austin</td>
+      <td>ITS Applications</td>
+      <td>William J White</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/11/1993</td>
+      <td>103350.00</td>
+      <td>208146</td>
+      <td>3/31/2022</td>
+      <td>1993-01-11</td>
+      <td>103350.00</td>
+      <td>106243.80000</td>
+      <td>109218.626400</td>
+    </tr>
+    <tr>
+      <th>20223</th>
+      <td>Texas State University</td>
+      <td>Enterprise Systems</td>
+      <td>Christine Renee Pyy White</td>
+      <td>Sr Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>11/29/2010</td>
+      <td>104763.36</td>
+      <td>76135</td>
+      <td>8/20/2021</td>
+      <td>2010-11-29</td>
+      <td>104763.36</td>
+      <td>107696.73408</td>
+      <td>110712.242634</td>
+    </tr>
+    <tr>
+      <th>43073</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas Real Estate Research Center</td>
+      <td>Alfonso E Martinez</td>
+      <td>Database Administrator II</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>1/15/2020</td>
+      <td>106050.00</td>
+      <td>149203</td>
+      <td>3/1/2022</td>
+      <td>2020-01-15</td>
+      <td>106050.00</td>
+      <td>109019.40000</td>
+      <td>112071.943200</td>
+    </tr>
+    <tr>
+      <th>36342</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Samuel Lee Sing Chan</td>
+      <td>ES Database Administrator 3</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>10/14/2013</td>
+      <td>107133.48</td>
+      <td>121918</td>
+      <td>2/18/2022</td>
+      <td>2013-10-14</td>
+      <td>107133.48</td>
+      <td>110133.21744</td>
+      <td>113216.947528</td>
+    </tr>
+    <tr>
+      <th>73324</th>
+      <td>Lamar University</td>
+      <td>VP Info Mgmt &amp; Decision Support</td>
+      <td>Taylor Stephenson</td>
+      <td>Lead Data Engineer</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Not Provided</td>
+      <td>1/1/2006</td>
+      <td>107151.00</td>
+      <td>165140</td>
+      <td>2/28/2022</td>
+      <td>2006-01-01</td>
+      <td>107151.00</td>
+      <td>110151.22800</td>
+      <td>113235.462384</td>
+    </tr>
+    <tr>
+      <th>77195</th>
+      <td>Lone Star Community College</td>
+      <td>Analytics</td>
+      <td>Abhijeet Thorat</td>
+      <td>Database Developer Admin II</td>
+      <td>Full-Time</td>
+      <td>not provided</td>
+      <td>Male</td>
+      <td>12/10/2015</td>
+      <td>107182.01</td>
+      <td>187663</td>
+      <td>3/24/2022</td>
+      <td>2015-12-10</td>
+      <td>107182.01</td>
+      <td>110183.10628</td>
+      <td>113268.233256</td>
+    </tr>
+    <tr>
+      <th>34283</th>
+      <td>Texas A&amp;M</td>
+      <td>Enterprise Information Systems</td>
+      <td>SUMANTA K PATRO</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>12/1/2020</td>
+      <td>107500.08</td>
+      <td>147280</td>
+      <td>3/1/2022</td>
+      <td>2020-12-01</td>
+      <td>107500.08</td>
+      <td>110510.08224</td>
+      <td>113604.364543</td>
+    </tr>
+    <tr>
+      <th>574</th>
+      <td>Texas A&amp;M</td>
+      <td>Enterprise Information Systems</td>
+      <td>Shalini Bansal</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>11/12/2008</td>
+      <td>107508.12</td>
+      <td>147239</td>
+      <td>3/1/2022</td>
+      <td>2008-11-12</td>
+      <td>107508.12</td>
+      <td>110518.34736</td>
+      <td>113612.861086</td>
+    </tr>
+    <tr>
+      <th>75330</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>Merwyn Croston</td>
+      <td>Database Admin Sr</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/16/2020</td>
+      <td>107862.96</td>
+      <td>185796</td>
+      <td>3/24/2022</td>
+      <td>2020-11-16</td>
+      <td>107862.96</td>
+      <td>110883.12288</td>
+      <td>113987.850321</td>
+    </tr>
+    <tr>
+      <th>25420</th>
+      <td>UT Austin</td>
+      <td>Governmental Affairs and Initiatives</td>
+      <td>Alhaji Jalloh</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>black or african american</td>
+      <td>Male</td>
+      <td>10/25/2017</td>
+      <td>108150.00</td>
+      <td>199171</td>
+      <td>3/31/2022</td>
+      <td>2017-10-25</td>
+      <td>108150.00</td>
+      <td>111178.20000</td>
+      <td>114291.189600</td>
+    </tr>
+    <tr>
+      <th>36255</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Venkata Gadiyaram</td>
+      <td>ES Database Administrator 3</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>11/1/2010</td>
+      <td>109490.52</td>
+      <td>121215</td>
+      <td>2/18/2022</td>
+      <td>2010-11-01</td>
+      <td>109490.52</td>
+      <td>112556.25456</td>
+      <td>115707.829688</td>
+    </tr>
+    <tr>
+      <th>40634</th>
+      <td>University of Houston</td>
+      <td>Office of the Dean</td>
+      <td>David Garcia</td>
+      <td>Dir Coll IT Inf&amp;Data Anly COM</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>5/17/2021</td>
+      <td>110000.16</td>
+      <td>124217</td>
+      <td>2/18/2022</td>
+      <td>2021-05-17</td>
+      <td>110000.16</td>
+      <td>113080.16448</td>
+      <td>116246.409085</td>
+    </tr>
+    <tr>
+      <th>36350</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Zhaoan Wei</td>
+      <td>ES Database Administrator 3</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Male</td>
+      <td>2/17/2014</td>
+      <td>110560.32</td>
+      <td>122023</td>
+      <td>2/18/2022</td>
+      <td>2014-02-17</td>
+      <td>110560.32</td>
+      <td>113656.00896</td>
+      <td>116838.377211</td>
+    </tr>
+    <tr>
+      <th>46425</th>
+      <td>Texas A&amp;M</td>
+      <td>Enterprise Information Systems</td>
+      <td>Sean P Leahy</td>
+      <td>Database Administrator IV</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>4/1/2015</td>
+      <td>110859.96</td>
+      <td>147265</td>
+      <td>3/1/2022</td>
+      <td>2015-04-01</td>
+      <td>110859.96</td>
+      <td>113964.03888</td>
+      <td>117155.031969</td>
+    </tr>
+    <tr>
+      <th>46482</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Data Research Services</td>
+      <td>Mahmut Gundogdu</td>
+      <td>Data Scientist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>1/4/2021</td>
+      <td>111000.00</td>
+      <td>147395</td>
+      <td>3/1/2022</td>
+      <td>2021-01-04</td>
+      <td>111000.00</td>
+      <td>114108.00000</td>
+      <td>117303.024000</td>
+    </tr>
+    <tr>
+      <th>76212</th>
+      <td>Lone Star Community College</td>
+      <td>Tech Services</td>
+      <td>Richard Long</td>
+      <td>Sr Mgr IT Data Ctr Ops</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>5/16/2016</td>
+      <td>112265.32</td>
+      <td>186680</td>
+      <td>3/24/2022</td>
+      <td>2016-05-16</td>
+      <td>112265.32</td>
+      <td>115408.74896</td>
+      <td>118640.193931</td>
+    </tr>
+    <tr>
+      <th>6885</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Carol Pena</td>
+      <td>ES Database Adminstrator 4</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>2/11/2008</td>
+      <td>114880.44</td>
+      <td>120659</td>
+      <td>2/18/2022</td>
+      <td>2008-02-11</td>
+      <td>114880.44</td>
+      <td>118097.09232</td>
+      <td>121403.810905</td>
+    </tr>
+    <tr>
+      <th>1803</th>
+      <td>University of Houston</td>
+      <td>Enterprise Systems</td>
+      <td>Zeandra Mathura</td>
+      <td>ES Database Adminstrator 4</td>
+      <td>Full-Time</td>
+      <td>asian</td>
+      <td>Female</td>
+      <td>6/1/2016</td>
+      <td>116857.80</td>
+      <td>120609</td>
+      <td>2/18/2022</td>
+      <td>2016-06-01</td>
+      <td>116857.80</td>
+      <td>120129.81840</td>
+      <td>123493.453315</td>
+    </tr>
+    <tr>
+      <th>32501</th>
+      <td>UNT</td>
+      <td>Data Analytics &amp; Instl Rsrch</td>
+      <td>Daniel J Hubbard</td>
+      <td>Director, Data Management</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>2/22/2017</td>
+      <td>123000.00</td>
+      <td>179862</td>
+      <td>3/29/2022</td>
+      <td>2017-02-22</td>
+      <td>123000.00</td>
+      <td>126444.00000</td>
+      <td>129984.432000</td>
+    </tr>
+    <tr>
+      <th>42959</th>
+      <td>Texas A&amp;M</td>
+      <td>Office Of Institutional Effectiveness</td>
+      <td>Rajeeb L Das</td>
+      <td>Senior Data Scientist</td>
+      <td>Full-Time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>12/2/2019</td>
+      <td>126284.16</td>
+      <td>147034</td>
+      <td>3/1/2022</td>
+      <td>2019-12-02</td>
+      <td>126284.16</td>
+      <td>129820.11648</td>
+      <td>133455.079741</td>
+    </tr>
+    <tr>
+      <th>24980</th>
+      <td>UT Austin</td>
+      <td>IQ - Information Quest</td>
+      <td>Darren S Holm</td>
+      <td>Senior Database Administrator</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/10/2014</td>
+      <td>127335.00</td>
+      <td>198732</td>
+      <td>3/31/2022</td>
+      <td>2014-11-10</td>
+      <td>127335.00</td>
+      <td>130900.38000</td>
+      <td>134565.590640</td>
+    </tr>
+    <tr>
+      <th>79868</th>
+      <td>Austin Community College</td>
+      <td>Information Technology</td>
+      <td>David Cantu</td>
+      <td>Sr. Manager, Data Governance</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>5/17/2021</td>
+      <td>129273.00</td>
+      <td>191311</td>
+      <td>3/29/2022</td>
+      <td>2021-05-17</td>
+      <td>129273.00</td>
+      <td>132892.64400</td>
+      <td>136613.638032</td>
+    </tr>
+    <tr>
+      <th>19476</th>
+      <td>Texas State University</td>
+      <td>Office of Institutional Research</td>
+      <td>Tami Lynn Rice</td>
+      <td>Dir, System Data &amp; Analysis</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>12/1/1997</td>
+      <td>142124.88</td>
+      <td>74397</td>
+      <td>8/20/2021</td>
+      <td>1997-12-01</td>
+      <td>142124.88</td>
+      <td>146104.37664</td>
+      <td>150195.299186</td>
+    </tr>
+    <tr>
+      <th>46963</th>
+      <td>Texas A&amp;M</td>
+      <td>Texas Real Estate Research Center</td>
+      <td>Gerald A Klassen</td>
+      <td>Research Data Scientist</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>11/28/2005</td>
+      <td>223485.60</td>
+      <td>149201</td>
+      <td>3/1/2022</td>
+      <td>2005-11-28</td>
+      <td>223485.60</td>
+      <td>229743.19680</td>
+      <td>236176.006310</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Community Colleges (with community in the name) all roles</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>CC_ <span class="op">=</span> uni_[uni_.agency.<span class="bu">str</span>.contains(<span class="st">'Community'</span>)]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>display(CC_.shape, CC_.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>(5223, 15)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>174</th>
+      <td>Austin Community College</td>
+      <td>Marketing</td>
+      <td>Nicholas Sarantakes</td>
+      <td>Professor</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/24/1981</td>
+      <td>142052.00</td>
+      <td>189000</td>
+      <td>3/29/2022</td>
+      <td>1981-08-24</td>
+      <td>142052.00</td>
+      <td>146029.45600</td>
+      <td>150118.280768</td>
+    </tr>
+    <tr>
+      <th>8323</th>
+      <td>Austin Community College</td>
+      <td>Physics</td>
+      <td>Paul Edward Williams</td>
+      <td>Professor</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/16/2004</td>
+      <td>88776.00</td>
+      <td>189086</td>
+      <td>3/29/2022</td>
+      <td>2004-08-16</td>
+      <td>88776.00</td>
+      <td>91261.72800</td>
+      <td>93817.056384</td>
+    </tr>
+    <tr>
+      <th>11729</th>
+      <td>Austin Community College</td>
+      <td>Biology</td>
+      <td>Felix S Villarreal</td>
+      <td>Professor</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>9/1/1992</td>
+      <td>89047.00</td>
+      <td>189087</td>
+      <td>3/29/2022</td>
+      <td>1992-09-01</td>
+      <td>89047.00</td>
+      <td>91540.31600</td>
+      <td>94103.444848</td>
+    </tr>
+    <tr>
+      <th>12866</th>
+      <td>Austin Community College</td>
+      <td>Biology</td>
+      <td>Sarah L Strong</td>
+      <td>Professor</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/23/1993</td>
+      <td>118117.00</td>
+      <td>189261</td>
+      <td>3/29/2022</td>
+      <td>1993-08-23</td>
+      <td>118117.00</td>
+      <td>121424.27600</td>
+      <td>124824.155728</td>
+    </tr>
+    <tr>
+      <th>74587</th>
+      <td>Lone Star Community College</td>
+      <td>Cisco</td>
+      <td>Donna Ivey</td>
+      <td>Dir CISCO Prog</td>
+      <td>Full-Time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>7/1/2010</td>
+      <td>102625.94</td>
+      <td>186427</td>
+      <td>3/24/2022</td>
+      <td>2010-07-01</td>
+      <td>102625.94</td>
+      <td>105499.46632</td>
+      <td>108453.451377</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">### What types of Assistant roles makes between 55k-75k at these community colleges?</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>display(CC_[CC_.job_title.<span class="bu">str</span>.contains(<span class="st">'Assistant'</span>) <span class="op">&amp;</span> (CC_.salary2.between(<span class="dv">55000</span>,<span class="dv">75000</span>))].sort_values(by<span class="op">=</span>[<span class="st">'salary'</span>], ascending<span class="op">=</span><span class="va">False</span>).head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>agency</th>
+      <th>department</th>
+      <th>full_name</th>
+      <th>job_title</th>
+      <th>employment_time</th>
+      <th>race</th>
+      <th>gender</th>
+      <th>hire_date</th>
+      <th>salary</th>
+      <th>id</th>
+      <th>data_date</th>
+      <th>hire_date_dt</th>
+      <th>salary2</th>
+      <th>salary3</th>
+      <th>salary4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>79903</th>
+      <td>Austin Community College</td>
+      <td>Sonography</td>
+      <td>Joel Thurman</td>
+      <td>Professor, Assistant</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Male</td>
+      <td>8/9/2021</td>
+      <td>73972.0</td>
+      <td>191346</td>
+      <td>3/29/2022</td>
+      <td>2021-08-09</td>
+      <td>73972.0</td>
+      <td>76043.216</td>
+      <td>78172.426048</td>
+    </tr>
+    <tr>
+      <th>79718</th>
+      <td>Austin Community College</td>
+      <td>Library Services</td>
+      <td>Jorge Lopez-McKnight</td>
+      <td>Professor, Assistant</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Male</td>
+      <td>10/14/2018</td>
+      <td>73972.0</td>
+      <td>191161</td>
+      <td>3/29/2022</td>
+      <td>2018-10-14</td>
+      <td>73972.0</td>
+      <td>76043.216</td>
+      <td>78172.426048</td>
+    </tr>
+    <tr>
+      <th>77959</th>
+      <td>Austin Community College</td>
+      <td>Sonography</td>
+      <td>Sherri Lynn</td>
+      <td>Professor, Assistant</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>8/19/2019</td>
+      <td>73972.0</td>
+      <td>189402</td>
+      <td>3/29/2022</td>
+      <td>2019-08-19</td>
+      <td>73972.0</td>
+      <td>76043.216</td>
+      <td>78172.426048</td>
+    </tr>
+    <tr>
+      <th>79631</th>
+      <td>Austin Community College</td>
+      <td>Library Services</td>
+      <td>Christina M McCourt</td>
+      <td>Professor, Assistant</td>
+      <td>Full-time</td>
+      <td>hispanic or latino</td>
+      <td>Female</td>
+      <td>10/2/2017</td>
+      <td>72749.0</td>
+      <td>191074</td>
+      <td>3/29/2022</td>
+      <td>2017-10-02</td>
+      <td>72749.0</td>
+      <td>74785.972</td>
+      <td>76879.979216</td>
+    </tr>
+    <tr>
+      <th>78779</th>
+      <td>Austin Community College</td>
+      <td>Emergency Med Svcs Professions</td>
+      <td>Neia D Hoffman</td>
+      <td>Professor, Assistant</td>
+      <td>Full-time</td>
+      <td>white</td>
+      <td>Female</td>
+      <td>5/23/2016</td>
+      <td>72749.0</td>
+      <td>190222</td>
+      <td>3/29/2022</td>
+      <td>2016-05-23</td>
+      <td>72749.0</td>
+      <td>74785.972</td>
+      <td>76879.979216</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Describe Data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> sns.light_palette(<span class="st">"#34A853"</span>, as_cmap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">### Change this as you see fit. Suggestions: 'Data', 'Assistant', 'Librar*'</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>Role <span class="op">=</span> <span class="st">'Data'</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>num_ <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Top </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> Roles: </span><span class="ch">\n\n</span><span class="st">'</span>.<span class="bu">format</span>(num_, Role))</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>display(uni_[uni_.job_title.<span class="bu">str</span>.contains(Role)].sort_values(by<span class="op">=</span>[<span class="st">'salary'</span>], ascending<span class="op">=</span><span class="va">False</span>).head(num_).style.background_gradient(cmap<span class="op">=</span>cmap, subset<span class="op">=</span>[<span class="st">'salary'</span>]))</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>,<span class="st">'----'</span><span class="op">*</span><span class="dv">50</span>, <span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>display(uni_[uni_.job_title.<span class="bu">str</span>.contains(Role)].groupby([<span class="st">'race'</span>, <span class="st">'gender'</span>])[[<span class="st">'salary'</span>]].describe().style.background_gradient(cmap<span class="op">=</span>cmap, subset<span class="op">=</span>[(<span class="st">'salary'</span>,  <span class="st">'mean'</span>)]))</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>,<span class="st">'----'</span><span class="op">*</span><span class="dv">50</span>, <span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co">### Visualize!</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>boxprops <span class="op">=</span> <span class="bu">dict</span>(linewidth<span class="op">=</span><span class="fl">1.5</span>, color<span class="op">=</span><span class="st">'pink'</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>medianprops <span class="op">=</span> <span class="bu">dict</span>(linestyle<span class="op">=</span><span class="st">'-.'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'firebrick'</span>)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating boxplot</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize <span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove top and right border</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>uni_[uni_.job_title.<span class="bu">str</span>.contains(Role)].boxplot(column<span class="op">=</span><span class="st">'salary'</span>, by<span class="op">=</span>[<span class="st">'race'</span>], ax<span class="op">=</span>ax, boxprops<span class="op">=</span>boxprops, medianprops<span class="op">=</span>medianprops)</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Boxplot for </span><span class="sc">{}</span><span class="st"> by Race"</span>.<span class="bu">format</span>(Role))</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>,<span class="st">'----'</span><span class="op">*</span><span class="dv">50</span>, <span class="st">'</span><span class="ch">\n\n</span><span class="st">'</span>)</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize <span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove top and right border</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>uni_[uni_.job_title.<span class="bu">str</span>.contains(Role)].boxplot(column<span class="op">=</span><span class="st">'salary'</span>, by<span class="op">=</span>[<span class="st">'gender'</span>], ax<span class="op">=</span>ax,  boxprops<span class="op">=</span>boxprops, medianprops <span class="op">=</span> <span class="bu">dict</span>(linestyle<span class="op">=</span><span class="st">'-.'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'green'</span>))</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Boxplot for </span><span class="sc">{}</span><span class="st"> by Gender"</span>.<span class="bu">format</span>(Role))</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Top 10 Data Roles: 
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<style type="text/css">
+#T_534b75b6_519a_11ed_9911_367dda2c7820row0_col8{
+            background-color:  #34a853;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row1_col8{
+            background-color:  #bde0c6;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row2_col8{
+            background-color:  #d3e9d8;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row3_col8{
+            background-color:  #d6eadb;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row4_col8{
+            background-color:  #d8ebdd;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row5_col8{
+            background-color:  #ddede0;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row6_col8{
+            background-color:  #ddede1;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row7_col8{
+            background-color:  #e0eee3;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row8_col8{
+            background-color:  #e8f1ea;
+            color:  #000000;
+        }#T_534b75b6_519a_11ed_9911_367dda2c7820row9_col8{
+            background-color:  #ebf3ec;
+            color:  #000000;
+        }</style><table id="T_534b75b6_519a_11ed_9911_367dda2c7820"><thead>    <tr>        <th class="blank level0"></th>        <th class="col_heading level0 col0">agency</th>        <th class="col_heading level0 col1">department</th>        <th class="col_heading level0 col2">full_name</th>        <th class="col_heading level0 col3">job_title</th>        <th class="col_heading level0 col4">employment_time</th>        <th class="col_heading level0 col5">race</th>        <th class="col_heading level0 col6">gender</th>        <th class="col_heading level0 col7">hire_date</th>        <th class="col_heading level0 col8">salary</th>        <th class="col_heading level0 col9">id</th>        <th class="col_heading level0 col10">data_date</th>        <th class="col_heading level0 col11">hire_date_dt</th>        <th class="col_heading level0 col12">salary2</th>        <th class="col_heading level0 col13">salary3</th>        <th class="col_heading level0 col14">salary4</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row0" class="row_heading level0 row0">46963</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col0" class="data row0 col0">Texas A&amp;M</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col1" class="data row0 col1">Texas Real Estate Research Center</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col2" class="data row0 col2">Gerald A Klassen</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col3" class="data row0 col3">Research Data Scientist</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col4" class="data row0 col4">Full-Time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col5" class="data row0 col5">white</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col6" class="data row0 col6">Male</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col7" class="data row0 col7">11/28/2005</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col8" class="data row0 col8">223485.600000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col9" class="data row0 col9">149201</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col10" class="data row0 col10">3/1/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col11" class="data row0 col11">2005-11-28 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col12" class="data row0 col12">223485.600000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col13" class="data row0 col13">229743.196800</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row0_col14" class="data row0 col14">236176.006310</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row1" class="row_heading level0 row1">19476</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col0" class="data row1 col0">Texas State University</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col1" class="data row1 col1">Office of Institutional Research</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col2" class="data row1 col2">Tami Lynn Rice</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col3" class="data row1 col3">Dir, System Data &amp; Analysis</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col4" class="data row1 col4">Full-time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col5" class="data row1 col5">white</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col6" class="data row1 col6">Female</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col7" class="data row1 col7">12/1/1997</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col8" class="data row1 col8">142124.880000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col9" class="data row1 col9">74397</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col10" class="data row1 col10">8/20/2021</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col11" class="data row1 col11">1997-12-01 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col12" class="data row1 col12">142124.880000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col13" class="data row1 col13">146104.376640</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row1_col14" class="data row1 col14">150195.299186</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row2" class="row_heading level0 row2">79868</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col0" class="data row2 col0">Austin Community College</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col1" class="data row2 col1">Information Technology </td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col2" class="data row2 col2">David Cantu</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col3" class="data row2 col3">Sr. Manager, Data Governance</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col4" class="data row2 col4">Full-time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col5" class="data row2 col5">hispanic or latino</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col6" class="data row2 col6">Male</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col7" class="data row2 col7">5/17/2021</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col8" class="data row2 col8">129273.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col9" class="data row2 col9">191311</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col10" class="data row2 col10">3/29/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col11" class="data row2 col11">2021-05-17 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col12" class="data row2 col12">129273.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col13" class="data row2 col13">132892.644000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row2_col14" class="data row2 col14">136613.638032</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row3" class="row_heading level0 row3">24980</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col0" class="data row3 col0">UT Austin</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col1" class="data row3 col1">IQ - Information Quest</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col2" class="data row3 col2">Darren S Holm</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col3" class="data row3 col3">Senior Database Administrator</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col4" class="data row3 col4">Full-time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col5" class="data row3 col5">white</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col6" class="data row3 col6">Male</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col7" class="data row3 col7">11/10/2014</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col8" class="data row3 col8">127335.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col9" class="data row3 col9">198732</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col10" class="data row3 col10">3/31/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col11" class="data row3 col11">2014-11-10 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col12" class="data row3 col12">127335.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col13" class="data row3 col13">130900.380000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row3_col14" class="data row3 col14">134565.590640</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row4" class="row_heading level0 row4">42959</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col0" class="data row4 col0">Texas A&amp;M</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col1" class="data row4 col1">Office Of Institutional Effectiveness</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col2" class="data row4 col2">Rajeeb L Das</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col3" class="data row4 col3">Senior Data Scientist</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col4" class="data row4 col4">Full-Time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col5" class="data row4 col5">hispanic or latino</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col6" class="data row4 col6">Male</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col7" class="data row4 col7">12/2/2019</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col8" class="data row4 col8">126284.160000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col9" class="data row4 col9">147034</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col10" class="data row4 col10">3/1/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col11" class="data row4 col11">2019-12-02 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col12" class="data row4 col12">126284.160000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col13" class="data row4 col13">129820.116480</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row4_col14" class="data row4 col14">133455.079741</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row5" class="row_heading level0 row5">71763</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col0" class="data row5 col0">UT Arlington</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col1" class="data row5 col1">University Analytics</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col2" class="data row5 col2">Lisa Creed</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col3" class="data row5 col3">MANAGER, Partnerships &amp; Data</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col4" class="data row5 col4">Not Provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col5" class="data row5 col5">not provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col6" class="data row5 col6">Not Provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col7" class="data row5 col7">9/8/2020</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col8" class="data row5 col8">123600.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col9" class="data row5 col9">145604</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col10" class="data row5 col10">2/15/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col11" class="data row5 col11">2020-09-08 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col12" class="data row5 col12">123600.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col13" class="data row5 col13">127060.800000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row5_col14" class="data row5 col14">130618.502400</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row6" class="row_heading level0 row6">32501</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col0" class="data row6 col0">UNT</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col1" class="data row6 col1">Data Analytics &amp; Instl Rsrch</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col2" class="data row6 col2">Daniel J Hubbard</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col3" class="data row6 col3">Director, Data Management</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col4" class="data row6 col4">Full-Time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col5" class="data row6 col5">white</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col6" class="data row6 col6">Male</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col7" class="data row6 col7">2/22/2017</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col8" class="data row6 col8">123000.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col9" class="data row6 col9">179862</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col10" class="data row6 col10">3/29/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col11" class="data row6 col11">2017-02-22 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col12" class="data row6 col12">123000.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col13" class="data row6 col13">126444.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row6_col14" class="data row6 col14">129984.432000</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row7" class="row_heading level0 row7">64495</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col0" class="data row7 col0">UT Arlington</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col1" class="data row7 col1">OIT Enterprise Data Services</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col2" class="data row7 col2">Paul Savoy</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col3" class="data row7 col3">Sr Database Administrator</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col4" class="data row7 col4">Not Provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col5" class="data row7 col5">not provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col6" class="data row7 col6">Not Provided</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col7" class="data row7 col7">12/12/2016</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col8" class="data row7 col8">121616.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col9" class="data row7 col9">141732</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col10" class="data row7 col10">2/15/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col11" class="data row7 col11">2016-12-12 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col12" class="data row7 col12">121616.000000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col13" class="data row7 col13">125021.248000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row7_col14" class="data row7 col14">128521.842944</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row8" class="row_heading level0 row8">1803</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col0" class="data row8 col0">University of Houston</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col1" class="data row8 col1">Enterprise Systems</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col2" class="data row8 col2">Zeandra Mathura</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col3" class="data row8 col3">ES Database Adminstrator 4</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col4" class="data row8 col4">Full-Time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col5" class="data row8 col5">asian</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col6" class="data row8 col6">Female</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col7" class="data row8 col7">6/1/2016</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col8" class="data row8 col8">116857.800000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col9" class="data row8 col9">120609</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col10" class="data row8 col10">2/18/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col11" class="data row8 col11">2016-06-01 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col12" class="data row8 col12">116857.800000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col13" class="data row8 col13">120129.818400</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row8_col14" class="data row8 col14">123493.453315</td>
+            </tr>
+            <tr>
+                        <th id="T_534b75b6_519a_11ed_9911_367dda2c7820level0_row9" class="row_heading level0 row9">6885</th>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col0" class="data row9 col0">University of Houston</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col1" class="data row9 col1">Enterprise Systems</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col2" class="data row9 col2">Carol Pena</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col3" class="data row9 col3">ES Database Adminstrator 4</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col4" class="data row9 col4">Full-Time</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col5" class="data row9 col5">hispanic or latino</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col6" class="data row9 col6">Female</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col7" class="data row9 col7">2/11/2008</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col8" class="data row9 col8">114880.440000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col9" class="data row9 col9">120659</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col10" class="data row9 col10">2/18/2022</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col11" class="data row9 col11">2008-02-11 00:00:00</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col12" class="data row9 col12">114880.440000</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col13" class="data row9 col13">118097.092320</td>
+                        <td id="T_534b75b6_519a_11ed_9911_367dda2c7820row9_col14" class="data row9 col14">121403.810905</td>
+            </tr>
+    </tbody></table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+
+<style type="text/css">
+#T_5359c152_519a_11ed_9911_367dda2c7820row0_col1{
+            background-color:  #56b670;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row1_col1{
+            background-color:  #3aab58;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row2_col1{
+            background-color:  #8bcb9c;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row3_col1{
+            background-color:  #34a853;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row4_col1{
+            background-color:  #c1e1c9;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row5_col1{
+            background-color:  #7ac48d;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row6_col1{
+            background-color:  #ebf3ec;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row7_col1{
+            background-color:  #eaf2ec;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row8_col1{
+            background-color:  #77c48b;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row9_col1{
+            background-color:  #79c48d;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row10_col1{
+            background-color:  #9fd4ad;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row11_col1{
+            background-color:  #a5d6b2;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row12_col1{
+            background-color:  #a6d7b3;
+            color:  #000000;
+        }#T_5359c152_519a_11ed_9911_367dda2c7820row13_col1{
+            background-color:  #68bd7f;
+            color:  #000000;
+        }</style><table id="T_5359c152_519a_11ed_9911_367dda2c7820"><thead>    <tr>        <th class="blank"></th>        <th class="blank level0"></th>        <th class="col_heading level0 col0" colspan="8">salary</th>    </tr>    <tr>        <th class="blank"></th>        <th class="blank level1"></th>        <th class="col_heading level1 col0">count</th>        <th class="col_heading level1 col1">mean</th>        <th class="col_heading level1 col2">std</th>        <th class="col_heading level1 col3">min</th>        <th class="col_heading level1 col4">25%</th>        <th class="col_heading level1 col5">50%</th>        <th class="col_heading level1 col6">75%</th>        <th class="col_heading level1 col7">max</th>    </tr>    <tr>        <th class="index_name level0">race</th>        <th class="index_name level1">gender</th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>        <th class="blank"></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row0" class="row_heading level0 row0" rowspan="2">asian</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row0" class="row_heading level1 row0">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col0" class="data row0 col0">22.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col1" class="data row0 col1">79189.720000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col2" class="data row0 col2">21915.379994</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col3" class="data row0 col3">41616.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col4" class="data row0 col4">60969.120000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col5" class="data row0 col5">80713.320000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col6" class="data row0 col6">97159.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row0_col7" class="data row0 col7">116857.800000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row1" class="row_heading level1 row1">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col0" class="data row1 col0">18.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col1" class="data row1 col1">86061.783889</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col2" class="data row1 col2">20387.068553</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col3" class="data row1 col3">52000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col4" class="data row1 col4">75340.432500</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col5" class="data row1 col5">90175.860000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col6" class="data row1 col6">102901.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row1_col7" class="data row1 col7">110560.320000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row2" class="row_heading level0 row2" rowspan="2">black or african american</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row2" class="row_heading level1 row2">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col0" class="data row2 col0">8.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col1" class="data row2 col1">66522.936250</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col2" class="data row2 col2">16022.700192</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col3" class="data row2 col3">30514.320000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col4" class="data row2 col4">63750.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col5" class="data row2 col5">72318.585000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col6" class="data row2 col6">74150.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row2_col7" class="data row2 col7">81690.000000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row3" class="row_heading level1 row3">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col0" class="data row3 col0">3.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col1" class="data row3 col1">87640.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col2" class="data row3 col2">19325.716028</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col3" class="data row3 col3">69770.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col4" class="data row3 col4">77385.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col5" class="data row3 col5">85000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col6" class="data row3 col6">96575.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row3_col7" class="data row3 col7">108150.000000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row4" class="row_heading level0 row4" rowspan="2">hispanic or latino</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row4" class="row_heading level1 row4">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col0" class="data row4 col0">7.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col1" class="data row4 col1">53637.491429</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col2" class="data row4 col2">31630.273709</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col3" class="data row4 col3">24046.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col4" class="data row4 col4">34779.500000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col5" class="data row4 col5">41124.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col6" class="data row4 col6">62926.500000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row4_col7" class="data row4 col7">114880.440000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row5" class="row_heading level1 row5">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col0" class="data row5 col0">19.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col1" class="data row5 col1">70699.188947</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col2" class="data row5 col2">29236.914059</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col3" class="data row5 col3">34680.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col4" class="data row5 col4">50260.020000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col5" class="data row5 col5">60000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col6" class="data row5 col6">90190.495000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row5_col7" class="data row5 col7">129273.000000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row6" class="row_heading level0 row6">native hawaiian or other pacific islander</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row6" class="row_heading level1 row6">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col0" class="data row6 col0">1.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col1" class="data row6 col1">43296.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col2" class="data row6 col2">nan</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col3" class="data row6 col3">43296.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col4" class="data row6 col4">43296.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col5" class="data row6 col5">43296.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col6" class="data row6 col6">43296.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row6_col7" class="data row6 col7">43296.000000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row7" class="row_heading level0 row7" rowspan="3">not provided</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row7" class="row_heading level1 row7">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col0" class="data row7 col0">3.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col1" class="data row7 col1">43594.666667</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col2" class="data row7 col2">16738.365671</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col3" class="data row7 col3">32000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col4" class="data row7 col4">34000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col5" class="data row7 col5">36000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col6" class="data row7 col6">49392.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row7_col7" class="data row7 col7">62784.000000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row8" class="row_heading level1 row8">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col0" class="data row8 col0">4.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col1" class="data row8 col1">71264.957500</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col2" class="data row8 col2">32838.361957</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col3" class="data row8 col3">42861.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col4" class="data row8 col4">43677.480000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col5" class="data row8 col5">67508.410000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col6" class="data row8 col6">95095.887500</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row8_col7" class="data row8 col7">107182.010000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row9" class="row_heading level1 row9">Not Provided</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col0" class="data row9 col0">40.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col1" class="data row9 col1">70903.949500</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col2" class="data row9 col2">26333.239253</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col3" class="data row9 col3">26450.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col4" class="data row9 col4">50600.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col5" class="data row9 col5">65693.115000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col6" class="data row9 col6">93155.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row9_col7" class="data row9 col7">123600.000000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row10" class="row_heading level0 row10" rowspan="2">two or more races</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row10" class="row_heading level1 row10">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col0" class="data row10 col0">3.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col1" class="data row10 col1">61697.586667</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col2" class="data row10 col2">18196.965722</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col3" class="data row10 col3">45000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col4" class="data row10 col4">52000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col5" class="data row10 col5">59000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col6" class="data row10 col6">70046.380000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row10_col7" class="data row10 col7">81092.760000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row11" class="row_heading level1 row11">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col0" class="data row11 col0">2.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col1" class="data row11 col1">60190.040000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col2" class="data row11 col2">11582.465644</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col3" class="data row11 col3">52000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col4" class="data row11 col4">56095.020000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col5" class="data row11 col5">60190.040000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col6" class="data row11 col6">64285.060000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row11_col7" class="data row11 col7">68380.080000</td>
+            </tr>
+            <tr>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level0_row12" class="row_heading level0 row12" rowspan="2">white</th>
+                        <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row12" class="row_heading level1 row12">Female</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col0" class="data row12 col0">49.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col1" class="data row12 col1">59937.559388</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col2" class="data row12 col2">22755.208720</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col3" class="data row12 col3">24293.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col4" class="data row12 col4">43703.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col5" class="data row12 col5">54200.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col6" class="data row12 col6">71400.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row12_col7" class="data row12 col7">142124.880000</td>
+            </tr>
+            <tr>
+                                <th id="T_5359c152_519a_11ed_9911_367dda2c7820level1_row13" class="row_heading level1 row13">Male</th>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col0" class="data row13 col0">68.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col1" class="data row13 col1">74908.674118</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col2" class="data row13 col2">30083.636671</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col3" class="data row13 col3">34000.000000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col4" class="data row13 col4">51940.500000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col5" class="data row13 col5">72003.500000</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col6" class="data row13 col6">92756.257500</td>
+                        <td id="T_5359c152_519a_11ed_9911_367dda2c7820row13_col7" class="data row13 col7">223485.600000</td>
+            </tr>
+    </tbody></table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="20221021_files/figure-html/cell-10-output-6.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="20221021_files/figure-html/cell-10-output-8.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
