@@ -12,7 +12,7 @@ execute:
 
 ## Requests
 
-Simply put -- [Requests](https://docs.python-requests.org/en/master/user/quickstart/) allows you to "ask" for the information/data from a webpage. 
+Simply put -- [Requests](https://requests.readthedocs.io/en/latest/) allows you to "ask" for the information/data from a webpage. 
 
 This can be as easy (or as difficult) as you want to make it, but it is one of the O.G. options for pulling information from websites. 
 
