@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Twitter API"
+title: "Requests and BeautifulSoup"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
 format: 
   html:
@@ -10,48 +10,46 @@ execute:
   enabled: false
 ---
 
-Great resource found here: https://mdl.library.utoronto.ca/technology/tutorials/scraping-tweets-using-python
+## Requests
 
-## What is an Application Programming Interface (API)
+Simply put -- [Requests](https://docs.python-requests.org/en/master/user/quickstart/) allows you to "ask" for the information/data from a webpage. 
 
-   An API allows us to extract and interact with data directly from websites as well as other social networks, applications, and projects that make their data publicly available. They are built for data-sharing purposes and help to promote the use and further development of a site and its data. 
-   
-   Twitter wants other developers to use, integrate, and build upon Twitter tools and data. The Twitter API is the main conduit by which these developers can do so.
+This can be as easy (or as difficult) as you want to make it, but it is one of the O.G. options for pulling information from websites. 
 
-   The API can provide structured data as organized by the site itself -- You can be a bit more confident about the data you are pulling from an API.
-   
-   However, sometimes sites will restrict data access or require payment because __**$$**__.
+## BeautifulSoup
+
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) takes the request concept and makes it agonizing... but then __*Beautiful*__. 
+
+No really, the setup for it can have an intense learning curve (well, for me at least). Once you figure it out and get it working the way you like, you can scrape for days!
+
+## Need to Know
+
+Let's be clear, not all webpages WANT to be scraped... thus, making these processes quite time consuming on the forefront. There are certain things that you will need to get well aquainted with, such as HTML tags:
+
+### HTML TAGS
+
+| HTML Tag                | Explanation                              |
+|--------------------|-------------------------------------------|
+| <\!DOCTYPE>        | Defines document type                 |
+| <html\>             | Defines HTML document                  |
+| <head\>             | Main information about document    |
+| <title\>            | Title for document          |
+| <body\>             | Document body               |
+| <h1\> to <h6\>       |  Headings                    |
+| <p\>                | Paragraph                       |
+| <br\>               | Line break               |
+| <\!\-\-comment here-\-> | Comment                         |
+| <img\> | Image                         |
+| <a\> | Hyperlink                       |
+| <ul\> | Unordered list                     |
+| <ol\> | Ordered list                     |
+| <li\> | List item                     |
+| <style\> | Style information for a document                    |
+| <div\> | Section in a document                   |
+| <span\> | Section in a document                   |
 
 
-## 0. You need a Twitter Account
-
-### Create a Twitter account if you do not have one.
-
-## 1. Apply for Twitter Developer Account
-
-### Developer? Sounds fancy...
-
-First step will be making a [developer account](https://developer.twitter.com/en/solutions/academic-research).
-
- - Go to https://dev.twitter.com/apps and log in with your Twitter credentials.
- 
-## 2. Create an "app"
-
- - Click "Create New App"
-
- - Fill out the form and agree to the terms. Put in a dummy website if you don't have one you want to use.
-
- - On the next page, click the "Keys and Access Tokens" tab along the top, then scroll all the way down until you see the section "Your Access Token"
-    - Click the button "Create My Access Token". You can Read more about Oauth authorization.
-
- - You will now copy your unique four values into twitterstream.py (download this file on your computer). These values are your "API Key", your "API secret", your "Access token", and your "Access token secret". For now, open a new text file (.txt) called something like twitter_creds.txt and set the variables corresponding to the api key, api secret, access token, and access secret formatted like this:
-     - api_key = "<Enter api key>"
-     - api_secret = "<Enter api secret>"
-     - access_token_key = "<Enter your access token key here>"
-     - access_token_secret = "<Enter your access token secret here>"
-     
-## 3. Get coding
-
+However, that does not mean it's impossible! And I think it's a good practice in learning new skills, making solid decisions about what you are actually studying, etc. 
 
 
 

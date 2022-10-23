@@ -18,7 +18,7 @@ This can be as easy (or as difficult) as you want to make it, but it is one of t
 
 ## BeautifulSoup
 
-[BeautfulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) takes the request concept and makes it agonizing... but then __*Beautiful*__. 
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) takes the request concept and makes it agonizing... but then __*Beautiful*__. 
 
 No really, the setup for it can have an intense learning curve (well, for me at least). Once you figure it out and get it working the way you like, you can scrape for days!
 

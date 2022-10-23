@@ -36,7 +36,7 @@ There are too many to name!
 But some of my favorites involve: 
 
  * [Requests](https://docs.python-requests.org/en/master/user/quickstart/)
- * [BeautfulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+ * [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
  * APIs - [Twitter](https://developer.twitter.com/en/docs/twitter-api), [Youtube](https://developers.google.com/youtube/v3)
  * [Tweepy](https://docs.tweepy.org/en/latest/)
  * [Twarc](https://scholarslab.github.io/learn-twarc/)
