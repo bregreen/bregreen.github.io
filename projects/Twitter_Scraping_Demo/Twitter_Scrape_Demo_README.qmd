@@ -34,7 +34,7 @@ These questions/topics included things like:
  
 ## Table of Contents:
 
-### [Set Up Twitter API](https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_step.html#)
+### [Set Up Twitter API](https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_steps.html#)
 
 ### [Twitter API Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/twitter_api_demo.html#)
 
@@ -46,6 +46,10 @@ These questions/topics included things like:
 - Second, many thanks to friends in the [THE SOCIAL PERCEPTION AND INTERGROUP (IN)EQUALITY LAB](http://www.kroschlab.com/) for whom I was motivated by to work on this! Otherwise, it might have been a powerpoint. 
    
    *Crowd boos in dissatisfaction.*
+   
+   
+[Blog Home Page](https://bregreen.github.io/blog.html#) | 
+[Home](https://bregreen.github.io/#)
    
    
    
