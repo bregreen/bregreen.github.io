@@ -19,18 +19,6 @@ execute:
   This webpage contains materials for a simple introduction to scraping content from Twitter. I created it present to colleagues and friends at Cornell in 2021 Spring (so if you are seeing this many moons in the future... brace yourself for this relic). A quick snippet about me -- I am a PhD Student in the [Information Science](https://infosci.cornell.edu/research) Department who's main research interest is how activist and extremist ideologies are developed and manifested online, particularly using social media. Moreover, I've been particularly interested in how folks moralize acts of harm.
 
  **How are we going to do this?** 
-
-  Let's get the core information out of the way. We will breeze through most of that (hopefully in about 5-10 minutes). Then we can talk through some demos and answer really good questions sent to me.
-  
-These questions/topics included things like:
-
-+ How to gather tweets from different users?
-    * How many to gather from each person? Are there norms/conventions in research for this? Without a specific question on the topic (i.e., I don’t think I really care about how many we get), what is “standard practice”?
-    * Which tweets to gather? Random selection, most recent, most liked, etc? Again, absent a more specific question, are there norms/conventions for this?
-+ How to diagnose political ideology?
-    * How do we determine each user’s political ideology, on some scale from “Very Liberal” to “Very Conservative”?
-+ Descriptive stats on tweets?
-    * Frequency of words like “we, us, our, ours”
  
 ## Table of Contents:
 
