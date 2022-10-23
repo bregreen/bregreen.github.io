@@ -1,6 +1,7 @@
 ---
 title: "Let's Scrape Twitter! (w/ Python)"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
+layout: default
 format: 
   html:
     code-fold: true
