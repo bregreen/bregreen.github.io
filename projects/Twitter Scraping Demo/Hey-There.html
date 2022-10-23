@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="A demo by Breanna E. Green // Powered by Quarto">
+
+<title>Let’s Scrape Twitter! (w/ Python)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Hey-There_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Hey-There_files/libs/quarto-html/quarto.js"></script>
+<script src="Hey-There_files/libs/quarto-html/popper.min.js"></script>
+<script src="Hey-There_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Hey-There_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Hey-There_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Hey-There_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Hey-There_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Hey-There_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Hey-There_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Let’s Scrape Twitter! (w/ Python)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>A demo by <a href="https://bregreen.github.io/">Breanna E. Green</a> // Powered by <a href="https://quarto.org/docs/tools/jupyter-lab.html">Quarto</a> </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<p><img src="logo.PNG" alt="Cartoon version of B. E. Green" width="200"></p>
+<p></p>
+<p>This webpage contains materials for a simple introduction to scraping content from Twitter. I created it present to colleagues and friends at Cornell in 2021 Spring (so if you are seeing this many moons in the future… brace yourself for this relic). A quick snippet about me – I am a PhD Student in the <a href="https://infosci.cornell.edu/research">Information Science</a> Department who’s main research interest is how activist and extremist ideologies are developed and manifested online, particularly using social media. Moreover, I’ve been particularly interested in how folks moralize acts of harm.</p>
+<p><strong>How are we going to do this?</strong></p>
+<p>Let’s get the core information out of the way. We will breeze through most of that (hopefully in about 5-10 minutes). Then we can talk through some demos and answer really good questions sent to me.</p>
+<p>These questions/topics included things like:</p>
+<ul>
+<li><p>How to gather tweets from different users?</p>
+<ul>
+<li>How many to gather from each person? Are there norms/conventions in research for this? Without a specific question on the topic (i.e., I don’t think I really care about how many we get), what is “standard practice”?</li>
+<li>Which tweets to gather? Random selection, most recent, most liked, etc? Again, absent a more specific question, are there norms/conventions for this?</li>
+</ul></li>
+<li><p>How to diagnose political ideology?</p>
+<ul>
+<li>How do we determine each user’s political ideology, on some scale from “Very Liberal” to “Very Conservative”?</li>
+</ul></li>
+<li><p>Descriptive stats on tweets?</p>
+<ul>
+<li>Frequency of words like “we, us, our, ours”</li>
+</ul></li>
+</ul>
+<p><strong>Acknowledgments</strong> I only learned how to develop this page after seeing the magnificent course materials of <a href="https://github.com/melaniewalsh/Intro-Cultural-Analytics">Melanine Walsh</a>, who themselves cite the works of <a href="https://github.com/laurenfklein/emory-qtm340">Lauren Klein</a>, <a href="https://mimno.infosci.cornell.edu/info3350/">David Mimno</a>, and <a href="https://github.com/aparrish/rwet">Allison Parrish</a>. Many, many thanks for such a beautiful and informative site!</p>
+<p>Second, many thanks to friends in the <a href="http://www.kroschlab.com/">THE SOCIAL PERCEPTION AND INTERGROUP (IN)EQUALITY LAB</a> for whom I motivated to work on this! Otherwise, it might have been a powerpoint. <em>Crowd boos in dissatisfaction.</em></p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
