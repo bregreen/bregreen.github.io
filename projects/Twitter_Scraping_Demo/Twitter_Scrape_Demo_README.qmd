@@ -7,7 +7,7 @@ format:
     page-layout: full
 jupyter: python3
 execute: 
-  enabled: true
+  enabled: false
 ---
 
 <img src="logo.PNG" alt="Cartoon version of B. E. Green" width="200"/>
@@ -16,7 +16,36 @@ execute:
 
 ## Introduction:
   
-  This webpage contains materials for a simple introduction to scraping content from Twitter. I created it present to colleagues and friends at Cornell in 2021 Spring (so if you are seeing this many moons in the future... brace yourself for this relic). A quick snippet about me -- I am a PhD Student in the [Information Science](https://infosci.cornell.edu/research) Department who's main research interest is how activist and extremist ideologies are developed and manifested online, particularly using social media. Moreover, I've been particularly interested in how folks moralize acts of harm.
+This webpage contains materials for a simple introduction to scraping content from Twitter. I created it present to colleagues and friends at Cornell in 2021 Spring (so if you are seeing this many moons in the future... brace yourself for this relic). A quick snippet about me -- I am a PhD Student in the [Information Science](https://infosci.cornell.edu/research) Department who's main research interest is how activist and extremist ideologies are developed and manifested online, particularly using social media. Moreover, I've been particularly interested in how folks moralize acts of harm.
+
+## Overview
+
+### Why scrape?
+
+Sometimes we are interested in the conversations, content, and context of interactions happening on the internet. Often, this involves finding ways to extract this information in organized and informative ways based on the source we are examining -- Facebook, Twitter, Reddit, Gab, etc.
+
+As a point of necessary discussion -- some might find these ways to be legally or morally questionable. This is a conversation certainly worth exploring and I implore you to always keep this in mind. 
+
+Talk to your IRB, experts in the field, the actual website of interest, and/or Google. 
+
+
+### Tell me the ways!
+
+There are too many to name!
+
+But some of my favorites involve: 
+
+ * [Requests](https://docs.python-requests.org/en/master/user/quickstart/)
+ * [BeautfulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+ * APIs - [Twitter](https://developer.twitter.com/en/docs/twitter-api), [Youtube](https://developers.google.com/youtube/v3)
+ * [Tweepy](https://docs.tweepy.org/en/latest/)
+ * [Twarc](https://scholarslab.github.io/learn-twarc/)
+ 
+
+But people might build automatic web scrapers or crawlers (Spiders) unique to their needs, or publically available options such as:
+ 
+ * [Scrapy](https://scrapy.org/)
+ * [Bathyscaphe](https://github.com/darkspot-org) (an intersting one I found for the DarkWeb)
 
 **How are we going to do this?** 
  
@@ -25,6 +54,10 @@ execute:
 ### [Set Up Twitter API](https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_steps.html#)
 
 ### [Twitter API Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/twitter_api_demo.html#)
+
+### [Requests and BeautifulSoup](https://bregreen.github.io/projects/Twitter_Scraping_Demo/requests_and_beautifulsoup.html#)
+
+### [BeautifulSoup Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/beautifulsoup_demo.html#)
 
 
 #### **Acknowledgments**:

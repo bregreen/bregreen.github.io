@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="A demo by Breanna E. Green // Powered by Quarto">
+
+<title>Requests and BeautifulSoup</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="requests_and_beautifulsoup_files/libs/clipboard/clipboard.min.js"></script>
+<script src="requests_and_beautifulsoup_files/libs/quarto-html/quarto.js"></script>
+<script src="requests_and_beautifulsoup_files/libs/quarto-html/popper.min.js"></script>
+<script src="requests_and_beautifulsoup_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="requests_and_beautifulsoup_files/libs/quarto-html/anchor.min.js"></script>
+<link href="requests_and_beautifulsoup_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="requests_and_beautifulsoup_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="requests_and_beautifulsoup_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="requests_and_beautifulsoup_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="requests_and_beautifulsoup_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Requests and BeautifulSoup</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>A demo by <a href="https://bregreen.github.io/">Breanna E. Green</a> // Powered by <a href="https://quarto.org/docs/tools/jupyter-lab.html">Quarto</a> </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="requests" class="level2">
+<h2 class="anchored" data-anchor-id="requests">Requests</h2>
+<p>Simply put – <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests</a> allows you to “ask” for the information/data from a webpage.</p>
+<p>This can be as easy (or as difficult) as you want to make it, but it is one of the O.G. options for pulling information from websites.</p>
+</section>
+<section id="beautifulsoup" class="level2">
+<h2 class="anchored" data-anchor-id="beautifulsoup">BeautifulSoup</h2>
+<p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautfulSoup</a> takes the request concept and makes it agonizing… but then <strong><em>Beautiful</em></strong>.</p>
+<p>No really, the setup for it can have an intense learning curve (well, for me at least). Once you figure it out and get it working the way you like, you can scrape for days!</p>
+</section>
+<section id="need-to-know" class="level2">
+<h2 class="anchored" data-anchor-id="need-to-know">Need to Know</h2>
+<p>Let’s be clear, not all webpages WANT to be scraped… thus, making these processes quite time consuming on the forefront. There are certain things that you will need to get well aquainted with, such as HTML tags:</p>
+<section id="html-tags" class="level3">
+<h3 class="anchored" data-anchor-id="html-tags">HTML TAGS</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>HTML Tag</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;!DOCTYPE&gt;&nbsp;</td>
+<td>Defines document type</td>
+</tr>
+<tr class="even">
+<td>&lt;html&gt;</td>
+<td>Defines HTML document</td>
+</tr>
+<tr class="odd">
+<td>&lt;head&gt;</td>
+<td>Main information about document</td>
+</tr>
+<tr class="even">
+<td>&lt;title&gt;</td>
+<td>Title for document</td>
+</tr>
+<tr class="odd">
+<td>&lt;body&gt;</td>
+<td>Document body</td>
+</tr>
+<tr class="even">
+<td>&lt;h1&gt; to &lt;h6&gt;</td>
+<td>Headings</td>
+</tr>
+<tr class="odd">
+<td>&lt;p&gt;</td>
+<td>Paragraph</td>
+</tr>
+<tr class="even">
+<td>&lt;br&gt;</td>
+<td>Line break</td>
+</tr>
+<tr class="odd">
+<td>&lt;!--comment here--&gt;</td>
+<td>Comment</td>
+</tr>
+<tr class="even">
+<td>&lt;img&gt;</td>
+<td>Image</td>
+</tr>
+<tr class="odd">
+<td>&lt;a&gt;</td>
+<td>Hyperlink</td>
+</tr>
+<tr class="even">
+<td>&lt;ul&gt;</td>
+<td>Unordered list</td>
+</tr>
+<tr class="odd">
+<td>&lt;ol&gt;</td>
+<td>Ordered list</td>
+</tr>
+<tr class="even">
+<td>&lt;li&gt;</td>
+<td>List item</td>
+</tr>
+<tr class="odd">
+<td>&lt;style&gt;</td>
+<td>Style information for a document</td>
+</tr>
+<tr class="even">
+<td>&lt;div&gt;</td>
+<td>Section in a document</td>
+</tr>
+<tr class="odd">
+<td>&lt;span&gt;</td>
+<td>Section in a document</td>
+</tr>
+</tbody>
+</table>
+<p>However, that does not mean it’s impossible! And I think it’s a good practice in learning new skills, making solid decisions about what you are actually studying, etc.</p>
+<p><a href="https://bregreen.github.io/projects/Twitter_Scraping_Demo/Twitter_Scrape_Demo_README.html#">Return to Twitter Scraping Demo Home Page</a> | <a href="https://bregreen.github.io/blog.html#">Return to Blog Home Page</a> | <a href="https://bregreen.github.io/#">Home</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
