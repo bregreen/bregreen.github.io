@@ -222,6 +222,7 @@ display(a_text.head())
 
 
 
+
+[Home](https://bregreen.github.io/#) | 
 [Return to Twitter Scraping Demo Home Page](https://bregreen.github.io/projects/Twitter_Scraping_Demo/Twitter_Scrape_Demo_README.html#) | 
-[Return to Blog Home Page](https://bregreen.github.io/blog.html#) | 
-[Home](https://bregreen.github.io/#)
+[<< Requests and BeautifulSoup](https://bregreen.github.io/projects/Twitter_Scraping_Demo/requests_and_beautifulsoup.html#) 

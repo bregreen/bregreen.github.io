@@ -53,6 +53,7 @@ However, that does not mean it's impossible! And I think it's a good practice in
 
 
 
+[Home](https://bregreen.github.io/#) | 
 [Return to Twitter Scraping Demo Home Page](https://bregreen.github.io/projects/Twitter_Scraping_Demo/Twitter_Scrape_Demo_README.html#) | 
-[Return to Blog Home Page](https://bregreen.github.io/blog.html#) | 
-[Home](https://bregreen.github.io/#)
+[<< Twitter API Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/twitter_api_demo.html#) |
+[BeautifulSoup Demo >>](https://bregreen.github.io/projects/Twitter_Scraping_Demo/beautifulsoup_demo.html#)
