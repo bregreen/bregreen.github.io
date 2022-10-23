@@ -1,0 +1,97 @@
+---
+title: "Twitter API (+ Tweepy)"
+author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
+format: 
+  html:
+    code-fold: true
+    page-layout: full
+jupyter: python3
+execute: 
+  enabled: false
+---
+
+```{python}
+
+#Imports and Installs
+
+import json
+from   collections import defaultdict
+from   glob import glob
+import pandas as pd
+import numpy as np
+import os
+import string
+import sys
+import tweepy 
+
+try:
+    import lzma
+except ImportError:
+    from backports import lzma
+    
+```
+
+### You will need your own keys here!
+
+```{python}
+
+#Tweepy
+# Exmaple code from: (https://www.geeksforgeeks.org/python-api-lookup_users-in-tweepy/)
+
+# assign the values accordingly 
+consumer_key = "LETTERSANDNUMBERS" 
+consumer_secret = "LETTERSANDNUMBERS" 
+access_token = "LETTERSANDNUMBERS" 
+access_token_secret = "LETTERSANDNUMBERS" 
+  
+# authorization of consumer key and consumer secret 
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret) 
+  
+# set access to user's access key and access secret  
+auth.set_access_token(access_token, access_token_secret) 
+  
+# calling the api  
+api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True) 
+
+```
+
+
+```{python}
+
+## Test that this worked! (It does, keep it commented out)
+
+print("We can find users by userid: \n")
+# list of user_ids 
+user_ids = [1188495786801278981, 17369110,  254791849]
+  
+# getting the users by user_ids 
+users = api.lookup_users(user_ids) 
+  
+# printing the user details 
+for user in users: 
+    print("The id by twitter id is : " + str(user.id)) 
+    print("The screen name by twitter id is : " + user.screen_name, end = "\n\n")
+
+
+print('\n', '___'*25, '\n') 
+    
+    
+print("Or we can find users by user handle: \n")
+# list of screen_names 
+handles = ["BreannaEGreen", "Cornell", "SciPyTip"] 
+  
+# getting the users by screen_names 
+users = api.lookup_users(screen_names = handles) 
+  
+# printing the user details 
+for user in users: 
+    print("The id by handle is : " + str(user.id)) 
+    print("The screen name by handle is : " + user.screen_name, end = "\n\n") 
+
+```
+
+
+
+[Return to Twitter Scraping Demo Home Page](https://bregreen.github.io/projects/Twitter_Scraping_Demo/#) | 
+[Return to Blog Home Page](https://bregreen.github.io/blog.html#) | 
+[Home](https://bregreen.github.io/#)

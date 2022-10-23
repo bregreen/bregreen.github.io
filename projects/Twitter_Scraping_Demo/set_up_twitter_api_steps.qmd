@@ -1,0 +1,60 @@
+---
+title: "Setting Up Twitter API"
+author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
+format: 
+  html:
+    code-fold: true
+    page-layout: full
+jupyter: python3
+execute: 
+  enabled: false
+---
+
+Great resource found here: https://mdl.library.utoronto.ca/technology/tutorials/scraping-tweets-using-python
+
+## What is an Application Programming Interface (API)
+
+   An API allows us to extract and interact with data directly from websites as well as other social networks, applications, and projects that make their data publicly available. They are built for data-sharing purposes and help to promote the use and further development of a site and its data. 
+   
+   Twitter wants other developers to use, integrate, and build upon Twitter tools and data. The Twitter API is the main conduit by which these developers can do so.
+
+   The API can provide structured data as organized by the site itself -- You can be a bit more confident about the data you are pulling from an API.
+   
+   However, sometimes sites will restrict data access or require payment because __**$$**__.
+
+
+## 0. You need a Twitter Account
+
+### Create a Twitter account if you do not have one.
+
+## 1. Apply for Twitter Developer Account
+
+### Developer? Sounds fancy...
+
+First step will be making a [developer account](https://developer.twitter.com/en/solutions/academic-research).
+
+ - Go to https://dev.twitter.com/apps and log in with your Twitter credentials.
+ 
+## 2. Create an "app"
+
+ - Click "Create New App"
+
+ - Fill out the form and agree to the terms. Put in a dummy website if you don't have one you want to use.
+
+ - On the next page, click the "Keys and Access Tokens" tab along the top, then scroll all the way down until you see the section "Your Access Token"
+    - Click the button "Create My Access Token". You can Read more about Oauth authorization.
+
+ - You will now copy your unique four values into twitterstream.py (download this file on your computer). These values are your "API Key", your "API secret", your "Access token", and your "Access token secret". For now, open a new text file (.txt) called something like twitter_creds.txt and set the variables corresponding to the api key, api secret, access token, and access secret formatted like this:
+     - api_key = "<Enter api key>"
+     - api_secret = "<Enter api secret>"
+     - access_token_key = "<Enter your access token key here>"
+     - access_token_secret = "<Enter your access token secret here>"
+     
+## 3. Get coding
+
+
+
+
+[Return to Twitter Scraping Demo Home Page](https://bregreen.github.io/projects/Twitter_Scraping_Demo/#) | 
+[Return to Blog Home Page](https://bregreen.github.io/blog.html#) | 
+[Home](https://bregreen.github.io/#)

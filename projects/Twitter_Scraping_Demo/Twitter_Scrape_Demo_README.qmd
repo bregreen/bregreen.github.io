@@ -3,7 +3,7 @@ title: "Let's Scrape Twitter! (w/ Python)"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
 format: 
   html:
-    code-fold: true
+    code-fold: false
     page-layout: full
 jupyter: python3
 execute: 
@@ -34,9 +34,9 @@ These questions/topics included things like:
  
 ## Table of Contents:
 
-### [Set Up Twitter API](https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_step.ipynb#)
+### [Set Up Twitter API](https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_step.html#)
 
-### [Twitter API Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/twitter_api_demo.ipynb#)
+### [Twitter API Demo](https://bregreen.github.io/projects/Twitter_Scraping_Demo/twitter_api_demo.html#)
 
 
 #### **Acknowledgments**:

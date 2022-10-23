@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="A demo by Breanna E. Green // Powered by Quarto">
+
+<title>Setting Up Twitter API</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="set_up_twitter_api_steps_files/libs/clipboard/clipboard.min.js"></script>
+<script src="set_up_twitter_api_steps_files/libs/quarto-html/quarto.js"></script>
+<script src="set_up_twitter_api_steps_files/libs/quarto-html/popper.min.js"></script>
+<script src="set_up_twitter_api_steps_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="set_up_twitter_api_steps_files/libs/quarto-html/anchor.min.js"></script>
+<link href="set_up_twitter_api_steps_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="set_up_twitter_api_steps_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="set_up_twitter_api_steps_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="set_up_twitter_api_steps_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="set_up_twitter_api_steps_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Setting Up Twitter API</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>A demo by <a href="https://bregreen.github.io/">Breanna E. Green</a> // Powered by <a href="https://quarto.org/docs/tools/jupyter-lab.html">Quarto</a> </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Great resource found here: https://mdl.library.utoronto.ca/technology/tutorials/scraping-tweets-using-python</p>
+<section id="what-is-an-application-programming-interface-api" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-application-programming-interface-api">What is an Application Programming Interface (API)</h2>
+<p>An API allows us to extract and interact with data directly from websites as well as other social networks, applications, and projects that make their data publicly available. They are built for data-sharing purposes and help to promote the use and further development of a site and its data.</p>
+<p>Twitter wants other developers to use, integrate, and build upon Twitter tools and data. The Twitter API is the main conduit by which these developers can do so.</p>
+<p>The API can provide structured data as organized by the site itself – You can be a bit more confident about the data you are pulling from an API.</p>
+<p>However, sometimes sites will restrict data access or require payment because <strong><strong>$$</strong></strong>.</p>
+</section>
+<section id="you-need-a-twitter-account" class="level2">
+<h2 class="anchored" data-anchor-id="you-need-a-twitter-account">0. You need a Twitter Account</h2>
+<section id="create-a-twitter-account-if-you-do-not-have-one." class="level3">
+<h3 class="anchored" data-anchor-id="create-a-twitter-account-if-you-do-not-have-one.">Create a Twitter account if you do not have one.</h3>
+</section>
+</section>
+<section id="apply-for-twitter-developer-account" class="level2">
+<h2 class="anchored" data-anchor-id="apply-for-twitter-developer-account">1. Apply for Twitter Developer Account</h2>
+<section id="developer-sounds-fancy" class="level3">
+<h3 class="anchored" data-anchor-id="developer-sounds-fancy">Developer? Sounds fancy…</h3>
+<p>First step will be making a <a href="https://developer.twitter.com/en/solutions/academic-research">developer account</a>.</p>
+<ul>
+<li>Go to https://dev.twitter.com/apps and log in with your Twitter credentials.</li>
+</ul>
+</section>
+</section>
+<section id="create-an-app" class="level2">
+<h2 class="anchored" data-anchor-id="create-an-app">2. Create an “app”</h2>
+<ul>
+<li><p>Click “Create New App”</p></li>
+<li><p>Fill out the form and agree to the terms. Put in a dummy website if you don’t have one you want to use.</p></li>
+<li><p>On the next page, click the “Keys and Access Tokens” tab along the top, then scroll all the way down until you see the section “Your Access Token”</p>
+<ul>
+<li>Click the button “Create My Access Token”. You can Read more about Oauth authorization.</li>
+</ul></li>
+<li><p>You will now copy your unique four values into twitterstream.py (download this file on your computer). These values are your “API Key”, your “API secret”, your “Access token”, and your “Access token secret”. For now, open a new text file (.txt) called something like twitter_creds.txt and set the variables corresponding to the api key, api secret, access token, and access secret formatted like this:</p>
+<ul>
+<li>api_key = “<enter api="" key="">”</enter></li>
+<li>api_secret = “<enter api="" secret="">”</enter></li>
+<li>access_token_key = “<enter your="" access="" token="" key="" here="">”</enter></li>
+<li>access_token_secret = “<enter your="" access="" token="" secret="" here="">”</enter></li>
+</ul></li>
+</ul>
+</section>
+<section id="get-coding" class="level2">
+<h2 class="anchored" data-anchor-id="get-coding">3. Get coding</h2>
+<p><a href="https://bregreen.github.io/projects/Twitter_Scraping_Demo/#">Return to Twitter Scraping Demo Home Page</a> | <a href="https://bregreen.github.io/blog.html#">Return to Blog Home Page</a> | <a href="https://bregreen.github.io/#">Home</a></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
