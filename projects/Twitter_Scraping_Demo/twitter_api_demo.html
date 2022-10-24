@@ -208,6 +208,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The screen name by handle is : "</span> <span class="op">+</span> user.screen_name, end <span class="op">=</span> <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="ok-so-we-know-that-the-above-code-chunk-works.-nice" class="level2">
+<h2 class="anchored" data-anchor-id="ok-so-we-know-that-the-above-code-chunk-works.-nice">Ok, so we know that the above code chunk works. <em>Nice!</em></h2>
+<p>Let’s work on somegthing a bit more detailed. The below code requires a list of Twitter IDs that you’re interesting in pulling tweets from – similar to the code chunk above:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># list of user_ids </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>user_ids <span class="op">=</span> [<span class="dv">1188495786801278981</span>, <span class="dv">17369110</span>,  <span class="dv">254791849</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The below code assumes you’ve received more advanced API access – researcher access. You might need to make some changes to the code depending on the level of access you have. I’ve commented notes within this code indcating what I’m doing and why.</p>
+<p>Happy Coding!</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Full Archive Search</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">### Pick an endpoint you are pulling code from... Here we search all tweets </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>archive_search_url <span class="op">=</span> <span class="st">"https://api.twitter.com/2/tweets/search/all"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">### This is when Twitter began! March 25, 2006. I want to pull as early as I possibly can, so why not start near the day the website launched?</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>twitter_start <span class="op">=</span> datetime(<span class="dv">2006</span>, <span class="dv">3</span>, <span class="dv">25</span>).isoformat()<span class="op">+</span><span class="st">'Z'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.now()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">### Define some useful functions</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">### You bearer token can be found where you pulled you tokens</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>bearer_token<span class="op">=</span><span class="st">"LETTERSANDNUMBERS"</span> <span class="co">### put your bearer token here!</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bearer_oauth(r):</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Method required by bearer token authentication.</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    r.headers[<span class="st">"Authorization"</span>] <span class="op">=</span> <span class="ss">f"Bearer </span><span class="sc">{</span>bearer_token<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    r.headers[<span class="st">"User-Agent"</span>] <span class="op">=</span> <span class="st">"v2FullArchiveSearchPython"</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> r</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">### connect to your endpoint using parameters you set and return a json snippet</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> connect_to_endpoint(url, params):</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.request(<span class="st">"GET"</span>, archive_search_url, auth<span class="op">=</span>bearer_oauth, params<span class="op">=</span>params)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#     print(response.status_code)</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(response.headers)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(response.status_code, response.text)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> response.json()</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co">### main function that uses the above functions, as well as the paramters you want</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main(id_):</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    fileDir <span class="op">=</span> os.path.dirname(os.path.realpath(<span class="st">'__file__'</span>)) <span class="co">### the current path that you're working in</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    store <span class="op">=</span> fileDir.replace(<span class="st">"_Notebooks"</span>, <span class="st">"_Data"</span>)<span class="op">+</span><span class="st">'/TLs_subset_1500/'</span> <span class="co">### name of folder where you want to store these results</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    json_file_name <span class="op">=</span> store <span class="op">+</span> now.strftime(<span class="st">"%Y_%m_</span><span class="sc">%d</span><span class="st">"</span>) <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> <span class="bu">str</span>(id_) <span class="op">+</span> <span class="st">'.json'</span> <span class="co">### json file name as DATE_USERID_.json</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    log_name <span class="op">=</span> store <span class="op">+</span> <span class="st">"log_TLs_1500"</span><span class="op">+</span>now.strftime(<span class="st">"%Y_%m_</span><span class="sc">%d</span><span class="st">"</span>)<span class="op">+</span><span class="st">".text"</span> <span class="co">### creating a log of what was pulled in case somethign breaks (which happens!)</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    search_archive_done <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Loop for pull</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (search_archive_done <span class="op">==</span> <span class="va">False</span>):</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(json_file_name, <span class="st">"w"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>            time.sleep(<span class="dv">5</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>            query_params <span class="op">=</span> {<span class="st">'query'</span>: <span class="st">'(from:</span><span class="sc">{}</span><span class="st"> OR to:</span><span class="sc">{}</span><span class="st">) lang:en -is:retweet'</span>.<span class="bu">format</span>(id_, id_),</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>            <span class="st">'tweet.fields'</span>: <span class="st">'created_at,public_metrics,'</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'attachments,'</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'conversation_id,context_annotations,'</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'entities,geo,id,'</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'in_reply_to_user_id,lang,'</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'possibly_sensitive,reply_settings,'</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'referenced_tweets,'</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'source,text,withheld'</span>,</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>            <span class="st">'start_time'</span>: twitter_start,</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>            <span class="st">"user.fields"</span>: <span class="st">'created_at,description,entities,id,location,name,'</span> </span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'profile_image_url,protected,public_metrics,url,username,verified,withheld'</span>,</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>            <span class="st">"place.fields"</span>:<span class="st">'contained_within,country,country_code,full_name,geo,id,name,place_type'</span>,</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>            <span class="st">'expansions'</span>:<span class="st">'author_id,referenced_tweets.id,in_reply_to_user_id,'</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'attachments.media_keys,attachments.poll_ids,geo.place_id,'</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'entities.mentions.username,referenced_tweets.id.author_id'</span>, </span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>            <span class="st">'max_results'</span>: <span class="dv">100</span>,</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>            <span class="st">'next_token'</span>: <span class="va">None</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>            json_response_ids <span class="op">=</span> connect_to_endpoint(archive_search_url, query_params)</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">"result_count"</span> <span class="kw">in</span> json_response_ids.get(<span class="st">"meta"</span>, {}).keys():</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>                result_count <span class="op">=</span> json_response_ids[<span class="st">"meta"</span>][<span class="st">"result_count"</span>]</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> result_count <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>                    json.dump(json_response_ids, <span class="bu">file</span>, sort_keys<span class="op">=</span><span class="va">True</span>,indent<span class="op">=</span><span class="dv">2</span>, separators<span class="op">=</span>(<span class="st">','</span>, <span class="st">': '</span>))</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">while</span> <span class="st">"next_token"</span> <span class="kw">in</span> json_response_ids.get(<span class="st">"meta"</span>, {}).keys():</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>                        <span class="bu">file</span>.write(<span class="st">",</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>                        next_token <span class="op">=</span> json_response_ids[<span class="st">"meta"</span>][<span class="st">"next_token"</span>]</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>                        new_param <span class="op">=</span> {<span class="st">"next_token"</span>: next_token}</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>                        query_params.update(new_param)</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>                        time.sleep(<span class="fl">4.2</span>)</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>                        json_response_ids <span class="op">=</span> connect_to_endpoint(archive_search_url, query_params)</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>                        json.dump(json_response_ids, <span class="bu">file</span>, sort_keys<span class="op">=</span><span class="va">True</span>,indent<span class="op">=</span><span class="dv">2</span>, separators<span class="op">=</span>(<span class="st">','</span>, <span class="st">': '</span>))</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">else</span>:</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>                        search_archive_done <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>                        <span class="bu">file</span>.write(<span class="st">",</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="co">#                         print('{} tweets finished pull at {}'.format(id_, datetime.now()))</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">pass</span></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>                    search_archive_done <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st"> has no tweets, is private, or is suspended. finished pull at </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(id_, datetime.now()))</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>                search_archive_done <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st"> is likely private or suspended.'</span>.<span class="bu">format</span>(id_))</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.close()</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>    search_archive_done <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st"> tweets finished pull at </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(id_, datetime.now()))</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(log_name, <span class="st">"a"</span>) <span class="im">as</span> log:</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>        log.write(<span class="st">'</span><span class="sc">{}</span><span class="st"> finished pull at </span><span class="sc">{}</span><span class="st">.</span><span class="ch">\n</span><span class="st">'</span>.<span class="bu">format</span>(id_, datetime.now()))</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>    log.close()</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx <span class="kw">in</span> userid_list: <span class="co">### userid_list is the list of userids you're interested in pulling tweets from!</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>        main(<span class="bu">str</span>(idx))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><a href="https://bregreen.github.io/#">Home</a> | <a href="https://bregreen.github.io/projects/Twitter_Scraping_Demo/Twitter_Scrape_Demo_README.html#">Return to Twitter Scraping Demo Home Page</a> | <a href="https://bregreen.github.io/projects/Twitter_Scraping_Demo/set_up_twitter_api_steps.html#">&lt;&lt; Set Up Twitter API</a> | <a href="https://bregreen.github.io/projects/Twitter_Scraping_Demo/requests_and_beautifulsoup.html#">Requests and BeautifulSoup &gt;&gt;</a></p>
 </section>
 
