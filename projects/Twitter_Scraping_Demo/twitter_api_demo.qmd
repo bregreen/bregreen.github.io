@@ -3,7 +3,7 @@ title: "Twitter API (+ Tweepy)"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
 format: 
   html:
-    code-fold: true
+    code-fold: false
     page-layout: full
 jupyter: python3
 execute: 

@@ -3,7 +3,7 @@ title: "Twitter API (+ Tweepy)"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
 format: 
   html:
-    code-fold: true
+    code-fold: false
     page-layout: full
 jupyter: python3
 execute: 
@@ -118,6 +118,9 @@ now = datetime.now()
 ### Define some useful functions
 
 ### You bearer token can be found where you pulled you tokens
+
+bearer_token="LETTERSANDNUMBERS" ### put your bearer token here!
+
 def bearer_oauth(r):
     """
     Method required by bearer token authentication.
@@ -210,7 +213,7 @@ def main(id_):
                 
 
 if __name__ == "__main__":
-    for idx in subset_scored.twitter_id[848:1000]:
+    for idx in userid_list: ### userid_list is the list of userids you're interested in pulling tweets from!
         main(str(idx))
 
 

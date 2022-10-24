@@ -3,7 +3,7 @@ title: "BeautifulSoup Demo: Scraping Counter-Currents"
 author: "A demo by [Breanna E. Green ](https://bregreen.github.io/) // Powered by [Quarto](https://quarto.org/docs/tools/jupyter-lab.html)"
 format: 
   html:
-    code-fold: true
+    code-fold: false
     page-layout: full
 jupyter: python3
 execute: 
@@ -12,23 +12,28 @@ execute:
 
 Note: This has been edited to scrape the website in small batches. You can't run this freely without making changes.
 
+## Some Background on this site...
+
+I work with extremist language, whether to detect hate speech or examining language from the far-right (and sometimes the far-left).
+
+I was working on a project related to Counter-Currents -- a site that "promote(s) white identity politics". So if you're wondering why this is the example, I wanted to make it clear that this is a part of my work and I would never suggest someone read this type of language without ample preparation.
+
+### Before you begin:
+
+- I'll likely edit this to scrape a site that is less... abrasive. But for now it was the code I had previously used.
+- PLEASE change this demo to a site that makes sense for you!
+- I respect your mental health and well-being. 
+
 
 ```{python}
 # Imports
 
-from   collections import Counter
-import numpy as np
 import os
-import random
 import requests
-import spacy
-from collections import defaultdict
 import string 
 import pandas as pd
 from bs4 import BeautifulSoup
 from glob import glob
-import statsmodels.stats.api as sms
-from scipy import stats
 
 ```
 
