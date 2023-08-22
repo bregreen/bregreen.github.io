@@ -8,7 +8,7 @@ permalink: /
 
 A fourth year [Information Science](http://infosci.cornell.edu/) PhD candidate at [Cornell University](https://www.cornell.edu/) advised by [Drew Margolin](https://www.communication.cals.cornell.edu/people/drew-margolin/).
 
-Generally, I'm interested in the ways both activist and extremist identities and ideologies are built and maintained using various social media platforms. Specifically, mt dissertation will examine how politically motivated actors moralize acts of harm (i.e. political violence). I employ semi-supervised and unsupervised learning methods to examine text as data, particularly from sources such as Twitter, YouTube and Gab. 
+Generally, I'm interested in the ways both activist and extremist identities and ideologies are built and maintained using various social media platforms. Specifically, my dissertation will examine how politically motivated actors moralize acts of harm (i.e. political violence). I employ semi-supervised and unsupervised learning methods to examine text as data, particularly from sources such as Twitter, YouTube and Gab. 
 
 Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [Prairie View A&M University](https://www.pvamu.edu/cojjp/departments/psychology/) and the [University of Texas at San Antonio](https://hcap.utsa.edu/psychology/), respectively.
 
