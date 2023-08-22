@@ -15,6 +15,8 @@ Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [P
 After UTSA, I spent a few years working as a Research Analyst in the Institutional Research department of a large community college in Texas.
 
 ## Recent Updates
+-   Teaching Assistant for [INFO 3350/6350 Text Mining History & Literature ](https://classes.cornell.edu/browse/roster/FA23/class/INFO/3350)
+
 -   Recipient of the Siegel Public Interest Tech Impact Fellowship  [PiTech Fellow 2023](https://www.pi.tech.cornell.edu/spotlight/siegel-pitech-impact-fellowship-in-its-third-year) - Working with [*Block Party*](https://blockparty.studio/) - Improving community board meeting summarization pipeline using NLP
 
 -   Completed a 2023 PhD ML/AI Internship at [Regeneron Pharmacuticals, Inc.](https://www.regeneron.com/) - People Analytics and Reporting
@@ -26,7 +28,7 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 ## Funding & Awards
-- The Siegel Public Interest Tech Impact Fellowship [PiTech Fellow 2023](https://www.pi.tech.cornell.edu/phd-impact-fellowship-students)
+-   The Siegel Public Interest Tech Impact Fellowship [PiTech Fellow 2023](https://www.pi.tech.cornell.edu/phd-impact-fellowship-students)
 
 -   Awarded APSA 2022 [Travel Grant](https://connect.apsanet.org/apsa2022/travel-grants/) through Political Communication 
 
