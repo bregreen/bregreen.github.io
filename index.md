@@ -17,6 +17,8 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 ## Recent Updates
 -   Recipient of the Siegel Public Interest Tech Impact Fellowship  [PiTech Fellow 2023](https://www.pi.tech.cornell.edu/spotlight/siegel-pitech-impact-fellowship-in-its-third-year) - Working with [*Block Party*](https://blockparty.studio/) - Improving community board meeting summarization pipeline using NLP
 
+-   Completed a 2023 PhD ML/AI Internship at [Regeneron Pharmacuticals, Inc.](https://www.regeneron.com/) - People Analytics and Reporting
+
 - 🎉🎉🎉 Passed my A-Exam and moved to candidacy! 🎉🎉🎉
 
 -   Panelist at [APSA 2022](https://convention2.allacademic.com/one/apsa/apsa22/index.php?cmd=Online+Program+View+Session&selected_session_id=2022029&PHPSESSID=sork86megslu6jc0kf6b6vpl9p) - *Listening and Reacting to Communication* - Examining Associations of Voter Turnout in 2021 VA Gubernatorial Election
@@ -27,6 +29,8 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 
 ## Funding & Awards
+- The Siegel Public Interest Tech Impact Fellowship [PiTech Fellow 2023](https://www.pi.tech.cornell.edu/phd-impact-fellowship-students)
+
 -   Awarded APSA 2022 [Travel Grant](https://connect.apsanet.org/apsa2022/travel-grants/) through Political Communication 
 
 -   Awarded [GHC Student Scholarship](https://ghc.anitab.org/attend/scholarships/) to attend the virtual component of the 2022 Grace Hopper Celebration
