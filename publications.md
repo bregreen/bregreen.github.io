@@ -1,6 +1,6 @@
 ---
-title: "Publications"
 layout: default
+title: Publications
 ---
 
 # In print and forthcoming
