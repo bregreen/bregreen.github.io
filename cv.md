@@ -20,7 +20,7 @@ description: Up to date as of - August 2023
 <br>
 <br>
 
-## Resume current as of Aug. 2022
+## Resume current as of Aug. 2023
 
 
 <p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/Resume_2023_08.pdf">Download PDF</a>.</p>
