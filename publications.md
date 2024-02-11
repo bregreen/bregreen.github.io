@@ -9,7 +9,7 @@ Wainwright, K., Green, B. E., & Romanowich, P. (2018). [[**The Relationship Betw
 
 # Working papers
 
-Green, Breanna, Will Hobbs, Pedro L. Rodriguez, Arthur Spirling, and Brandon M. Stewart. 2024. [[**"Measuring Distances in High Dimensional Spaces: Why Average Group Vector Comparisons Exhibit Bias, and What to Do About It."**]](doi:10.31235/osf.io/g8hxt) SocArXiv. January 12.
+Green, Breanna, Will Hobbs, Pedro L. Rodriguez, Arthur Spirling, and Brandon M. Stewart. 2024. [[**"Measuring Distances in High Dimensional Spaces: Why Average Group Vector Comparisons Exhibit Bias, and What to Do About It."**]](https://doi:10.31235/osf.io/g8hxt) SocArXiv. January 12.
 
 Omapang, Aspen K.B., Breanna E. Green, Chao Yu, Roxana Mika Muenster, and Drew B. Margolin. 2023. **"Time to Politicization: The Emergence and Effects of Politics on Science YouTube Videos"**. [[data]](https://doi.org/10.7910/DVN/VMAWN8)
 
