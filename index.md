@@ -12,7 +12,7 @@ Generally, I'm interested in the ways both activist and extremist identities and
 
 Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [Prairie View A&M University](https://www.pvamu.edu/cojjp/departments/psychology/) and the [University of Texas at San Antonio](https://hcap.utsa.edu/psychology/), respectively.
 
-After UTSA, I spent a few years working as a Research Analyst in the Institutional Research department of a large community college in Texas.
+After UTSA, I had the pleasure to work as a Research Analyst in Institutional Research at [Tarrant County College](https://www.tccd.edu/about/research/institutional-intelligence-and-research/).
 
 ------------------------------------------------------------------------
 
