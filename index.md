@@ -14,6 +14,28 @@ Before arriving to Cornell, I earned both my B.S. and M.S. in Psychology from [P
 
 After UTSA, I spent a few years working as a Research Analyst in the Institutional Research department of a large community college in Texas.
 
+------------------------------------------------------------------------
+
+# About Me
+
+**Pronouns**
+
+She, Her(s)
+
+## Interests
+
+-   Computational Social Science
+-   Text as Data & NLP
+-   Identity Development
+
+## First Gen Scholar
+
+I am a first-generation college graduate, and I will be the first person in my family to earn a Doctorate degree. That holds incredible weight for me, and I seek to mentor future scholars throughout my journey.
+
+------------------------------------------------------------------------
+
+# News
+
 ## Recent Updates
 
 -   Selected as a member of the third cohort for [Siegel Family Endowment Research Fellows](https://www.siegelendowment.org/research/fellows/).
