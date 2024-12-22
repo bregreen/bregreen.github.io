@@ -1,11 +1,11 @@
 ---
 title: "Breanna E. Green CV & Resume"
 layout: default
-date: '2024-02-01'
-description: Up to date as of - Feb 2024
+date: '2024-11-01'
+description: Up to date as of - Nov 2024
 ---
 
-## CV current as of Feb. 2024
+## CV current as of Nov. 2024
 
 
 <p>If viewing on a mobile device - Please download the PDF to view it in full: <a href="https://bregreen.github.io/assets/pdfs/CV_BEGreen_202411.pdf">Download PDF</a>.</p>
