@@ -18,17 +18,17 @@ After UTSA, I spent a few years working as a Research Analyst in the Institution
 
 # About Me
 
-**Pronouns**
+#### Pronouns
 
 She, Her(s)
 
-## Interests
+#### Interests
 
 -   Computational Social Science
 -   Text as Data & NLP
 -   Identity Development
 
-## First Gen Scholar
+#### First Gen Scholar
 
 I am a first-generation college graduate, and I will be the first person in my family to earn a Doctorate degree. That holds incredible weight for me, and I seek to mentor future scholars throughout my journey.
 
